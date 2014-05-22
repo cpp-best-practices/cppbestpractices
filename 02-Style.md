@@ -24,9 +24,6 @@ Name private data with a `m_` prefix to distinguish it from public data.
 
 Name function parameters with an `t_` prefix.
 
-## Never begin a preprocessor definition or identifer with _
-
-http://stackoverflow.com/questions/228783/what-are-the-rules-about-using-an-underscore-in-a-c-identifier
 
 ## Don't name anything starting with an `_`
 
@@ -67,7 +64,7 @@ Not the source folder
 
 ## Use `nullptr`
 
-C++11 introduces `nullptr` which is a special type denoting a null pointer value. This should be used instead of 0 or NULL to indicate a null pointer.
+C++11 introduces `nullptr` which is a special type denoting a null pointer value. This should be used instead of `0` or `NULL` to indicate a null pointer.
 
 ## Comments
 
@@ -242,6 +239,9 @@ namespace my_project {
 
 ## Use the correct integer type for stdlib features
 
+The standard library generally returns `size_t` for anything related to size. What exactly `size_t` is is implementation defined.
+
+Make sure you stick with the correct integer types and be consistent with the C++ stdlib. It might not warn on the platform you are currently using, but it probably will when you change platforms.
 
 ## Use .hpp and .cpp for your file extensions
 
@@ -249,8 +249,18 @@ Ultimately this is a matter of preference, but .hpp and .cpp are widely recogniz
 
 One particularly large project (OpenStudio) uses .hpp and .cpp for user generated files and .hxx and .cxx for tool generated files. Both are well recongized and having the disctinction is helpful
 
-## never ever mix tabs and spaces
+## Never Mix Tabs and Spaces
 
-## never put code with side effects inside an assert()
+Some editors like to indent with a mixture of tabs and spaces by default. This makes the code unreadable to anyone not using the exact same tab indentation settings.
+
+## Never Put Code with Side Effects Inside an assert()
+
+```cpp
+assert(registerSomeThing()); // make sure that registerSomeThing() returns true
+```
+
+The above code succeeds when making a debug build, but gets removed by the compiler when making a release build, giving you different behavior between debug and release builds.
 
 ## Don't be afraid of templates
+
+They can help you stick to DRY principles.
