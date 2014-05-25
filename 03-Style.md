@@ -264,3 +264,5 @@ The above code succeeds when making a debug build, but gets removed by the compi
 ## Don't be afraid of templates
 
 They can help you stick to DRY principles.
+
+## Use operator overloads judiciously
