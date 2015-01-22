@@ -46,7 +46,7 @@ You should use as many compilers as you can for your platform(s). Each compiler 
 `-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic`
 
  * `-Wall -Wextra` reasonable and standard
- * `-Wshadow` warn the user if a variable declartion shadows one from a parent context
+ * `-Wshadow` warn the user if a variable declaration shadows one from a parent context
  * `-Wnon-virtual-dtor` warn the user if a class with virtual functions has a non-virtual destructor. This helps catch hard to track down memory errors
  * `-pedantic`
 
