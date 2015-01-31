@@ -2,8 +2,6 @@
 
 ## Build Time
 
-## see also
-include-what-you-use
 
 
 ### Forward Declare when Possible
@@ -40,7 +38,13 @@ This is a proactive approach to simplify compilation time and rebuilding depende
 
 ### Firewall Frequently Changing Header Files
 
+
+
 ### Don't Unnecessarily Include Headers
+
+The compiler has to do something with each include directive it sees. Even if it stops as soon as it seems the `#ifndef` include guard, it still had to open the file and begin processing it.
+
+[include-what-you-use](https://code.google.com/p/include-what-you-use) is a tool that can help you identify which headers you need.
 
 ### Reduce the load on the preprocessor
 
@@ -54,8 +58,23 @@ These are not meant to supercede good design
 
 CCACHE, facebook's thing (warp)
 
+### Put tmp on Ramdisk
+
+See [this](https://www.youtube.com/watch?v=t4M3yG1dWho) youtube video for more details.
+
+### Use the Gold Linker
+
+If on linux, consider using the gold linker for gcc.
 
 ## Runtime
+
+### Analyze the code!
+
+There's no real way to know where your bottlenecks are without analyzing the code.
+
+ * http://developer.amd.com/tools-and-sdks/opencl-zone/codexl/
+ * http://www.codersnotes.com/sleepy
+
 
 ### Limit Variable Scope
 
@@ -81,6 +100,9 @@ for (int i = 0; i < 15; ++i)
 
 ### Prefer double to float
 
+Operations are doubles are typically faster than float. However, in vectorized operations, float might win out. Analyze the code and find out which is faster for your application!
+
+
 ### Prefer ++i to i++
 ... when it is semantically correct. Pre-increment is [faster](http://blog2.emptycrate.com/content/why-i-faster-i-c) then post-increment because it does not require a copy of the object to be made.
 
@@ -99,3 +121,4 @@ for (int i = 0; i < 15; ++i)
 }
 
 ```
+

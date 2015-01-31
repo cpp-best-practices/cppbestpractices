@@ -8,5 +8,6 @@
  7. [Considering Performance](07-Considering_Performance.md)
  8. [Enable Scripting](08-Enable_Scripting.md)
  9. [Further Reading](09-Further_Reading.md)
+ 10. [Final Thoughts](10-Final_Thoughts.md)
 
 

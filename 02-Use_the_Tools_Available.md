@@ -1,5 +1,7 @@
 # Use The Tools Available
 
+An automated framework for executing these tools should be established very early in the development process. It should not take more than 2-3 commands to checkout the source code, build, and execute the tests. Once the tests are done executing, you should have an almost complete picture of the state and quality of the code.
+
 ## Source Control
 
 Source control is an absolute necessity for any software development project. If you are not using one yet, start using one.
@@ -105,7 +107,11 @@ Can be enabled with the `/analyze` [command line option](http://msdn.microsoft.c
 
 commercial options
 
+### Metrix++
 
+http://metrixplusplus.sourceforge.net/
+
+While not necessarily a static analyzer, Metrix++ can identify and report on the most complex sections of your code. Reducing complex code helps you and the compiler understand it better and optimize it better.
 
 ## Runtime Checkers
 
@@ -115,6 +121,7 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
 
 The most likely candidate for a coverage visualization is the [lcov](http://ltp.sourceforge.net/coverage/lcov.php) project. A secondary option is [coveralls](https://coveralls.io/), which is free for open source projects.
 
+An alternative to lcov is [gcovr](http://gcovr.com/). It seems to provide similar functionality, but is written in python. 
 <link to chaiscript example of using it>
 
 ### GCC/Clang Sanitizers
@@ -129,6 +136,10 @@ The most likely candidate for a coverage visualization is the [lcov](http://ltp.
 If it is determined by team consensus that the compiler or analyzer is warning on something that is either incorrect or unavoidable, the team will disable the specific error to as localized part of the code as possible.
 
 ## Testing
+
+CMake, mentioned above, has a built in framework for executing tests. Make sure whatever build system you use has a way to execute tests built in.
+
+To further aid in executing tests, consider a library such as [googletest](https://code.google.com/p/googletest/) or [Catch](https://github.com/philsquared/Catch) to help you organize the tests.
 
 ### Unit Tests
 
