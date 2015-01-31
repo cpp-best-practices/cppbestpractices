@@ -7,6 +7,7 @@ Source control is an absolute necessity for any software development project. If
  * [github](http://github.com) - allows for unlimited public repositories, must pay for a private repository
  * [bitbucket](http://bitbucket.org) - allows for unlimited private repositories with up to 5 collaborators, for free.
  * [sourceforge](http://sf.net) - open source hosting only
+ * Subversion, Bitkeeper, many many others... The above are the most popular free services.
 
 ## Build Tool
 
@@ -26,11 +27,14 @@ Once you have picked your build tool, set up a continuous integration environmen
 Continuous Integration (CI) tools automatically build the source code as changes are pushed to the repository. These can be hosted privately or with a CI host.
 
  * [Travis CI](http://travis-ci.org)
- * works well with C++
- * designed for use with github
- * free for public repositories on github
+   * works well with C++
+   * designed for use with github
+   * free for public repositories on github
  * Hudson CI
- * Decent CI
+ * [Decent CI](https://github.com/lefticus/decent_ci)
+  * simple ad-hoc continuous integration that posts results to github
+  * supports Windows, MacOS and Linux
+  * used by [ChaiScript](http://chaiscript.com/ChaiScript-BuildResults/full_dashboard.html)
 
 If you have an OpenSource, publicly hosted project on github, go enable travis-ci integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
 
@@ -48,6 +52,10 @@ You should use as many compilers as you can for your platform(s). Each compiler 
  * `-Wall -Wextra` reasonable and standard
  * `-Wshadow` warn the user if a variable declaration shadows one from a parent context
  * `-Wnon-virtual-dtor` warn the user if a class with virtual functions has a non-virtual destructor. This helps catch hard to track down memory errors
+ * `-Wold-style-cast` warn for c-style casts
+ * `-Wcast-align` warn for potential performance problem casts 
+ * `-Wunused` warn on anything being unused
+ * `-Woverloaded-virtual` warn if you overload (not override) a virtual function
  * `-pedantic`
 
 `-Weffc++` warning mode can be too noisy, but if it works for your project, use it also.
@@ -84,7 +92,7 @@ clang-tidy
 ## Static Analyzers
 
 ### cppcheck
-Cppcheck is free and opensource. It strives for 0 false positives and does a good job at it. Therefor all warning should be enabled: -enable=all
+Cppcheck is free and opensource. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `-enable=all`
 
 ### Clang's Static Analyzer
 
@@ -120,7 +128,17 @@ The most likely candidate for a coverage visualization is the [lcov](http://ltp.
 
 If it is determined by team consensus that the compiler or analyzer is warning on something that is either incorrect or unavoidable, the team will disable the specific error to as localized part of the code as possible.
 
-## Unit Tests
+## Testing
 
-There should be a test enabled for every feature or bug fix that is committed. See also "Code Coverage Analysis."
+### Unit Tests
+
+Unit tests are for small chunks of code, individual functions which can be tested standalone.
+
+### Integration Tests
+
+There should be a test enabled for every feature or bug fix that is committed. See also "Code Coverage Analysis." These are tests that are higher level than unit tests. They should still be limited in scope to individual features.
+
+### Negative Testing
+
+Don't forget to make sure that your error handling is being tested and works properly as well. This will become obvious if you aim for 100% code coverage.
 
