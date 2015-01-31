@@ -68,12 +68,90 @@ If on linux, consider using the gold linker for gcc.
 
 ## Runtime
 
-### Analyze the code!
+### Analyze the Code!
 
 There's no real way to know where your bottlenecks are without analyzing the code.
 
  * http://developer.amd.com/tools-and-sdks/opencl-zone/codexl/
  * http://www.codersnotes.com/sleepy
+
+### Simplify the Code
+
+The cleaner, more simple, and easier to read the code is, the better chance the compiler has at implementing it as well.
+
+### Use Initializer Lists
+
+
+```c++
+// This
+std::vector<ModelObject> mos{mo1, mo2};
+
+// -or-
+auto mos = std::vector<ModelObject>{mo1, mo2};
+```
+
+```c++
+// Don't do this
+std::vector<ModelObject> mos;
+mo.push_back(mo1);
+mo.push_back(mo2);
+```
+
+Initializer lists are significantly more efficient; reducing object copies and resizing of containers
+
+### Reduce Temporary Objects
+
+```c++
+// Instead of
+auto mo1 = getSomeModelObject();
+auto mo2 = getAnotherModelObject();
+
+doSomething(mo1, mo2);
+```
+
+```c++
+// consider:
+
+doSomething(getSomeModelObject(), getAnotherModelObject());
+```
+
+This sort of code prevents the compiler from performing a move operation…
+
+### Enable move operations
+
+Move operations are one of the most touted features of C++11. They allow the compiler to avoid extra copies by moving temporary objects instead of copying them in certain cases.
+
+Certain coding choices we make (such as declaring our own destructor or assignment operator or copy constructor) prevents the compiler from generating a move constructor.
+
+For most code, a simple
+
+```c++
+ModelObject(ModelObject &&) = default;
+```
+
+would suffice. However, MSVC2013 doesn’t seem to like this code yet. 
+
+### Kill shared_ptr Copies
+
+shared_ptr objects are much more expensive to copy than you think they should be. This is because the reference count must be atomic and thread safe. So this comment just re-enforces the note above - avoid temporaries and too many copies of objects. Just because we are using a pImpl it does not mean our copies are free.
+
+### Get rid of “new”
+
+We already know that we should not be using raw memory access, so we are using `unique_ptr` and `shared_ptr` instead, right?
+Heap allocations are much more expensive than stack allocations, but sometimes we have to use them. To make matters worse, creating a shared_ptr actually requires 2 heap allocations.
+
+However, the make_shared function reduces this down to just one.
+
+```c++
+std::shared_ptr<ModelObject_Impl>(new ModelObject_Impl());
+
+// should become
+std::make_shared<ModelObject_Impl>(); // (it's also more readable and concise)
+```
+
+### Get rid of std::endl
+
+`std::endl` implies a flush operation. It’s equivalent to `"\n" << std::flush`. 
 
 
 ### Limit Variable Scope
