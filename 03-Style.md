@@ -90,9 +90,11 @@ int myFunc()
 
 which would be impossible if the function comment header used `/* */`
 
-## Never Use `using` In a Header File
+## Never Use `using namespace` In a Header File
 
 This causes the name space you are `using` to be pulled into the namespace of the header file.
+It litters the own namespace and it may lead to name collisions in the future. 
+Writing `using namespace` in an implementation file is fine though.
 
 
 ## Include Guards
