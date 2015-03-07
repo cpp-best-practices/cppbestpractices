@@ -113,6 +113,9 @@ class MyClass {
 #endif
 ```
 
+You may also consider to use the `#pragma once` directive instead which is quasi standard across many compilers. 
+It's short and makes the intent clear. 
+
 
 ## {} are required for blocks. 
 Leaving them off can lead to semantic errors in the code.
