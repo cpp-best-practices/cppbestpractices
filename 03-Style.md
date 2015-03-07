@@ -223,6 +223,16 @@ private:
 };
 ```
 
+In C++11 you may consider to always give each member a default value, e.g. by writing
+```cpp
+// ... //
+private:
+  int m_value = 0;
+// ... //
+```
+inside the class body. This makes sure that no constructor ever "forgets" to initialize a member object. 
+Forgetting to initialize a member is a source of undefined behaviour bugs which are often extremely hard to find.
+
 
 ## Always Use Namespaces
 
