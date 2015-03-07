@@ -207,7 +207,7 @@ private:
 
 
 // Good Idea
-// C++'s memeber initializer list is unique to the language and leads to
+// C++'s member initializer list is unique to the language and leads to
 // cleaner code and potential performance gains that other languages cannot 
 // match
 class MyClass
