@@ -282,9 +282,11 @@ assert(registerSomeThing()); // make sure that registerSomeThing() returns true
 ```
 
 The above code succeeds when making a debug build, but gets removed by the compiler when making a release build, giving you different behavior between debug and release builds.
+This is because `assert()` is a macro which expands to nothing in release mode. 
 
 ## Don't be afraid of templates
 
 They can help you stick to DRY principles.
+They should be preferred to macros, because macros do not honor namespaces, etc. 
 
 ## Use operator overloads judiciously
