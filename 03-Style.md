@@ -233,16 +233,19 @@ There is almost never a reason to declare an identifier in the global namespaces
 Compiler definitions and macros are replaced by the pre-processor before the compiler is ever run. This can make debugging very difficult because the debugger doesn't know where the source came from.
 
 ```cpp
+// Bad Idea
+#define PI 3.14159;
+
 // Good Idea
 namespace my_project {
   class Constants {
   public:
+    // if the above macro would be expanded, then the following line would be:
+    //   static const double 3.14159 = 3.14159;
+    // which leads to an compile-time error. Sometimes such errors are hard to understand.
     static const double PI = 3.14159;
   }
 }
-
-// Bad Idea
-#define PI 3.14159;
 ```
 
 
