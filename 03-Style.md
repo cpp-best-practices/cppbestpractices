@@ -160,6 +160,10 @@ if (x && y && myFunctionThatReturnsBool()
 }
 ```
 
+Many projects and coding standards have a soft guideline that one should try to use less than about 80 or 100 characters per line. 
+Such code is generally easier to read. 
+It also makes it possible to have two separate file next to each other on one screen without having a tiny font. 
+
 
 ## Use "" For Including Local Files
 ... `<>` is [reserved for system includes](http://blog2.emptycrate.com/content/when-use-include-verses-include).
