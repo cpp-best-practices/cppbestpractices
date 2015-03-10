@@ -90,9 +90,11 @@ int myFunc()
 
 which would be impossible if the function comment header used `/* */`
 
-## Never Use `using` In a Header File
+## Never Use `using namespace` In a Header File
 
 This causes the name space you are `using` to be pulled into the namespace of the header file.
+It litters the own namespace and it may lead to name collisions in the future. 
+Writing `using namespace` in an implementation file is fine though.
 
 
 ## Include Guards
@@ -110,6 +112,9 @@ class MyClass {
 
 #endif
 ```
+
+You may also consider to use the `#pragma once` directive instead which is quasi standard across many compilers. 
+It's short and makes the intent clear. 
 
 
 ## {} are required for blocks. 
@@ -155,6 +160,10 @@ if (x && y && myFunctionThatReturnsBool()
 }
 ```
 
+Many projects and coding standards have a soft guideline that one should try to use less than about 80 or 100 characters per line. 
+Such code is generally easier to read. 
+It also makes it possible to have two separate file next to each other on one screen without having a tiny font. 
+
 
 ## Use "" For Including Local Files
 ... `<>` is [reserved for system includes](http://blog2.emptycrate.com/content/when-use-include-verses-include).
@@ -198,7 +207,7 @@ private:
 
 
 // Good Idea
-// C++'s memeber initializer list is unique to the language and leads to
+// C++'s member initializer list is unique to the language and leads to
 // cleaner code and potential performance gains that other languages cannot 
 // match
 class MyClass
@@ -214,6 +223,16 @@ private:
 };
 ```
 
+In C++11 you may consider to always give each member a default value, e.g. by writing
+```cpp
+// ... //
+private:
+  int m_value = 0;
+// ... //
+```
+inside the class body. This makes sure that no constructor ever "forgets" to initialize a member object. 
+Forgetting to initialize a member is a source of undefined behaviour bugs which are often extremely hard to find.
+
 
 ## Always Use Namespaces
 
@@ -224,16 +243,19 @@ There is almost never a reason to declare an identifier in the global namespaces
 Compiler definitions and macros are replaced by the pre-processor before the compiler is ever run. This can make debugging very difficult because the debugger doesn't know where the source came from.
 
 ```cpp
+// Bad Idea
+#define PI 3.14159;
+
 // Good Idea
 namespace my_project {
   class Constants {
   public:
+    // if the above macro would be expanded, then the following line would be:
+    //   static const double 3.14159 = 3.14159;
+    // which leads to an compile-time error. Sometimes such errors are hard to understand.
     static const double PI = 3.14159;
   }
 }
-
-// Bad Idea
-#define PI 3.14159;
 ```
 
 
@@ -260,9 +282,11 @@ assert(registerSomeThing()); // make sure that registerSomeThing() returns true
 ```
 
 The above code succeeds when making a debug build, but gets removed by the compiler when making a release build, giving you different behavior between debug and release builds.
+This is because `assert()` is a macro which expands to nothing in release mode. 
 
 ## Don't be afraid of templates
 
 They can help you stick to DRY principles.
+They should be preferred to macros, because macros do not honor namespaces, etc. 
 
 ## Use operator overloads judiciously
