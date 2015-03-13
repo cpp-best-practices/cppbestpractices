@@ -19,9 +19,6 @@ instead of:
 
 ```cpp
 // some header file
-
-
-
 #include "MyClass.hpp"
 
 void doSomething(const MyClass &);
