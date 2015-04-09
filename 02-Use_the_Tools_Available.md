@@ -16,6 +16,7 @@ Source control is an absolute necessity for any software development project. If
 Use an industry standard widely accepted build tool. This prevents you from reinventing the wheel whenever you discover / link to a new library / package your product / etc. Examples include:
 
  * [cmake](http://cmake.org)
+ * [biicode](http://biicode.com)
  * [waf](http://waf.googlecode.com)
  * ninja - can greatly improve the incremental build time of your larger projects. Can be used as a target for cmake
  * google's build tool
@@ -33,6 +34,7 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * designed for use with github
    * free for public repositories on github
  * Hudson CI
+ * Appveyor
  * [Decent CI](https://github.com/lefticus/decent_ci)
   * simple ad-hoc continuous integration that posts results to github
   * supports Windows, MacOS and Linux
