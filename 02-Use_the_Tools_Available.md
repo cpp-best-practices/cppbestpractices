@@ -18,7 +18,8 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [cmake](http://cmake.org)
  * [biicode](http://biicode.com)
  * [waf](http://waf.googlecode.com)
- * ninja - can greatly improve the incremental build time of your larger projects. Can be used as a target for cmake
+ * [FASTBuild](http://www.fastbuild.org/)
+ * [ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for cmake
  * google's build tool
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using
@@ -95,6 +96,8 @@ clang-tidy
 
 ## Static Analyzers
 
+The best bet is the static analyzer that you can run as part of your automated build system. cppcheck and clang meet that requirement for free options.
+
 ### cppcheck
 Cppcheck is free and opensource. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `-enable=all`
 
@@ -107,7 +110,13 @@ Clang's analyzer's default options are good for the respective platform. It can 
 
 Can be enabled with the `/analyze` [command line option](http://msdn.microsoft.com/en-us/library/ms173498.aspx). For now we will stick with the default options.
 
-commercial options
+### ReSharper C++ / CLion
+
+Both of these tools from [JetBrains](https://www.jetbrains.com/cpp/) offer some level of static analysis and automated fixes for common things that can be done better. They have options available for free licenses for Open Source project leaders.
+
+### Qt Creator
+
+Qt Creator can plug into the clang static analyzer, but *only* on the *commercial* version of Qt Creator. 
 
 ### Metrix++
 
@@ -126,7 +135,13 @@ The most likely candidate for a coverage visualization is the [lcov](http://ltp.
 An alternative to lcov is [gcovr](http://gcovr.com/). It seems to provide similar functionality, but is written in python. 
 <link to chaiscript example of using it>
 
+### Valgrind
+
+Runtime code analyzer that can detect memory leaks, race conditions and other associated problems. It is supported on various unix platforms.
+
 ### GCC/Clang Sanitizers
+
+These tools provide many of the same features as valgrind, but built into the compiler. They are easy to use and provide a report of what went wrong.
 
  * address
  * thread
