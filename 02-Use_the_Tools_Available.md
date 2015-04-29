@@ -70,7 +70,7 @@ You should use as many compilers as you can for your platform(s). Each compiler 
 `/W4 /W44640`
 
  * `/W4` - All reasonable warnings
- * `/w4640` - Enable warning on thread un-safe static member initialization
+ * `/w44640` - Enable warning on thread un-safe static member initialization
 
 Not recommended
 
