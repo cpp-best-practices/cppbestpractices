@@ -9,7 +9,7 @@ Source control is an absolute necessity for any software development project. If
  * [github](http://github.com) - allows for unlimited public repositories, must pay for a private repository
  * [bitbucket](http://bitbucket.org) - allows for unlimited private repositories with up to 5 collaborators, for free.
  * [sourceforge](http://sf.net) - open source hosting only
- * Subversion, Bitkeeper, many many others... The above are the most popular free services.
+ * [GitLab](https://gitlab.com/), Subversion, Bitkeeper, many many others... The above are the most popular free services.
 
 ## Build Tool
 
@@ -70,7 +70,7 @@ You should use as many compilers as you can for your platform(s). Each compiler 
 `/W4 /W44640`
 
  * `/W4` - All reasonable warnings
- * `/w44640` - Enable warning on thread un-safe static member initialization
+ * `/w4640` - Enable warning on thread un-safe static member initialization
 
 Not recommended
 
