@@ -33,6 +33,12 @@ template<typename T> class MyTemplatedType;
 
 This is a proactive approach to simplify compilation time and rebuilding dependencies.
 
+### Avoid Unnecessary Template Instantiations
+
+Templates are not free to instantiate. Instantiating many templates, or templates with more code than necessary increases compiled code size and build time.
+
+For more examples see [this article](http://blog2.emptycrate.com/content/template-code-bloat-revisited-smaller-makeshared).
+
 ### Firewall Frequently Changing Header Files
 
 
@@ -131,6 +137,36 @@ would suffice. However, MSVC2013 doesn’t seem to like this code yet.
 ### Kill shared_ptr Copies
 
 shared_ptr objects are much more expensive to copy than you think they should be. This is because the reference count must be atomic and thread safe. So this comment just re-enforces the note above - avoid temporaries and too many copies of objects. Just because we are using a pImpl it does not mean our copies are free.
+
+### Reduce Copies and Reassignments as Much as Possible
+
+This can be facilited in some cases with an [immediate-invoked lambda](http://blog2.emptycrate.com/content/complex-object-initialization-optimization-iife-c11). 
+
+```c++
+// Bad Idea
+std::string somevalue;
+
+if (somecase()) {
+  somevalue = "Value A";
+} else {
+  somevalue = "Value B";
+}
+```
+
+```c++
+// Better Idea
+const std::string somevalue = [&](){
+    if (somecase()) {
+      return "Value A";
+    } else {
+      return "Value B";
+    }
+  }();
+```
+
+### Avoid Excess Exceptions
+
+Exceptions which are thrown and captured internally during normal processing slow down the application execution. They also destroy the user experience from within a debugger, as debuggers monitor and report on each exception event. It is best to just avoid internal exception processing when possible.
 
 ### Get rid of “new”
 
