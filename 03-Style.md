@@ -103,7 +103,7 @@ Header files must contain an distinctly named include guard to avoid problems wi
 
 ```cpp
 #ifndef MYPROJECT_MYCLASS_HPP
-#define MYPROEJCT_MYCLASS_HPP
+#define MYPROJECT_MYCLASS_HPP
 
 namespace MyProject {
 class MyClass {
