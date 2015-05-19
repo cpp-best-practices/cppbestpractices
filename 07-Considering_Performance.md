@@ -96,8 +96,8 @@ auto mos = std::vector<ModelObject>{mo1, mo2};
 ```c++
 // Don't do this
 std::vector<ModelObject> mos;
-mo.push_back(mo1);
-mo.push_back(mo2);
+mos.push_back(mo1);
+mos.push_back(mo2);
 ```
 
 Initializer lists are significantly more efficient; reducing object copies and resizing of containers
