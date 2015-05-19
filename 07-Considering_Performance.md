@@ -140,13 +140,13 @@ shared_ptr objects are much more expensive to copy than you think they should be
 
 ### Reduce Copies and Reassignments as Much as Possible
 
-This can be facilited in some cases with an [immediate-invoked lambda](http://blog2.emptycrate.com/content/complex-object-initialization-optimization-iife-c11). 
+For more simple cases, the ternary operator can be used
 
 ```c++
 // Bad Idea
 std::string somevalue;
 
-if (somecase()) {
+if (caseA) {
   somevalue = "Value A";
 } else {
   somevalue = "Value B";
@@ -155,14 +155,37 @@ if (somecase()) {
 
 ```c++
 // Better Idea
+const std::string somevalue = caseA?"Value A":"Value B";
+```
+
+More complex cases can be facilited with an [immediately-invoked lambda](http://blog2.emptycrate.com/content/complex-object-initialization-optimization-iife-c11). 
+
+```c++
+// Bad Idea
+std::string somevalue;
+
+if (caseA) {
+  somevalue = "Value A";
+} else if(caseB) {
+  somevalue = "Value B";
+} else {
+  somevalue = "Value C";
+}
+```
+
+```c++
+// Better Idea
 const std::string somevalue = [&](){
-    if (somecase()) {
+    if (caseA) {
       return "Value A";
-    } else {
+    } else if (caseB) {
       return "Value B";
+    } else {
+      return "Value C";
     }
   }();
 ```
+
 
 ### Avoid Excess Exceptions
 
