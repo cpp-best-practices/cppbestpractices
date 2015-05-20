@@ -17,7 +17,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
 
  * [cmake](http://cmake.org)
  * [biicode](http://biicode.com)
- * [waf](http://waf.googlecode.com)
+ * [waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
  * [ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for cmake
  * google's build tool
