@@ -14,7 +14,11 @@ are common examples. snake_case has the advantage that it can also work with spe
  * functions and variables start with lower case: `myMethod`
  * constants are all capital: `const int PI=3.14159265358979323;`
 
-*Note that the C++ standard does not follow any of these guidelines. Everything in the standard is lowercase only.*
+C++ Standard Library (and other well known C++ libraries like boost) use these guidelines:
+
+ * Macro names use uppercase with underscores: INT_MAX
+ * Template parameter names use camel case: InputIterator
+ * All other names use snake case: unordered_map
 
 ## Distinguish Private Object Data
 
