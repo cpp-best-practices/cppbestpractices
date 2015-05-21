@@ -22,11 +22,41 @@ C++ Standard Library (and other well known C++ libraries like boost) use these g
 
 ## Distinguish Private Object Data
 
-Name private data with a `m_` prefix to distinguish it from public data.
+Name private data with a `m_` prefix to distinguish it from public data. `m_` stands for "member" data
 
 ## Distinguish Function Parameters
 
-Name function parameters with an `t_` prefix.
+Name function parameters with an `t_` prefix. `t_` can be thought of as "the," but the meaning is arbitrary. The point is to distinguish function parameters from other variables in scope while giving us a consistent naming strategy.
+
+By using `t_` for parameters and `m_` for module data, we can have consistency with both public members of structs and private members of classes. 
+
+Any prefix or postfix can be chosen for your organization. This is just one example.
+
+```
+struct Size
+{
+  int width;
+  int height;
+  
+  ValueType(int t_width, int t_height) : width(t_width), height(t_height) {}
+};
+
+// this version might make sense for thread safety or something,
+// but more to the point, sometimes we need to hide data, sometimes we don't
+class PrivateSize
+{
+  public:
+    int width() const { return m_width; }
+    int height() const { return m_height; }
+    ValueType(int t_width, int t_height) : m_width(t_width), m_height(t_height) {}
+    
+  private:
+    int m_width;
+    int m_height;
+};
+```
+
+
 
 
 ## Don't name anything starting with an `_`
