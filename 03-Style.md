@@ -303,7 +303,7 @@ Make sure you stick with the correct integer types and be consistent with the C+
 
 Ultimately this is a matter of preference, but .hpp and .cpp are widely recognized by various editors and tools. So the choice is pragmatic. Specifically, VisualStudio only automatically recognizes .cpp and .cxx for C++ files, plus vim doesn't necessarily recognize .cc as a C++ file. 
 
-One particularly large project (OpenStudio) uses .hpp and .cpp for user generated files and .hxx and .cxx for tool generated files. Both are well recongized and having the disctinction is helpful
+One particularly large project (OpenStudio) uses .hpp and .cpp for user generated files and .hxx and .cxx for tool generated files. Both are well recognized and having the distinction is helpful.
 
 ## Never Mix Tabs and Spaces
 
