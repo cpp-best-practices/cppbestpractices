@@ -4,7 +4,7 @@
 
 
 
-### Forward Declare when Possible
+### Forward Declare When Possible
 
 This:
 
@@ -31,7 +31,7 @@ This applies to templates as well:
 template<typename T> class MyTemplatedType;
 ```
 
-This is a proactive approach to simplify compilation time and rebuilding dependencies.
+This is a proactive approach to reduce compilation time and rebuilding dependencies.
 
 ### Avoid Unnecessary Template Instantiations
 
@@ -39,7 +39,7 @@ Templates are not free to instantiate. Instantiating many templates, or template
 
 For more examples see [this article](http://blog2.emptycrate.com/content/template-code-bloat-revisited-smaller-makeshared).
 
-### Firewall Frequently Changing Header Files
+## Firewall Frequently Changing Header Files
 
 
 
@@ -51,23 +51,24 @@ The compiler has to do something with each include directive it sees. Even if it
 
 ### Reduce the load on the preprocessor
 
-This is a general form of "Firewall Frequently Changing Header Files" and "Don't Unnecessarily Include Headers." Tools like BOOST_PP can be very helpful, but they also put a huge burden on the preprocessor
+This is a general form of "Firewall Frequently Changing Header Files" and "Don't Unnecessarily Include Headers." Tools like BOOST_PP can be very helpful, but they also put a huge burden on the preprocessor.
 
 ### Consider using precompiled headers
 
 ### Consider Using Tools
 
-These are not meant to supercede good design
+These are not meant to supersede good design
 
-CCACHE, facebook's thing (warp)
+ * [ccache](https://ccache.samba.org/)
+ * [warp](https://github.com/facebook/warp), Facebook's preprocessor
 
 ### Put tmp on Ramdisk
 
-See [this](https://www.youtube.com/watch?v=t4M3yG1dWho) youtube video for more details.
+See [this](https://www.youtube.com/watch?v=t4M3yG1dWho) YouTube video for more details.
 
-### Use the Gold Linker
+### Use the gold linker
 
-If on linux, consider using the gold linker for gcc.
+If on Linux, consider using the gold linker for GCC.
 
 ## Runtime
 
@@ -80,12 +81,11 @@ There's no real way to know where your bottlenecks are without analyzing the cod
 
 ### Simplify the Code
 
-The cleaner, more simple, and easier to read the code is, the better chance the compiler has at implementing it as well.
+The cleaner, simpler, and easier to read the code is, the better chance the compiler has at implementing it well.
 
 ### Use Initializer Lists
 
-
-```c++
+```cpp
 // This
 std::vector<ModelObject> mos{mo1, mo2};
 
@@ -93,18 +93,18 @@ std::vector<ModelObject> mos{mo1, mo2};
 auto mos = std::vector<ModelObject>{mo1, mo2};
 ```
 
-```c++
+```cpp
 // Don't do this
 std::vector<ModelObject> mos;
 mos.push_back(mo1);
 mos.push_back(mo2);
 ```
 
-Initializer lists are significantly more efficient; reducing object copies and resizing of containers
+Initializer lists are significantly more efficient; reducing object copies and resizing of containers.
 
 ### Reduce Temporary Objects
 
-```c++
+```cpp
 // Instead of
 auto mo1 = getSomeModelObject();
 auto mo2 = getAnotherModelObject();
@@ -112,13 +112,13 @@ auto mo2 = getAnotherModelObject();
 doSomething(mo1, mo2);
 ```
 
-```c++
+```cpp
 // consider:
 
 doSomething(getSomeModelObject(), getAnotherModelObject());
 ```
 
-This sort of code prevents the compiler from performing a move operation…
+This sort of code prevents the compiler from performing a move operation...
 
 ### Enable move operations
 
@@ -128,21 +128,21 @@ Certain coding choices we make (such as declaring our own destructor or assignme
 
 For most code, a simple
 
-```c++
+```cpp
 ModelObject(ModelObject &&) = default;
 ```
 
-would suffice. However, MSVC2013 doesn’t seem to like this code yet. 
+would suffice. However, MSVC2013 doesn't seem to like this code yet.
 
-### Kill shared_ptr Copies
+### Kill `shared_ptr` Copies
 
-shared_ptr objects are much more expensive to copy than you think they should be. This is because the reference count must be atomic and thread safe. So this comment just re-enforces the note above - avoid temporaries and too many copies of objects. Just because we are using a pImpl it does not mean our copies are free.
+`shared_ptr` objects are much more expensive to copy than you'd think they would be. This is because the reference count must be atomic and thread-safe. So this comment just re-enforces the note above: avoid temporaries and too many copies of objects. Just because we are using a pImpl it does not mean our copies are free.
 
 ### Reduce Copies and Reassignments as Much as Possible
 
-For more simple cases, the ternary operator can be used
+For more simple cases, the ternary operator can be used:
 
-```c++
+```cpp
 // Bad Idea
 std::string somevalue;
 
@@ -153,14 +153,14 @@ if (caseA) {
 }
 ```
 
-```c++
+```cpp
 // Better Idea
 const std::string somevalue = caseA?"Value A":"Value B";
 ```
 
-More complex cases can be facilited with an [immediately-invoked lambda](http://blog2.emptycrate.com/content/complex-object-initialization-optimization-iife-c11). 
+More complex cases can be facilitated with an [immediately-invoked lambda](http://blog2.emptycrate.com/content/complex-object-initialization-optimization-iife-c11).
 
-```c++
+```cpp
 // Bad Idea
 std::string somevalue;
 
@@ -173,7 +173,7 @@ if (caseA) {
 }
 ```
 
-```c++
+```cpp
 // Better Idea
 const std::string somevalue = [&](){
     if (caseA) {
@@ -194,11 +194,11 @@ Exceptions which are thrown and captured internally during normal processing slo
 ### Get rid of “new”
 
 We already know that we should not be using raw memory access, so we are using `unique_ptr` and `shared_ptr` instead, right?
-Heap allocations are much more expensive than stack allocations, but sometimes we have to use them. To make matters worse, creating a shared_ptr actually requires 2 heap allocations.
+Heap allocations are much more expensive than stack allocations, but sometimes we have to use them. To make matters worse, creating a `shared_ptr` actually requires 2 heap allocations.
 
-However, the make_shared function reduces this down to just one.
+However, the `make_shared` function reduces this down to just one.
 
-```c++
+```cpp
 std::shared_ptr<ModelObject_Impl>(new ModelObject_Impl());
 
 // should become
@@ -207,15 +207,15 @@ std::make_shared<ModelObject_Impl>(); // (it's also more readable and concise)
 
 ### Get rid of std::endl
 
-`std::endl` implies a flush operation. It’s equivalent to `"\n" << std::flush`. 
+`std::endl` implies a flush operation. It's equivalent to `"\n" << std::flush`.
 
 
 ### Limit Variable Scope
 
-Variables should be declared as late as possible, and ideally, only when it's possible to initialize the object. Reduced variable scope results in less memory being used, more efficient code in general, and helps the compiler optimize the code further.
+Variables should be declared as late as possible, and ideally only when it's possible to initialize the object. Reduced variable scope results in less memory being used, more efficient code in general, and helps the compiler optimize the code further.
 
-```c++
-// Good idea
+```cpp
+// Good Idea
 for (int i = 0; i < 15; ++i)
 {
   MyObject obj(i);
@@ -232,13 +232,13 @@ for (int i = 0; i < 15; ++i)
 // obj is still taking up memory for no reason
 ```
 
-### Prefer double to float
+### Prefer `double` to `float`
 
-Operations are doubles are typically faster than float. However, in vectorized operations, float might win out. Analyze the code and find out which is faster for your application!
+Operations on `double`s are typically faster than `float`s. However, in vectorized operations, `float` might win out. Analyze the code and find out which is faster for your application!
 
 
-### Prefer ++i to i++
-... when it is semantically correct. Pre-increment is [faster](http://blog2.emptycrate.com/content/why-i-faster-i-c) then post-increment because it does not require a copy of the object to be made.
+### Prefer `++i` to `i++`
+... when it is semantically correct. Pre-increment is [faster](http://blog2.emptycrate.com/content/why-i-faster-i-c) than post-increment because it does not require a copy of the object to be made.
 
 ```cpp
 // Bad Idea

@@ -1,12 +1,13 @@
 # Style
 
-Consistency of style is more important. Second most importance is following a style that the average C++ programmer is used to reading. 
-C++ allows for arbitrary length identifier names, so there's no reason to be terse when naming variables. Use descriptive names, and be consistent in the style
+Consistency of style is more important. Second most importance is following a style that the average C++ programmer is used to reading.
+
+C++ allows for arbitrary-length identifier names, so there's no reason to be terse when naming variables. Use descriptive names, and be consistent in the style.
 
  * `CamelCase`
  * `snake_case`
- 
-are common examples. snake_case has the advantage that it can also work with spell checkers, if desired.
+
+are common examples. *snake_case* has the advantage that it can also work with spell checkers, if desired.
 
 ## Common C++ Naming Conventions
 
@@ -14,11 +15,11 @@ are common examples. snake_case has the advantage that it can also work with spe
  * functions and variables start with lower case: `myMethod`
  * constants are all capital: `const int PI=3.14159265358979323;`
 
-C++ Standard Library (and other well known C++ libraries like boost) use these guidelines:
+C++ Standard Library (and other well-known C++ libraries like [Boost](http://www.boost.org/)) use these guidelines:
 
- * Macro names use uppercase with underscores: INT_MAX
- * Template parameter names use camel case: InputIterator
- * All other names use snake case: unordered_map
+ * Macro names use uppercase with underscores: `INT_MAX`
+ * Template parameter names use camel case: `InputIterator`
+ * All other names use snake case: `unordered_map`
 
 ## Distinguish Private Object Data
 
@@ -26,18 +27,18 @@ Name private data with a `m_` prefix to distinguish it from public data. `m_` st
 
 ## Distinguish Function Parameters
 
-Name function parameters with an `t_` prefix. `t_` can be thought of as "the," but the meaning is arbitrary. The point is to distinguish function parameters from other variables in scope while giving us a consistent naming strategy.
+Name function parameters with an `t_` prefix. `t_` can be thought of as "the", but the meaning is arbitrary. The point is to distinguish function parameters from other variables in scope while giving us a consistent naming strategy.
 
-By using `t_` for parameters and `m_` for module data, we can have consistency with both public members of structs and private members of classes. 
+By using `t_` for parameters and `m_` for module data, we can have consistency with both public members of structs and private members of classes.
 
 Any prefix or postfix can be chosen for your organization. This is just one example.
 
-```
+```cpp
 struct Size
 {
   int width;
   int height;
-  
+
   ValueType(int t_width, int t_height) : width(t_width), height(t_height) {}
 };
 
@@ -49,7 +50,7 @@ class PrivateSize
     int width() const { return m_width; }
     int height() const { return m_height; }
     ValueType(int t_width, int t_height) : m_width(t_width), m_height(t_height) {}
-    
+
   private:
     int m_width;
     int m_height;
@@ -59,14 +60,14 @@ class PrivateSize
 
 
 
-## Don't name anything starting with an `_`
+## Don't Name Anything Starting With `_`
 
-If you do, you risk broaching on names reserved for implementation use
+If you do, you risk broaching on names reserved for implementation use:
 
 http://stackoverflow.com/questions/228783/what-are-the-rules-about-using-an-underscore-in-a-c-identifier
 
 
-## Well formed example
+## Well-Formed Example
 
 ```cpp
 class MyClass
@@ -76,12 +77,12 @@ public:
     : m_data(t_data)
   {
   }
-  
+
   int getData() const
   {
     return m_data;
   }
-  
+
 private:
   int m_data;
 };
@@ -89,11 +90,9 @@ private:
 
 
 
-## Enable out of source directory builds
+## Enable Out-of-Source-Directory Builds
 
-### Make sure generated files go into build folder
-
-Not the source folder
+Make sure generated files go into build folder, not the source folder
 
 
 ## Use `nullptr`
@@ -124,16 +123,16 @@ int myFunc()
 
 which would be impossible if the function comment header used `/* */`
 
-## Never Use `using namespace` In a Header File
+## Never Use `using namespace` in a Header File
 
 This causes the name space you are `using` to be pulled into the namespace of the header file.
-It litters the own namespace and it may lead to name collisions in the future. 
+It litters the namespace and it may lead to name collisions in the future.
 Writing `using namespace` in an implementation file is fine though.
 
 
 ## Include Guards
 
-Header files must contain an distinctly named include guard to avoid problems with including the same header multiple times or conflicting with other headers from other projects
+Header files must contain a distinctly-named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.
 
 ```cpp
 #ifndef MYPROJECT_MYCLASS_HPP
@@ -147,11 +146,11 @@ class MyClass {
 #endif
 ```
 
-You may also consider to use the `#pragma once` directive instead which is quasi standard across many compilers. 
-It's short and makes the intent clear. 
+You may also consider using the `#pragma once` directive instead which is quasi-standard across many compilers.
+It's short and makes the intent clear.
 
 
-## {} are required for blocks. 
+## {} Are Required for Blocks.
 Leaving them off can lead to semantic errors in the code.
 
 ```cpp
@@ -167,8 +166,8 @@ int sum = 0;
 for (int i = 0; i < 15; ++i)
   ++sum;
   std::cout << i << std::endl;
-  
-  
+
+
 // Good Idea
 // It's clear which statements are part of the loop (or if block, or whatever)
 int sum = 0;
@@ -178,28 +177,28 @@ for (int i = 0; i < 15; ++i) {
 }
 ```
 
-## Keep lines a reasonable length
+## Keep Lines a Reasonable Length
 
 ```cpp
 // Bad Idea
 // hard to follow
-if (x && y && myFunctionThatReturnsBool() && caseNumber3 && (15 > 12 || 2 < 3)) { 
+if (x && y && myFunctionThatReturnsBool() && caseNumber3 && (15 > 12 || 2 < 3)) {
 }
 
 // Good Idea
 // Logical grouping, easier to read
-if (x && y && myFunctionThatReturnsBool() 
-    && caseNumber3 
-    && (15 > 12 || 2 < 3)) { 
+if (x && y && myFunctionThatReturnsBool()
+    && caseNumber3
+    && (15 > 12 || 2 < 3)) {
 }
 ```
 
-Many projects and coding standards have a soft guideline that one should try to use less than about 80 or 100 characters per line. 
-Such code is generally easier to read. 
-It also makes it possible to have two separate file next to each other on one screen without having a tiny font. 
+Many projects and coding standards have a soft guideline that one should try to use less than about 80 or 100 characters per line.
+Such code is generally easier to read.
+It also makes it possible to have two separate files next to each other on one screen without having a tiny font.
 
 
-## Use "" For Including Local Files
+## Use "" for Including Local Files
 ... `<>` is [reserved for system includes](http://blog2.emptycrate.com/content/when-use-include-verses-include).
 
 ```cpp
@@ -209,7 +208,7 @@ It also makes it possible to have two separate file next to each other on one sc
 #include <includes/MyHeader.hpp>
 
 // Worse Idea
-// requires potentially even more specific -I directives and 
+// requires potentially even more specific -I directives and
 // makes code more difficult to package and distribute
 #include <string>
 #include <MyHeader.hpp>
@@ -242,7 +241,7 @@ private:
 
 // Good Idea
 // C++'s member initializer list is unique to the language and leads to
-// cleaner code and potential performance gains that other languages cannot 
+// cleaner code and potential performance gains that other languages cannot
 // match
 class MyClass
 {
@@ -257,24 +256,24 @@ private:
 };
 ```
 
-In C++11 you may consider to always give each member a default value, e.g. by writing
+In C++11 you may consider always giving each member a default value, e.g. by writing
 ```cpp
 // ... //
 private:
   int m_value = 0;
 // ... //
 ```
-inside the class body. This makes sure that no constructor ever "forgets" to initialize a member object. 
-Forgetting to initialize a member is a source of undefined behaviour bugs which are often extremely hard to find.
+inside the class body. This makes sure that no constructor ever "forgets" to initialize a member object.
+Forgetting to initialize a member is a source of undefined behavior bugs which are often extremely hard to find.
 
 
 ## Always Use Namespaces
 
-There is almost never a reason to declare an identifier in the global namespaces. Instead, functions and classes should exist in an appropriately named namespaces or in a class inside of a namespace. Identifiers which are placed in the global namespace risk conflicting with identifiers from other (mostly C, which doesn't have namespaces) libraries.
+There is almost never a reason to declare an identifier in the global namespaces. Instead, functions and classes should exist in an appropriately named namespace or in a class inside of a namespace. Identifiers which are placed in the global namespace risk conflicting with identifiers from other libraries (mostly C, which doesn't have namespaces).
 
 ## Avoid Compiler Macros
 
-Compiler definitions and macros are replaced by the pre-processor before the compiler is ever run. This can make debugging very difficult because the debugger doesn't know where the source came from.
+Compiler definitions and macros are replaced by the preprocessor before the compiler is ever run. This can make debugging very difficult because the debugger doesn't know where the source came from.
 
 ```cpp
 // Bad Idea
@@ -286,24 +285,24 @@ namespace my_project {
   public:
     // if the above macro would be expanded, then the following line would be:
     //   static const double 3.14159 = 3.14159;
-    // which leads to an compile-time error. Sometimes such errors are hard to understand.
+    // which leads to a compile-time error. Sometimes such errors are hard to understand.
     static const double PI = 3.14159;
   }
 }
 ```
 
 
-## Use the correct integer type for stdlib features
+## Use the Correct Integer Type For stdlib Features
 
 The standard library generally returns `size_t` for anything related to size. What exactly `size_t` is is implementation defined.
 
-Make sure you stick with the correct integer types and be consistent with the C++ stdlib. It might not warn on the platform you are currently using, but it probably will when you change platforms.
+Make sure you stick with the correct integer types and remain consistent with the C++ stdlib. It might not warn on the platform you are currently using, but it probably will when you change platforms.
 
-## Use .hpp and .cpp for your file extensions
+## Use .hpp and .cpp for Your File Extensions
 
-Ultimately this is a matter of preference, but .hpp and .cpp are widely recognized by various editors and tools. So the choice is pragmatic. Specifically, VisualStudio only automatically recognizes .cpp and .cxx for C++ files, plus vim doesn't necessarily recognize .cc as a C++ file. 
+Ultimately this is a matter of preference, but .hpp and .cpp are widely recognized by various editors and tools. So the choice is pragmatic. Specifically, Visual Studio only automatically recognizes .cpp and .cxx for C++ files, and Vim doesn't necessarily recognize .cc as a C++ file.
 
-One particularly large project (OpenStudio) uses .hpp and .cpp for user generated files and .hxx and .cxx for tool generated files. Both are well recognized and having the distinction is helpful.
+One particularly large project ([OpenStudio](https://github.com/NREL/OpenStudio)) uses .hpp and .cpp for user-generated files and .hxx and .cxx for tool-generated files. Both are well recognized and having the distinction is helpful.
 
 ## Never Mix Tabs and Spaces
 
@@ -316,11 +315,11 @@ assert(registerSomeThing()); // make sure that registerSomeThing() returns true
 ```
 
 The above code succeeds when making a debug build, but gets removed by the compiler when making a release build, giving you different behavior between debug and release builds.
-This is because `assert()` is a macro which expands to nothing in release mode. 
+This is because `assert()` is a macro which expands to nothing in release mode.
 
-## Don't be afraid of templates
+## Don't Be Afraid of Templates
 
-They can help you stick to DRY principles.
-They should be preferred to macros, because macros do not honor namespaces, etc. 
+They can help you stick to [DRY principles](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+They should be preferred to macros, because macros do not honor namespaces, etc.
 
-## Use operator overloads judiciously
+## Use Operator Overloads Judiciously
