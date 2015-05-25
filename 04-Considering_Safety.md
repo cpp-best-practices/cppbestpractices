@@ -1,8 +1,8 @@
 # Considering Safety
 
 
-## Const as much as possible
-`const` tells the compiler that a variable or method is immutable. This helps the compiler optimize the code and helps the developer know if a function side effects. Also, using `const &` prevents the compiler from copying data unnecessarily. [Here](http://kotaku.com/454293019) are some comments on const from John Carmack.
+## Const as Much as Possible
+`const` tells the compiler that a variable or method is immutable. This helps the compiler optimize the code and helps the developer know if a function has a side effect. Also, using `const &` prevents the compiler from copying data unnecessarily. [Here](http://kotaku.com/454293019) are some comments on `const` from John Carmack.
 
 ```cpp
 // Bad Idea
@@ -14,7 +14,7 @@ public:
   {
   }
 
-  std::string get_value() 
+  std::string get_value()
   {
     return m_value;
   }
@@ -43,7 +43,7 @@ private:
 }
 ```
 
-## Avoid raw memory access
+## Avoid Raw Memory Access
 
 Raw memory access, allocation and deallocation, are difficult to get correct in C++ without [risking memory errors and leaks](http://blog2.emptycrate.com/content/nobody-understands-c-part-6-are-you-still-using-pointers). C++11 provides tools to avoid these problems.
 
@@ -57,7 +57,7 @@ delete myobj;
 
 // Good Idea
 std::shared_ptr<MyClass> myobj = make_shared<MyClass>();
-// ... 
+// ...
 // myobj is automatically freed for you whenever it is no longer used.
 ```
 
