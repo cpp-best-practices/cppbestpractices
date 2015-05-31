@@ -13,7 +13,7 @@ are common examples. *snake_case* has the advantage that it can also work with s
 
  * Types start with capitals: `MyClass`
  * functions and variables start with lower case: `myMethod`
- * constants are all capital: `const int PI=3.14159265358979323;`
+ * constants are all capital: `const double PI=3.14159265358979323;`
 
 C++ Standard Library (and other well-known C++ libraries like [Boost](http://www.boost.org/)) use these guidelines:
 
