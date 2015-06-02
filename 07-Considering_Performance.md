@@ -207,10 +207,18 @@ std::make_shared<ModelObject_Impl>(); // (it's also more readable and concise)
 
 ### Prefer `unique_ptr` to `shared_ptr`
 
-If possible use `unique_ptr` instead of `shared_ptr`. The `unique_ptr` does not need to keep track of its copies because it is not copyable. Because of this it is more efficient than the `shared_ptr`. Equivalent to `shared_ptr` and `make_shared` you should use `make_unique` to create the `unique_ptr`:
+If possible use `unique_ptr` instead of `shared_ptr`. The `unique_ptr` does not need to keep track of its copies because it is not copyable. Because of this it is more efficient than the `shared_ptr`. Equivalent to `shared_ptr` and `make_shared` you should use `make_unique` (C++14 or greater) to create the `unique_ptr`:
 
 ```cpp
 std::make_unique<ModelObject_Impl>();
+```
+
+Current best practices suggest returning a `unique_ptr` from factory functions as well, then converting the  `unique_ptr` to a `shared_ptr` if necessary.
+
+```cpp
+std::unique_ptr<ModelObject_Impl> factory();
+
+auto shared = std::shared_ptr<ModelObject_Impl>(factory());
 ```
 
 ### Get rid of std::endl
