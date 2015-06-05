@@ -67,6 +67,19 @@ Exceptions cannot be ignored. Return values, such as using `boost::optional`, ca
 
 Stroustrup, the original designer of C++, [makes this point](http://www.stroustrup.com/bs_faq2.html#exceptions-why) much better than I ever could.
 
+## Use C++-style cast instead of C-style cast
+Use the C++-style cast(static\_cast<>, dynamic\_cast<> ...) instead of the C-style cast. The C++-style cast allows more compiler checks and is considerable safer.
+
+```cpp
+// Bad Idea
+double x = getX();
+int i = (int) x;
+
+// Good Idea
+int i = static_cast<int>(x);
+```
+Additionaly the C++ cast style is more visible and has the possiblity to search for.
+
 ## Additional Resources
 
 [How to Prevent The Next Heartbleed](http://www.dwheeler.com/essays/heartbleed.html) by David Wheeler is a good analysis of the current state of code safety and how to ensure safe code.
