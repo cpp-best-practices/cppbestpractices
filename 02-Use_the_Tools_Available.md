@@ -20,7 +20,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
- * [Bazel](http://bazel.io/)
+ * [Bazel](http://bazel.io/) - Note: MacOS and Linux only.
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
@@ -34,15 +34,16 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * works well with C++
    * designed for use with GitHub
    * free for public repositories on GitHub
- * [Hudson CI](http://hudson-ci.org/)
  * [AppVeyor](http://www.appveyor.com/)
-   * supports Windows and MSVC
+   * supports Windows, MSVC and MinGW
+   * free for public repositoris on GitHub
+ * [Hudson CI](http://hudson-ci.org/)
  * [Decent CI](https://github.com/lefticus/decent_ci)
-  * simple ad-hoc continuous integration that posts results to GitHub
-  * supports Windows, OS X, and Linux
-  * used by [ChaiScript](http://chaiscript.com/ChaiScript-BuildResults/full_dashboard.html)
+   * simple ad-hoc continuous integration that posts results to GitHub
+   * supports Windows, OS X, and Linux
+   * used by [ChaiScript](http://chaiscript.com/ChaiScript-BuildResults/full_dashboard.html)
 
-If you have an open source, publicly-hosted project on GitHub, go enable travis-ci integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
+If you have an open source, publicly-hosted project on GitHub, go enable travis-ci and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml Also consider going an enabling [Coverity Scan](https://scan.coverity.com)
 
 
 ## Compilers
@@ -95,6 +96,10 @@ Consider using the *treat warnings as errors* setting. `/Wx` with MSVC, `-Werror
 ## Static Analyzers
 
 The best bet is the static analyzer that you can run as part of your automated build system. Cppcheck and clang meet that requirement for free options.
+
+### Coverity Scan 
+
+Coverity has a free (for open source) static analysis toolkit that can work on every commit in integration with [Travis CI](http://travis-ci.org) and [AppVeyor](http://www.appveyor.com/).
 
 ### Cppcheck
 Cppcheck is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `-enable=all`
