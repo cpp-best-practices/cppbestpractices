@@ -56,10 +56,22 @@ delete myobj;
 
 
 // Good Idea
-std::shared_ptr<MyClass> myobj = make_shared<MyClass>();
+auto myobj = std::make_unique<MyClass>(); // C++14
+auto myobj = std::unique_ptr<MyClass>(new MyClass()); // C++11
+
+// or for reference counted objects
+
+auto myobj = std::make_shared<MyClass>(); 
+
 // ...
 // myobj is automatically freed for you whenever it is no longer used.
 ```
+
+## Use `std::array` or `std::vector` Instead of C-style Arrays
+
+Both of these guarantee contiguous memory layout of objects and can (and should) completely replace your usage of C-style arrays for many of the reasons listed for not using bare pointers.
+
+Also, [avoid](http://stackoverflow.com/questions/3266443/can-you-use-a-shared-ptr-for-raii-of-c-style-arrays) using `std::shared_ptr` to hold an array. 
 
 ## Use Exceptions
 
