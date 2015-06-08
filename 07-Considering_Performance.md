@@ -39,17 +39,24 @@ Templates are not free to instantiate. Instantiating many templates, or template
 
 For more examples see [this article](http://blog2.emptycrate.com/content/template-code-bloat-revisited-smaller-makeshared).
 
-## Firewall Frequently Changing Header Files
+
+### Analyze the Build
+
+The tool [Templight](https://github.com/mikael-s-persson/templight) can be used to analyze the build time of your project. It takes some effort to get built, but once you do, it's a drop in replacement for clang++.
+
+After you build using Templight, you will need to analyze the results. The [templight-tools](https://github.com/mikael-s-persson/templight-tools) project provides various methods. (Author's Note: I suggest using the callgrind converter and visualizing the results with kcachegrind).
+
+### Firewall Frequently Changing Header Files
 
 
 
-### Don't Unnecessarily Include Headers
+#### Don't Unnecessarily Include Headers
 
 The compiler has to do something with each include directive it sees. Even if it stops as soon as it seems the `#ifndef` include guard, it still had to open the file and begin processing it.
 
 [include-what-you-use](https://code.google.com/p/include-what-you-use) is a tool that can help you identify which headers you need.
 
-### Reduce the load on the preprocessor
+#### Reduce the load on the preprocessor
 
 This is a general form of "Firewall Frequently Changing Header Files" and "Don't Unnecessarily Include Headers." Tools like BOOST_PP can be very helpful, but they also put a huge burden on the preprocessor.
 
