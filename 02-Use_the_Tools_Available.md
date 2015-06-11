@@ -38,6 +38,8 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * supports Windows, MSVC and MinGW
    * free for public repositoris on GitHub
  * [Hudson CI](http://hudson-ci.org/)
+ * [TeamCity](https://www.jetbrains.com/teamcity) 
+   * has a free option for open source projects
  * [Decent CI](https://github.com/lefticus/decent_ci)
    * simple ad-hoc continuous integration that posts results to GitHub
    * supports Windows, OS X, and Linux
