@@ -56,8 +56,10 @@ delete myobj;
 
 
 // Good Idea
-auto myobj = std::make_unique<MyClass>(); // C++14
-auto myobj = std::unique_ptr<MyClass>(new MyClass()); // C++11
+auto myobj = std::make_unique<MyClass>(constructor_param1, constructor_param2); // C++14
+auto myobj = std::unique_ptr<MyClass>(new MyClass(constructor_param1, constructor_param2)); // C++11
+auto mybuffer = std::make_unique<char[]>(length); // C++14
+auto mybuffer = std::unique_ptr<char[]>(new char[length]); // C++11
 
 // or for reference counted objects
 
