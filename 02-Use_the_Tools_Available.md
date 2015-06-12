@@ -45,7 +45,13 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * supports Windows, OS X, and Linux
    * used by [ChaiScript](http://chaiscript.com/ChaiScript-BuildResults/full_dashboard.html)
 
-If you have an open source, publicly-hosted project on GitHub, go enable travis-ci and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml Also consider going an enabling [Coverity Scan](https://scan.coverity.com)
+If you have an open source, publicly-hosted project on GitHub:
+
+ * go enable travis-ci and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
+ * enable one of the coverage tools listed below (Codecov or Coveralls)
+ * enable [Coverity Scan](https://scan.coverity.com)
+  
+These tools are all free and relatively easy to set up. Once they are set up you are getting continuous building, testing, analysis and reporting of your project. For free.
 
 
 ## Compilers
@@ -134,10 +140,16 @@ While not necessarily a static analyzer, Metrix++ can identify and report on the
 
 A coverage analysis tool shall be run when tests are executed to make sure the entire application is being tested. Unfortunately, coverage analysis requires that compiler optimizations be disabled. This can result in significantly longer test execution times.
 
-The most likely candidate for a coverage visualization is the [LCOV](http://ltp.sourceforge.net/coverage/lcov.php) project. A secondary option is [Coveralls](https://coveralls.io/), which is free for open source projects.
+ * [Codecov](https://codecov.io/)
+   * integrates with Travis CI and Appveyor
+   * free for open source projects
+ * [Coveralls](https://coveralls.io/)
+   * integrates with Travis CI and Appveyor
+   * free for open source projects
+ * [LCOV](http://ltp.sourceforge.net/coverage/lcov.php)
+   * very configurable 
+ * [Gcovr](http://gcovr.com/)
 
-An alternative to LCOV is [Gcovr](http://gcovr.com/). It seems to provide similar functionality, but is written in Python.
-<link to ChaiScript example of using it>
 
 ### Valgrind
 
@@ -151,6 +163,14 @@ These tools provide many of the same features as Valgrind, but built into the co
  * ThreadSanitizer
  * UndefinedBehaviorSanitizer
 
+### Fuzzy Analyzers
+
+If you project accepts user defined input, considering running a fuzzy input tester. 
+
+Both of these tools use coverage reporting to find new code executation paths and try to breed novel inputs for your code. They can find crashes, hangs, and inputs you didn't know were considered valid.
+
+ * [american fuzzy lop](http://lcamtuf.coredump.cx/afl/)
+ * [LibFuzzer](http://llvm.org/docs/LibFuzzer.html)
 
 ## Ignoring Warnings
 
