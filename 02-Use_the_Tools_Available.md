@@ -10,6 +10,7 @@ Source control is an absolute necessity for any software development project. If
  * [Bitbucket](https://bitbucket.org/) - allows for unlimited private repositories with up to 5 collaborators, for free.
  * [SourceForge](http://sourceforge.net/) - open source hosting only.
  * [GitLab](https://gitlab.com/), Subversion, BitKeeper, many many others... The above are the most popular free services.
+ * [Visual Studio Online](https://visualstudio.com)(http://www.visualstudio.com/what-is-visual-studio-online-vs) - allows for unlimited public repositories, must pay for private repository. Repositories can be git or TFVC. Additionally: Issue tracking, project planning (multiple Agile templates, such as SCRUM), integrated hosted builds, integration of all this into Microsoft Visual Studio. Windows only.
 
 ## Build Tool
 
@@ -44,6 +45,12 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * simple ad-hoc continuous integration that posts results to GitHub
    * supports Windows, OS X, and Linux
    * used by [ChaiScript](http://chaiscript.com/ChaiScript-BuildResults/full_dashboard.html)
+ * [Visual Studio Online](https://visualstudio.com)(http://www.visualstudio.com/what-is-visual-studio-online-vs)
+   * Tightly integrated with the source repositories from Visual Studio Online
+   * Uses MSBuild (Visual Studio's build engine), which is available on Windows, OS X and Linux
+   * Provides hosted build agents and also allows for user-provided build agents
+   * Can be controlled and monitored from within Microsoft Visual Studio
+   * On-Premise installation via Microsoft Team Foundation Server
 
 If you have an open source, publicly-hosted project on GitHub:
 
@@ -193,4 +200,3 @@ There should be a test enabled for every feature or bug fix that is committed. S
 ### Negative Testing
 
 Don't forget to make sure that your error handling is being tested and works properly as well. This will become obvious if you aim for 100% code coverage.
-
