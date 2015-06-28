@@ -276,7 +276,8 @@ for (int i = 0; i < 15; ++i)
   std::cout << i << '\n';
 }
 ```
-Even if many modern compilers will optimize this two loops to the same assembly code, it is still good practice to prefer `++i`. There is absolutely no reason not to and you can never be certain that your code will not pass a compiler that does not optimize this.
-You should be also aware that the compiler will optimize this only for integer types and not for loops with iterators or objects with an overloaded ++operator.  
+
+Even if many modern compilers will optimize these two loops to the same assembly code, it is still good practice to prefer `++i`. There is absolutely no reason not to and you can never be certain that your code will not pass a compiler that does not optimize this.
+You should be also aware that the compiler will not be able optimize this only for integer types and not necessarily for all iterator or other user defined types.  
 The bottom line is that it is always easier and recommended to use the pre-increment operator if it is semantically identical to the post-increment operator.
 
