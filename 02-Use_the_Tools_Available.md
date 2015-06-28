@@ -180,7 +180,7 @@ If it is determined by team consensus that the compiler or analyzer is warning o
 
 CMake, mentioned above, has a built in framework for executing tests. Make sure whatever build system you use has a way to execute tests built in.
 
-To further aid in executing tests, consider a library such as [Google Test](https://code.google.com/p/googletest/) or [Catch](https://github.com/philsquared/Catch) to help you organize the tests.
+To further aid in executing tests, consider a library such as [Google Test](https://code.google.com/p/googletest/) or [Catch](https://github.com/philsquared/Catch) or [Boost.Test](http://www.boost.org/doc/libs/1_55_0/libs/test/doc/html/index.html) to help you organize the tests.
 
 ### Unit Tests
 
