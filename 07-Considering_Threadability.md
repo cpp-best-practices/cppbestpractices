@@ -8,4 +8,11 @@ Global data leads to unintended side effects between functions and can make code
 
 ## Avoid Heap Operations
 
-Much slower in threaded environments. In many or maybe even most cases, copying data is faster. Plus with move operations and such and things
+Much slower in threaded environments. In many or maybe even most cases, copying data is faster. Plus with move operations and such and things.
+
+## Mutex and mutable go together (M&M rule, C++11)
+
+For member variables it is good practice to use mutex and mutable together. This applies in both ways:
+1) A mutable member variable is presumed to be a shared variable so it should be synchronized with a mutex (or made atomic)
+2) If a member variable is itself a mutex, it should be mutable. This is required to use it inside a const member function.
+
