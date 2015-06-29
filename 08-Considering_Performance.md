@@ -281,3 +281,16 @@ Even if many modern compilers will optimize these two loops to the same assembly
 You should be also aware that the compiler will not be able optimize this only for integer types and not necessarily for all iterator or other user defined types.  
 The bottom line is that it is always easier and recommended to use the pre-increment operator if it is semantically identical to the post-increment operator.
 
+### Char is a char, string is a string
+
+```cpp
+// Bad Idea
+std::cout << someThing() << "\n";
+
+// Good Idea
+std::cout << someThing() << '\n';
+```
+
+This is very minor, but a `"\n"` has to be parsed by the compiler as a `const char *` which has to do a range check for `\0` when writing it to the stream (or appending to a string). A '\n' is known to be a single character and avoids many CPU instructions.
+
+If used inefficiently very many times it might have an impact on your performance, but more importantly thinking about these two usage cases gets you thinking more about what the compiler and runtime has to do to execute your code.
