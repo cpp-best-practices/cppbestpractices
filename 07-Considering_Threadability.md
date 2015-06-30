@@ -14,3 +14,5 @@ Much slower in threaded environments. In many or maybe even most cases, copying 
 For member variables it is good practice to use mutex and mutable together. This applies in both ways:
 * A mutable member variable is presumed to be a shared variable so it should be synchronized with a mutex (or made atomic)
 * If a member variable is itself a mutex, it should be mutable. This is required to use it inside a const member function.
+
+For more information see the following article from Herb Sutter: http://herbsutter.com/2013/05/24/gotw-6a-const-correctness-part-1-3/
