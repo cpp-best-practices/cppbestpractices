@@ -38,7 +38,10 @@ Continuous Integration (CI) tools automatically build the source code as changes
  * [AppVeyor](http://www.appveyor.com/)
    * supports Windows, MSVC and MinGW
    * free for public repositoris on GitHub
- * [Hudson CI](http://hudson-ci.org/)
+ * [Hudson CI](http://hudson-ci.org/) / [Jenkins CI](https://jenkins-ci.org/)
+   * Java Application Server is required
+   * supports Windows, OS X, and Linux
+   * extendable with a lot of plugins
  * [TeamCity](https://www.jetbrains.com/teamcity) 
    * has a free option for open source projects
  * [Decent CI](https://github.com/lefticus/decent_ci)
