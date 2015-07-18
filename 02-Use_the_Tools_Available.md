@@ -22,6 +22,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
  * [Bazel](http://bazel.io/) - Note: MacOS and Linux only.
+ * [gyp](https://chromium.googlesource.com/external/gyp/) Google's build tool for chromium.
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
