@@ -43,6 +43,12 @@ private:
 }
 ```
 
+### Consider Return By Value for Mutable Data, `const &` for Immutable
+
+You don't want to have to pay a cost for copying the data when you don't need to, but you also don't want to have to safely return data in a threading scenario.
+
+See also this discussion for more information: https://github.com/lefticus/cppbestpractices/issues/21
+
 ## Avoid Raw Memory Access
 
 Raw memory access, allocation and deallocation, are difficult to get correct in C++ without [risking memory errors and leaks](http://blog2.emptycrate.com/content/nobody-understands-c-part-6-are-you-still-using-pointers). C++11 provides tools to avoid these problems.
