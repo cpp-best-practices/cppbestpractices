@@ -107,7 +107,7 @@ Consider using the *treat warnings as errors* setting. `/Wx` with MSVC, `-Werror
 
 ## LLVM-based tools
 
- * [include-what-you-use](https://code.google.com/p/include-what-you-use/), [example results](https://github.com/ChaiScript/ChaiScript/commit/c0bf6ee99dac14a19530179874f6c95255fde173)
+ * [include-what-you-use](https://github.com/include-what-you-use), [example results](https://github.com/ChaiScript/ChaiScript/commit/c0bf6ee99dac14a19530179874f6c95255fde173)
  * [clang-modernize](http://clang.llvm.org/extra/clang-modernize.html), [example results](https://github.com/ChaiScript/ChaiScript/commit/6eab8ddfe154a4ebbe956a5165b390ee700fae1b)
  * [clang-check](http://clang.llvm.org/docs/ClangCheck.html)
  * [clang-tidy](http://clang.llvm.org/extra/clang-tidy.html)
