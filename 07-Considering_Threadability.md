@@ -16,3 +16,5 @@ For member variables it is good practice to use mutex and mutable together. This
 * If a member variable is itself a mutex, it should be mutable. This is required to use it inside a const member function.
 
 For more information see the following article from Herb Sutter: http://herbsutter.com/2013/05/24/gotw-6a-const-correctness-part-1-3/
+
+See also [related safety discussion](04-Considering_Safety.md#consider-return-by-value-for-mutable-data-const--for-immutable) about `const &` return values
