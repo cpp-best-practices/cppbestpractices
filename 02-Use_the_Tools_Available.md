@@ -166,6 +166,10 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
 
 Runtime code analyzer that can detect memory leaks, race conditions, and other associated problems. It is supported on various Unix platforms.
 
+### Dr Memory
+
+Similar to valgrind. http://www.drmemory.org
+
 ### GCC / Clang Sanitizers
 
 These tools provide many of the same features as Valgrind, but built into the compiler. They are easy to use and provide a report of what went wrong.
