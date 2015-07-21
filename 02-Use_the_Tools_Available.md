@@ -17,6 +17,8 @@ Source control is an absolute necessity for any software development project. If
 Use an industry standard widely accepted build tool. This prevents you from reinventing the wheel whenever you discover / link to a new library / package your product / etc. Examples include:
 
  * [CMake](http://www.cmake.org/)
+   * Consider: https://github.com/sakra/cotire/ for build performance
+   * Consider: https://github.com/toeb/cmakepp for enhanced usability
  * [Biicode](https://www.biicode.com/)
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
