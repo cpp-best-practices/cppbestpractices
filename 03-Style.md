@@ -306,6 +306,23 @@ They should be preferred to macros, because macros do not honor namespaces, etc.
 
 ## Use Operator Overloads Judiciously
 
+Operator overloading was invented to enable expressive syntax. Expressive in the sense that adding two big integers looks like `a + b` and not `a.add(b)`. Another common example is std::string, where it is very common to concatenate two strings with `string1 + string2`.
+
+However, you can easily create unreadable expressions using too much or wrong operator overloading. When overloading operators, there are three basic rules to follow as described [on stackoverflow](http://stackoverflow.com/questions/4421706/operator-overloading/4421708#4421708) 
+
+More detailed, you should keep these things in mind:
+
+* Overloading `operator=` when handling with resources is a must, see "Consider the Rule of Zero" below.
+* For all other operators, only overload them when they are used in a context that is commonly connected to these operators. Typical scenarios are concatenating things with +, negating expressions that can be considered "true" or "false", etc.
+* Always be aware of the [operator precedence](http://en.cppreference.com/w/cpp/language/operator_precedence) and try to circumvent unintuitive constructs. 
+* Do not overload  exotic operators such as ~ or %. 
+* [Never](http://stackoverflow.com/questions/5602112/when-to-overload-the-comma-operator?answertab=votes#tab-top) overload `operator ,` (the comma operator).
+* Use `operator >>` and `operator <<` when dealing with streams. For example, you can overload `operator <<(std::ostream &, MyClass const &)` to enable "writing" you class into a stream, such as std::cout or an std::fstream or std::stringstream. The latter is often used to create a textual representation of a value.
+* There are more common operators to overload [described here](http://stackoverflow.com/questions/4421706/operator-overloading?answertab=votes#tab-top).
+* Do not use conversion operators except `operator bool` for values that clearly have a "true" or "false" state, or "right" or "wrong" so that you can write `if (myValue)` even if myValue is of a custom class.
+
+More tips regarding the implementation details of your custom operators can be found [here](http://courses.cms.caltech.edu/cs11/material/cpp/donnie/cpp-ops.html).
+
 ## Consider the Rule of Zero
 
 The Rule of Zero states that you do not provide any of the functions that the compiler can provide (copy constructor, assignment operator, move constructor, destructor, move constructor) unless the class you are constructing does some novel form of ownership.
