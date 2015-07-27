@@ -318,10 +318,22 @@ More detailed, you should keep these things in mind:
 * Do not overload  exotic operators such as ~ or %. 
 * [Never](http://stackoverflow.com/questions/5602112/when-to-overload-the-comma-operator?answertab=votes#tab-top) overload `operator ,` (the comma operator).
 * Use `operator >>` and `operator <<` when dealing with streams. For example, you can overload `operator <<(std::ostream &, MyClass const &)` to enable "writing" you class into a stream, such as std::cout or an std::fstream or std::stringstream. The latter is often used to create a textual representation of a value.
-* There are more common operators to overload [described here](http://stackoverflow.com/questions/4421706/operator-overloading?answertab=votes#tab-top).
-* Do not use conversion operators except `operator bool` for values that clearly have a "true" or "false" state, or "right" or "wrong" so that you can write `if (myValue)` even if myValue is of a custom class.
+* There are more common operators to overload [described here](http://stackoverflow.com/questions/4421706/operator-overloading?answertab=votes#tab-top)
 
 More tips regarding the implementation details of your custom operators can be found [here](http://courses.cms.caltech.edu/cs11/material/cpp/donnie/cpp-ops.html).
+
+## Avoid Implicit Conversions
+
+### Single Parameter Constructors
+
+Single parameter constructors can be applied at compile time to automatically convert between types. This is handy for things like `std::string(const char *)` but should be avoided in general because they can add to accidental runtime overhead.
+
+Instead mark single parameter constructors as `explicit`, which requires them to be explicitly called.
+
+### Conversion Operators
+
+Similarly to single parameter constructors, conversion operators can be called by the compiler and introduce unexpected overhead. The should also be marked as `explicit`.
+
 
 ## Consider the Rule of Zero
 
