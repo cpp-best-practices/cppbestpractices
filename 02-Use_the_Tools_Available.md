@@ -123,7 +123,7 @@ The best bet is the static analyzer that you can run as part of your automated b
 Coverity has a free (for open source) static analysis toolkit that can work on every commit in integration with [Travis CI](http://travis-ci.org) and [AppVeyor](http://www.appveyor.com/).
 
 ### Cppcheck
-Cppcheck is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `-enable=all`
+Cppcheck is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `--enable=all`
 
 ### Clang's Static Analyzer
 
