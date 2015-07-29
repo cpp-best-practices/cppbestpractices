@@ -21,7 +21,11 @@ namespace my_project {
 }
 ```
 
+## Consider Avoiding Boolean Parameters
 
+They do not provide any additional meaning while reading the code. You can either create a separate function that has a more meaningful name, or pass an enumeration that makes the meaning more clear.
+
+See http://mortoray.com/2015/06/15/get-rid-of-those-boolean-function-parameters/ for more information.
 
 ## Avoid Raw Loops
 
