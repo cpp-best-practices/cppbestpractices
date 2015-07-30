@@ -2,9 +2,19 @@
 
 ## Avoid Global Data
 
-This includes statics and singletons.
-
 Global data leads to unintended side effects between functions and can make code difficult or impossible to parallelize. Even if the code is not intended today for parallelization, there is no reason to make it impossible for the future.
+
+### Statics
+
+Besides being global data, statics are not always constructed and deconstructed as you would expect. This is particularly true in cross-platform environments. See for example, [this g++ bug](9https://gcc.gnu.org/bugzilla/show_bug.cgi?id=66830) regarding the order of destruction of shared static data loaded from dynamic modules.
+
+### Shared Pointers
+
+`std::shared_ptr` is "as good as a global" (http://stackoverflow.com/a/18803611/29975) because it allows multiple pieces of code to interact with the same data.
+
+### Singletons
+
+A singleton is often implemented with a static and/or `shared_ptr`
 
 ## Avoid Heap Operations
 
