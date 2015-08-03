@@ -10,7 +10,7 @@ Source control is an absolute necessity for any software development project. If
  * [Bitbucket](https://bitbucket.org/) - allows for unlimited private repositories with up to 5 collaborators, for free.
  * [SourceForge](http://sourceforge.net/) - open source hosting only.
  * [GitLab](https://gitlab.com/), Subversion, BitKeeper, many many others... The above are the most popular free services.
- * [Visual Studio Online](https://visualstudio.com)(http://www.visualstudio.com/what-is-visual-studio-online-vs) - allows for unlimited public repositories, must pay for private repository. Repositories can be git or TFVC. Additionally: Issue tracking, project planning (multiple Agile templates, such as SCRUM), integrated hosted builds, integration of all this into Microsoft Visual Studio. Windows only.
+ * [Visual Studio Online](https://visualstudio.com) (http://www.visualstudio.com/what-is-visual-studio-online-vs) - allows for unlimited public repositories, must pay for private repository. Repositories can be git or TFVC. Additionally: Issue tracking, project planning (multiple Agile templates, such as SCRUM), integrated hosted builds, integration of all this into Microsoft Visual Studio. Windows only.
 
 ## Build Tool
 
@@ -24,7 +24,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
  * [Bazel](http://bazel.io/) - Note: MacOS and Linux only.
- * [gyp](https://chromium.googlesource.com/external/gyp/) Google's build tool for chromium.
+ * [gyp](https://chromium.googlesource.com/external/gyp/) - Google's build tool for chromium.
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
@@ -40,7 +40,7 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * free for public repositories on GitHub
  * [AppVeyor](http://www.appveyor.com/)
    * supports Windows, MSVC and MinGW
-   * free for public repositoris on GitHub
+   * free for public repositories on GitHub
  * [Hudson CI](http://hudson-ci.org/) / [Jenkins CI](https://jenkins-ci.org/)
    * Java Application Server is required
    * supports Windows, OS X, and Linux
@@ -51,7 +51,7 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * simple ad-hoc continuous integration that posts results to GitHub
    * supports Windows, OS X, and Linux
    * used by [ChaiScript](http://chaiscript.com/ChaiScript-BuildResults/full_dashboard.html)
- * [Visual Studio Online](https://visualstudio.com)(http://www.visualstudio.com/what-is-visual-studio-online-vs)
+ * [Visual Studio Online](https://visualstudio.com) (http://www.visualstudio.com/what-is-visual-studio-online-vs)
    * Tightly integrated with the source repositories from Visual Studio Online
    * Uses MSBuild (Visual Studio's build engine), which is available on Windows, OS X and Linux
    * Provides hosted build agents and also allows for user-provided build agents
@@ -60,7 +60,7 @@ Continuous Integration (CI) tools automatically build the source code as changes
 
 If you have an open source, publicly-hosted project on GitHub:
 
- * go enable travis-ci and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
+ * go enable Travis Ci and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
  * enable one of the coverage tools listed below (Codecov or Coveralls)
  * enable [Coverity Scan](https://scan.coverity.com)
   
@@ -120,10 +120,10 @@ The best bet is the static analyzer that you can run as part of your automated b
 
 ### Coverity Scan 
 
-Coverity has a free (for open source) static analysis toolkit that can work on every commit in integration with [Travis CI](http://travis-ci.org) and [AppVeyor](http://www.appveyor.com/).
+[Coverity](https://scan.coverity.com/) has a free (for open source) static analysis toolkit that can work on every commit in integration with [Travis CI](http://travis-ci.org) and [AppVeyor](http://www.appveyor.com/).
 
 ### Cppcheck
-Cppcheck is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `--enable=all`
+[Cppcheck](http://cppcheck.sourceforge.net/) is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `--enable=all`
 
 ### Clang's Static Analyzer
 
@@ -143,9 +143,7 @@ Qt Creator can plug into the clang static analyzer, but *only* on the *commercia
 
 ### Metrix++
 
-http://metrixplusplus.sourceforge.net/
-
-While not necessarily a static analyzer, Metrix++ can identify and report on the most complex sections of your code. Reducing complex code helps you and the compiler understand it better and optimize it better.
+While not necessarily a static analyzer, [Metrix++](http://metrixplusplus.sourceforge.net/) can identify and report on the most complex sections of your code. Reducing complex code helps you and the compiler understand it better and optimize it better.
 
 ## Runtime Checkers
 
@@ -154,10 +152,10 @@ While not necessarily a static analyzer, Metrix++ can identify and report on the
 A coverage analysis tool shall be run when tests are executed to make sure the entire application is being tested. Unfortunately, coverage analysis requires that compiler optimizations be disabled. This can result in significantly longer test execution times.
 
  * [Codecov](https://codecov.io/)
-   * integrates with Travis CI and Appveyor
+   * integrates with Travis CI and AppVeyor
    * free for open source projects
  * [Coveralls](https://coveralls.io/)
-   * integrates with Travis CI and Appveyor
+   * integrates with Travis CI and AppVeyor
    * free for open source projects
  * [LCOV](http://ltp.sourceforge.net/coverage/lcov.php)
    * very configurable 
@@ -166,11 +164,11 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
 
 ### Valgrind
 
-Runtime code analyzer that can detect memory leaks, race conditions, and other associated problems. It is supported on various Unix platforms.
+[Valgrind](http://www.valgrind.org/) is a runtime code analyzer that can detect memory leaks, race conditions, and other associated problems. It is supported on various Unix platforms.
 
 ### Dr Memory
 
-Similar to valgrind. http://www.drmemory.org
+Similar to Valgrind. http://www.drmemory.org
 
 ### GCC / Clang Sanitizers
 
@@ -184,7 +182,7 @@ These tools provide many of the same features as Valgrind, but built into the co
 
 If you project accepts user defined input, considering running a fuzzy input tester. 
 
-Both of these tools use coverage reporting to find new code executation paths and try to breed novel inputs for your code. They can find crashes, hangs, and inputs you didn't know were considered valid.
+Both of these tools use coverage reporting to find new code execution paths and try to breed novel inputs for your code. They can find crashes, hangs, and inputs you didn't know were considered valid.
 
  * [american fuzzy lop](http://lcamtuf.coredump.cx/afl/)
  * [LibFuzzer](http://llvm.org/docs/LibFuzzer.html)
