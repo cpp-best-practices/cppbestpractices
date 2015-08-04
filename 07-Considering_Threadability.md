@@ -14,7 +14,7 @@ Besides being global data, statics are not always constructed and deconstructed 
 
 ### Singletons
 
-A singleton is often implemented with a static and/or `shared_ptr`
+A singleton is often implemented with a static and/or `shared_ptr`.
 
 ## Avoid Heap Operations
 

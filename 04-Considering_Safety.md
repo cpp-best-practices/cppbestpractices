@@ -21,7 +21,7 @@ public:
 
 private:
   std::string m_value;
-}
+};
 
 
 // Good Idea
@@ -40,7 +40,7 @@ public:
 
 private:
   std::string m_value;
-}
+};
 ```
 
 ### Consider Return By Value for Mutable Data, `const &` for Immutable
@@ -68,7 +68,6 @@ auto mybuffer = std::make_unique<char[]>(length); // C++14
 auto mybuffer = std::unique_ptr<char[]>(new char[length]); // C++11
 
 // or for reference counted objects
-
 auto myobj = std::make_shared<MyClass>(); 
 
 // ...
@@ -88,7 +87,7 @@ Exceptions cannot be ignored. Return values, such as using `boost::optional`, ca
 Stroustrup, the original designer of C++, [makes this point](http://www.stroustrup.com/bs_faq2.html#exceptions-why) much better than I ever could.
 
 ## Use C++-style cast instead of C-style cast
-Use the C++-style cast(static\_cast<>, dynamic\_cast<> ...) instead of the C-style cast. The C++-style cast allows more compiler checks and is considerable safer.
+Use the C++-style cast (static\_cast<>, dynamic\_cast<> ...) instead of the C-style cast. The C++-style cast allows more compiler checks and is considerable safer.
 
 ```cpp
 // Bad Idea
@@ -98,7 +97,7 @@ int i = (int) x;
 // Good Idea
 int i = static_cast<int>(x);
 ```
-Additionaly the C++ cast style is more visible and has the possiblity to search for.
+Additionally the C++ cast style is more visible and has the possibility to search for.
 
 ## Additional Resources
 

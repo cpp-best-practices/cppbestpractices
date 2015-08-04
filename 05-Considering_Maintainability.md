@@ -17,7 +17,7 @@ namespace my_project {
     //   static const double 3.14159 = 3.14159;
     // which leads to a compile-time error. Sometimes such errors are hard to understand.
     static const double PI = 3.14159;
-  }
+  };
 }
 ```
 
