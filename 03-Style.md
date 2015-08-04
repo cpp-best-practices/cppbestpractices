@@ -315,7 +315,7 @@ More detailed, you should keep these things in mind:
 * Overloading `operator=` when handling with resources is a must, see [Consider the Rule of Zero](03-Style.md#consider-the-rule-of-zero) below.
 * For all other operators, only overload them when they are used in a context that is commonly connected to these operators. Typical scenarios are concatenating things with +, negating expressions that can be considered "true" or "false", etc.
 * Always be aware of the [operator precedence](http://en.cppreference.com/w/cpp/language/operator_precedence) and try to circumvent unintuitive constructs. 
-* Do not overload exotic operators such as ~ or %. 
+* Do not overload exotic operators such as ~ or % unless implementing a numeric type or following a well recognized syntax in specific domain.
 * [Never](http://stackoverflow.com/questions/5602112/when-to-overload-the-comma-operator?answertab=votes#tab-top) overload `operator ,` (the comma operator).
 * Use `operator >>` and `operator <<` when dealing with streams. For example, you can overload `operator <<(std::ostream &, MyClass const &)` to enable "writing" you class into a stream, such as std::cout or an std::fstream or std::stringstream. The latter is often used to create a textual representation of a value.
 * There are more common operators to overload [described here](http://stackoverflow.com/questions/4421706/operator-overloading?answertab=votes#tab-top)
