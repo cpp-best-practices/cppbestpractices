@@ -139,8 +139,8 @@ Header files must contain a distinctly-named include guard to avoid problems wit
 #define MYPROJECT_MYCLASS_HPP
 
 namespace MyProject {
-class MyClass {
-};
+  class MyClass {
+  };
 }
 
 #endif
@@ -274,7 +274,7 @@ There is almost never a reason to declare an identifier in the global namespaces
 
 ## Use the Correct Integer Type For stdlib Features
 
-The standard library generally returns `size_t` for anything related to size. What exactly `size_t` is is implementation defined.
+The standard library generally returns `size_t` for anything related to size. What exactly `size_t` is, is implementation defined.
 
 In general, using `auto` will avoid most of these issues, but not all.
 
@@ -312,10 +312,10 @@ However, you can easily create unreadable expressions using too much or wrong op
 
 More detailed, you should keep these things in mind:
 
-* Overloading `operator=` when handling with resources is a must, see "Consider the Rule of Zero" below.
+* Overloading `operator=` when handling with resources is a must, see [Consider the Rule of Zero](03-Style.md#consider-the-rule-of-zero) below.
 * For all other operators, only overload them when they are used in a context that is commonly connected to these operators. Typical scenarios are concatenating things with +, negating expressions that can be considered "true" or "false", etc.
 * Always be aware of the [operator precedence](http://en.cppreference.com/w/cpp/language/operator_precedence) and try to circumvent unintuitive constructs. 
-* Do not overload  exotic operators such as ~ or %. 
+* Do not overload exotic operators such as ~ or %. 
 * [Never](http://stackoverflow.com/questions/5602112/when-to-overload-the-comma-operator?answertab=votes#tab-top) overload `operator ,` (the comma operator).
 * Use `operator >>` and `operator <<` when dealing with streams. For example, you can overload `operator <<(std::ostream &, MyClass const &)` to enable "writing" you class into a stream, such as std::cout or an std::fstream or std::stringstream. The latter is often used to create a textual representation of a value.
 * There are more common operators to overload [described here](http://stackoverflow.com/questions/4421706/operator-overloading?answertab=votes#tab-top)
@@ -332,7 +332,7 @@ Instead mark single parameter constructors as `explicit`, which requires them to
 
 ### Conversion Operators
 
-Similarly to single parameter constructors, conversion operators can be called by the compiler and introduce unexpected overhead. The should also be marked as `explicit`.
+Similarly to single parameter constructors, conversion operators can be called by the compiler and introduce unexpected overhead. They should also be marked as `explicit`.
 
 
 ## Consider the Rule of Zero
