@@ -141,10 +141,6 @@ Both of these tools from [JetBrains](https://www.jetbrains.com/cpp/) offer some 
 
 Qt Creator can plug into the clang static analyzer, but *only* on the *commercial* version of Qt Creator.
 
-### Metrix++
-
-While not necessarily a static analyzer, [Metrix++](http://metrixplusplus.sourceforge.net/) can identify and report on the most complex sections of your code. Reducing complex code helps you and the compiler understand it better and optimize it better.
-
 ## Runtime Checkers
 
 ### Code Coverage Analysis
@@ -208,3 +204,13 @@ There should be a test enabled for every feature or bug fix that is committed. S
 ### Negative Testing
 
 Don't forget to make sure that your error handling is being tested and works properly as well. This will become obvious if you aim for 100% code coverage.
+
+## Other Tools
+
+### Metrix++
+
+[Metrix++](http://metrixplusplus.sourceforge.net/) can identify and report on the most complex sections of your code. Reducing complex code helps you and the compiler understand it better and optimize it better.
+
+### ABI Compliance Checker
+
+[ABI Compliance Checker](http://ispras.linuxbase.org/index.php/ABI_compliance_checker) (ACC) can analyze two library versions and generates a detailed compatibility report regarding API and C++ ABI changes. This can help a library developer spot unintentional breaking changes to ensure backward compatibility.
