@@ -62,6 +62,9 @@ This is a general form of "Firewall Frequently Changing Header Files" and "Don't
 
 ### Consider using precompiled headers
 
+The usage of precompiled headers can considerably reduce the compile time in large projects. Selected headers are compiled to an intermediate form that can be faster processed by the compiler. It is recommended to define only frequently used header that changes rarely as precompiled header (e.g. system and library headers) to achieve the compile time reduction.
+But there is no standard way to use them, every compiler has their own way. Precompiled headers is supported by the most common compiler, like [GCC](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html), [Clang](http://clang.llvm.org/docs/PCHInternals.html) and [Visual Studio](https://msdn.microsoft.com/en-us/library/szfdksca.aspx).
+
 ### Consider Using Tools
 
 These are not meant to supersede good design
