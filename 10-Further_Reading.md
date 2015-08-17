@@ -9,3 +9,4 @@
  * http://sourceforge.net/apps/mediawiki/cppcheck/index.php?title=ListOfChecks
  * http://emptycrate.com/
  * http://stackoverflow.com/questions/tagged/c%2b%2b-faq?sort=votes&pageSize=15 - StackOverflow C++ FAQ
+ * http://codergears.com/qacenter/ discussion center for C and C++ best practices
