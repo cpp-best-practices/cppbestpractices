@@ -30,3 +30,7 @@ See http://mortoray.com/2015/06/15/get-rid-of-those-boolean-function-parameters/
 ## Avoid Raw Loops
 
 Know and understand the existing C++ standard algorithms and put them to use. See [C++ Seasoning](https://www.youtube.com/watch?v=qH6sSOr-yk8) for more details. 
+
+## Properly Utilize 'override' and 'final'
+
+These keywords make it clear to other developers how virtual functions are being utilized, can catch potential errors if the signature of a virtual function changes, and can possibly [hint to the compiler](http://stackoverflow.com/questions/7538820/how-does-the-compiler-benefit-from-cs-new-final-keyword) of optimizations that can be performed.
