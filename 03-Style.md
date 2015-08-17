@@ -264,6 +264,18 @@ private:
 // ... //
 ```
 inside the class body. This makes sure that no constructor ever "forgets" to initialize a member object.
+
+Use brace initialization, it does not allow narrowing at compile-time:
+```cpp
+// Best Idea
+
+// ... //
+private:
+  int m_value{ 0 };
+// ... //
+```
+Prefer {} initialization over alternatives unless you have a strong reason not to.
+
 Forgetting to initialize a member is a source of undefined behavior bugs which are often extremely hard to find.
 
 
