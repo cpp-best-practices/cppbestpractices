@@ -25,6 +25,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [Ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
  * [Bazel](http://bazel.io/) - Note: MacOS and Linux only.
  * [gyp](https://chromium.googlesource.com/external/gyp/) - Google's build tool for chromium.
+ * [maiken](https://github.com/Dekken/maiken) - Crossplatform build tool with Maven-esque configuration style.
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
@@ -133,6 +134,10 @@ Clang's analyzer's default options are good for the respective platform. It can 
 
 Can be enabled with the `/analyze` [command line option](http://msdn.microsoft.com/en-us/library/ms173498.aspx). For now we will stick with the default options.
 
+### Flint / Flint++
+
+[Flint](https://github.com/facebook/flint) and [Flint++](https://github.com/L2Program/FlintPlusPlus) are linters that analyze C++ code against Facebook's coding standards.
+
 ### ReSharper C++ / CLion
 
 Both of these tools from [JetBrains](https://www.jetbrains.com/cpp/) offer some level of static analysis and automated fixes for common things that can be done better. They have options available for free licenses for open source project leaders.
@@ -214,3 +219,15 @@ Don't forget to make sure that your error handling is being tested and works pro
 ### ABI Compliance Checker
 
 [ABI Compliance Checker](http://ispras.linuxbase.org/index.php/ABI_compliance_checker) (ACC) can analyze two library versions and generates a detailed compatibility report regarding API and C++ ABI changes. This can help a library developer spot unintentional breaking changes to ensure backward compatibility.
+
+### CNCC 
+
+[Customizable Naming Convention Checker](https://github.com/mapbox/cncc) can report on identifiers in your code that do not follow certain naming conventions.
+
+### ClangFormat
+
+[ClangFormat](http://clang.llvm.org/docs/ClangFormat.html) can check and correct code formatting to match organizational conventions automatically.
+
+### SourceMeter 
+
+[SourceMeter](https://www.sourcemeter.com/) offers a free version which provides many different metrics for your code and can also call into cppcheck.
