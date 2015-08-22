@@ -94,10 +94,12 @@ Use the C++-style cast (static\_cast<>, dynamic\_cast<> ...) instead of the C-st
 double x = getX();
 int i = (int) x;
 
-// Good Idea
+// Not a Bad Idea
 int i = static_cast<int>(x);
 ```
 Additionally the C++ cast style is more visible and has the possibility to search for.
+
+But consider refactoring of program logic (for example, additional checking on overflow and underflow) if you need to cast `double` to `int`. Measure three times and cut 0.9999999999981 times.
 
 ## Additional Resources
 
