@@ -70,6 +70,7 @@ But you have to keep in mind, that using precompiled headers has several disadva
 * It can break your header dependencies. Because of the precompiled headers, every file has the possibility to include every header that is marked as a precompiled header. In result it can happen, that the build fails if you disable the precompiled headers. This can be an issue if you ship something like a library. Because of this it is highly recommend to build once with precompiled header enabled and a second time without them.
 
 Precompiled headers is supported by the most common compiler, like [GCC](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html), [Clang](http://clang.llvm.org/docs/PCHInternals.html) and [Visual Studio](https://msdn.microsoft.com/en-us/library/szfdksca.aspx).
+Tools like [cotire](https://github.com/sakra/cotire/) (a plugin for cmake) can help you to add precompiled headers to your build system.
 
 ### Consider Using Tools
 
