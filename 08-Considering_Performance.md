@@ -62,6 +62,16 @@ This is a general form of "Firewall Frequently Changing Header Files" and "Don't
 
 ### Consider using precompiled headers
 
+The usage of precompiled headers can considerably reduce the compile time in large projects. Selected headers are compiled to an intermediate form (PCH files) that can be faster processed by the compiler. It is recommended to define only frequently used header that changes rarely as precompiled header (e.g. system and library headers) to achieve the compile time reduction.
+But you have to keep in mind, that using precompiled headers has several disadvantages:
+* The usage of precompiled header is not portable.
+* The generated PCH files are machine dependent.
+* The generated PCH files can be quite large.
+* It can break your header dependencies. Because of the precompiled headers, every file has the possibility to include every header that is marked as a precompiled header. In result it can happen, that the build fails if you disable the precompiled headers. This can be an issue if you ship something like a library. Because of this it is highly recommend to build once with precompiled header enabled and a second time without them.
+
+Precompiled headers is supported by the most common compiler, like [GCC](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html), [Clang](http://clang.llvm.org/docs/PCHInternals.html) and [Visual Studio](https://msdn.microsoft.com/en-us/library/szfdksca.aspx).
+Tools like [cotire](https://github.com/sakra/cotire/) (a plugin for cmake) can help you to add precompiled headers to your build system.
+
 ### Consider Using Tools
 
 These are not meant to supersede good design
