@@ -9,18 +9,8 @@
 class MyClass
 {
 public:
-  MyClass(std::string t_value)
-    : m_value(t_value)
-  {
-  }
-
-  std::string get_value()
-  {
-    return m_value;
-  }
-
-private:
-  std::string m_value;
+  void do_something(int i);
+  void do_something(std::string str);
 };
 
 
@@ -28,19 +18,10 @@ private:
 class MyClass
 {
 public:
-  MyClass(const std::string &t_value)
-    : m_value(t_value)
-  {
-  }
-
-  std::string get_value() const
-  {
-    return m_value;
-  }
-
-private:
-  std::string m_value;
+  void do_something(const int i);
+  void do_something(const std::string &str);
 };
+
 ```
 
 ### Consider Return By Value for Mutable Data, `const &` for Immutable
