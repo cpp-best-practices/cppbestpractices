@@ -49,6 +49,52 @@ You don't want to have to pay a cost for copying the data when you don't need to
 
 See also this discussion for more information: https://github.com/lefticus/cppbestpractices/issues/21
 
+### Do not pass and return simple types by const ref 
+
+```cpp
+// Very Bad Idea
+class MyClass
+{
+public:
+  explicit MyClass(const int& t_int_value)
+    : m_int_value(t_int_value)
+  {
+  }
+  
+  const int& get_int_value() const
+  {
+    return m_int_value;
+  }
+
+private:
+  int m_int_value;
+}
+```
+
+Instead, pass and return simple types by value. If you plan not to change passed value, declare them as `const`, but not `const` refs:
+
+```cpp
+// Good Idea
+class MyClass
+{
+public:
+  explicit MyClass(const int t_int_value)
+    : m_int_value(t_int_value)
+  {
+  }
+  
+  int get_int_value() const
+  {
+    return m_int_value;
+  }
+
+private:
+  int m_int_value;
+}
+```
+
+Why? Because passing and returning by reference leads to pointer operations instead by much more faster passing values in processor registers.
+
 ## Avoid Raw Memory Access
 
 Raw memory access, allocation and deallocation, are difficult to get correct in C++ without [risking memory errors and leaks](http://blog2.emptycrate.com/content/nobody-understands-c-part-6-are-you-still-using-pointers). C++11 provides tools to avoid these problems.
