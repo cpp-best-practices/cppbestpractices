@@ -24,11 +24,17 @@ public:
 
 ```
 
-### Consider Return By Value for Mutable Data, `const &` for Immutable
+### Carefully Consider Your Return Types
 
-You don't want to have to pay a cost for copying the data when you don't need to, but you also don't want to have to safely return data in a threading scenario.
+ * Getters
+   * Returning by `&` or `const &` can have significant performance savings when the normal use of the returned value is for observation
+   * Returning by value is better for thread safety and if the normal use of the returned value is to make a copy anyhow, there's no performance lost
+   * If your API uses covariant return types, you must return by `&` or `*`
+ * Temporaries and local values
+   * Always return by value.
 
-See also this discussion for more information: https://github.com/lefticus/cppbestpractices/issues/21
+
+references: https://github.com/lefticus/cppbestpractices/issues/21 https://twitter.com/lefticus/status/635943577328095232 
 
 ### Do not pass and return simple types by const ref 
 
