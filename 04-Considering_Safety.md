@@ -128,6 +128,10 @@ Additionally the C++ cast style is more visible and has the possibility to searc
 
 But consider refactoring of program logic (for example, additional checking on overflow and underflow) if you need to cast `double` to `int`. Measure three times and cut 0.9999999999981 times.
 
+## Do not define a variadic function
+Variadic functions can accept a variable number of parameters. The probably best known example is printf(). You have the possibility to define this kind of functions by yourself but this is a possible security risk. The usage of variadic functions is not type safe and the wrong input parameters can cause a program termination with an undefined behavior. This undefined behavior can be exploited to a security problem.
+If you have the possibility to use a compiler that supports C++11, you can use variadic templates instead.
+
 ## Additional Resources
 
 [How to Prevent The Next Heartbleed](http://www.dwheeler.com/essays/heartbleed.html) by David Wheeler is a good analysis of the current state of code safety and how to ensure safe code.
