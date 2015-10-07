@@ -142,6 +142,10 @@ Can be enabled with the `/analyze` [command line option](http://msdn.microsoft.c
 
 Both of these tools from [JetBrains](https://www.jetbrains.com/cpp/) offer some level of static analysis and automated fixes for common things that can be done better. They have options available for free licenses for open source project leaders.
 
+### Cevelop 
+
+The [cevelop](https://www.cevelop.com/) IDE has various static analysis and refactoring / code fix tools available.
+
 ### Qt Creator
 
 Qt Creator can plug into the clang static analyzer, but *only* on the *commercial* version of Qt Creator.
