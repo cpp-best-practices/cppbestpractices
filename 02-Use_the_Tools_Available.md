@@ -144,7 +144,7 @@ Both of these tools from [JetBrains](https://www.jetbrains.com/cpp/) offer some 
 
 ### Cevelop 
 
-The [cevelop](https://www.cevelop.com/) IDE has various static analysis and refactoring / code fix tools available.
+The Eclipse based [Cevelop](https://www.cevelop.com/) IDE has various static analysis and refactoring / code fix tools available. For example, you can replace macros with C++ `constexprs`, refactor namespaces (extract/inline `using`, qualify name), and refactor your code to C++11's uniform initialization syntax. Cevelop is free to use.
 
 ### Qt Creator
 
