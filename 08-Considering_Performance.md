@@ -265,10 +265,13 @@ for (int i = 0; i < 15; ++i)
 // obj is still taking up memory for no reason
 ```
 
-### Prefer `double` to `float`
+### Prefer `double` to `float`, But Test First
 
-Operations on `double`s are typically faster than `float`s. However, in vectorized operations, `float` might win out. Analyze the code and find out which is faster for your application!
+Depending on the situation and the compiler's ability to optimize, one may be faster over the other. Choosing `float` will result in lower precision and may be slower due to conversions. On vectorizable operations `float` may be faster if you are able to sacrifice precision. 
 
+`double` is the recomended default choice as it is the default type for floating point values in C++.
+
+See this [stackoverflow](http://stackoverflow.com/questions/4584637/double-or-float-which-is-faster) discussion for some more information. 
 
 ### Prefer `++i` to `i++`
 ... when it is semantically correct. Pre-increment is [faster](http://blog2.emptycrate.com/content/why-i-faster-i-c) than post-increment because it does not require a copy of the object to be made.
