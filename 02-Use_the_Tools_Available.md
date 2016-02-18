@@ -185,7 +185,7 @@ These tools provide many of the same features as Valgrind, but built into the co
 
 ### Fuzzy Analyzers
 
-If you project accepts user defined input, considering running a fuzzy input tester. 
+If your project accepts user defined input, considering running a fuzzy input tester. 
 
 Both of these tools use coverage reporting to find new code execution paths and try to breed novel inputs for your code. They can find crashes, hangs, and inputs you didn't know were considered valid.
 
