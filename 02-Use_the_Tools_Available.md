@@ -19,13 +19,15 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [CMake](http://www.cmake.org/)
    * Consider: https://github.com/sakra/cotire/ for build performance
    * Consider: https://github.com/toeb/cmakepp for enhanced usability
- * [Biicode](https://www.biicode.com/)
+ * [Conan](https://www.conan.io/) - a crossplatform dependency manager for C++
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
  * [Bazel](http://bazel.io/) - Note: MacOS and Linux only.
  * [gyp](https://chromium.googlesource.com/external/gyp/) - Google's build tool for chromium.
  * [maiken](https://github.com/Dekken/maiken) - Crossplatform build tool with Maven-esque configuration style.
+ * [Qt Build Suite](http://doc.qt.io/qbs/) - Crossplatform build tool From Qt.
+ * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
