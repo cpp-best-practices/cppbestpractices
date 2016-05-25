@@ -349,6 +349,23 @@ Instead mark single parameter constructors as `explicit`, which requires them to
 
 Similarly to single parameter constructors, conversion operators can be called by the compiler and introduce unexpected overhead. They should also be marked as `explicit`.
 
+```cpp
+//bad idea
+struct S {
+  operator int() {
+    return 2;
+  }
+};
+```
+
+```cpp
+//good idea
+struct S {
+  explicit operator int() {
+    return 2;
+  }
+};
+```
 
 ## Consider the Rule of Zero
 
