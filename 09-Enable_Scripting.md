@@ -7,4 +7,5 @@ The VM based compiled languages have learned this already: JRuby, Jython, IronRu
  * ChaiScript
  * AngelScript
  * luabind
+ * sol2 (bindings for Lua)
  * SWIG
