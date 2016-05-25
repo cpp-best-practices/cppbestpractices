@@ -274,9 +274,12 @@ Use brace initialization; it does not allow narrowing at compile-time:
 
 // ... //
 private:
-  int m_value{ 0 };
+  int m_value{ 0 }; // allowed
+  unsigned m_value_2 { -1 }; // compile-time error, narrowing from signed to unsigned.
 // ... //
 ```
+
+
 Prefer {} initialization over alternatives unless you have a strong reason not to.
 
 Forgetting to initialize a member is a source of undefined behavior bugs which are often extremely hard to find.
