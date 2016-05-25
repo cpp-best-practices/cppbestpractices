@@ -31,8 +31,6 @@ The most important thing is consistency within your codebase; this is one possib
 
 Name function parameters with an `t_` prefix. `t_` can be thought of as "the", but the meaning is arbitrary. The point is to distinguish function parameters from other variables in scope while giving us a consistent naming strategy.
 
-By using `t_` for parameters and `m_` for member data, we can have consistency with both public members of structs and private members of classes.
-
 Any prefix or postfix can be chosen for your organization. This is just one example. *This suggestion is controversial, for a discussion about it see issue [#11](https://github.com/lefticus/cppbestpractices/issues/11).*
 
 ```cpp
