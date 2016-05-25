@@ -2,10 +2,9 @@
     "plugins": [ "github" ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/your/repo"
+            "url": "https://github.com/lefticus/cppbestpractices"
         }
     }
-    "structure": {
-        "readme": "01-Preface.md"
-    }
+    
+    
 }
