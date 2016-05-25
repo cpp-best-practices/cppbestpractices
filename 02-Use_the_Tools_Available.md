@@ -88,15 +88,39 @@ You should use as many compilers as you can for your platform(s). Each compiler 
  * `-Wunused` warn on anything being unused
  * `-Woverloaded-virtual` warn if you overload (not override) a virtual function
  * `-pedantic`
+ * `-Wconversion` warn on type conversions that may lose data
+ * `-Wsign-conversion` warn on sign conversions
+ * `-Wmisleading-indentation` warn if identation implies blocks where blocks do not exist
+
+Consider using `-Weverything` and disabling the few warnings you need to on Clang
+
 
 `-Weffc++` warning mode can be too noisy, but if it works for your project, use it also.
 
 ### MSVC
 
-`/W4 /W44640`
+`/W4 /W44640` - use these and consider the following
 
- * `/W4` - All reasonable warnings
- * `/w44640` - Enable warning on thread un-safe static member initialization
+ * `/W4` All reasonable warnings
+ * [`/w14242`](https://msdn.microsoft.com/en-us/library/3hca13eh.aspx) 'identfier': conversion from 'type1' to 'type1', possible loss of data
+ * [`/w14254`](https://msdn.microsoft.com/en-us/library/3fbf7w04.aspx) 'operator': conversion from 'type1:field_bits' to 'type2:field_bits', possible loss of data
+ * [`/w14263`](https://msdn.microsoft.com/en-us/library/ay4h0tc9.aspx) 'function': member function does not override any base class virtual member function
+ * [`/w14265`](https://msdn.microsoft.com/en-us/library/wzxffy8c.aspx) 'classname': class has virtual functions, but destructor is not virtual instances of this class may not be destructed correctly
+ * [`/w14287`](https://msdn.microsoft.com/en-us/library/33s0was4.aspx) 'operator': unsigned/negative constant mismatch
+ * [`/we4289`](https://msdn.microsoft.com/en-us/library/06d758c0.aspx) nonstandard extension used: 'variable': loop control variable declared in the for-loop is used outside the for-loop scope
+ * [`/w14296`](https://msdn.microsoft.com/en-us/library/wz2y40yt.aspx) 'operator': expression is always 'boolean_value'
+ * [`/w14311`](https://msdn.microsoft.com/en-us/library/4t91x2k5.aspx) 'variable': pointer truncation from 'type1' to 'type2'
+ * [`/w14545`](https://msdn.microsoft.com/en-us/library/s2xatszb.aspx) expression before comma evaluates to a function which is missing an argument list
+ * [`/w14546`](https://msdn.microsoft.com/en-us/library/7be2hd1z.aspx) function call before comma missing argument list
+ * [`/w14547`](https://msdn.microsoft.com/en-us/library/y1724hsf.aspx) 'operator': operator before comma has no effect; expected operator with side-effect
+ * [`/w14549`](https://msdn.microsoft.com/en-us/library/60yhzzeh.aspx) 'operator': operator before comma has no effect; did you intend 'operator'?
+ * [`/w14555`](https://msdn.microsoft.com/en-us/library/k64a6he5.aspx) expression has no effect; expected expression with side-effect
+ * [`/w14619`](https://msdn.microsoft.com/en-us/library/tacee08d.aspx) #pragma warning: there is no warning number 'number'
+ * [`/w14640`](https://msdn.microsoft.com/en-us/library/4f5c8560.aspx) Enable warning on thread un-safe static member initialization
+ * [`/w14826`](https://msdn.microsoft.com/en-us/library/ms235307.aspx) Conversion from 'type1' to 'type_2' is sign-extended. This may cause unexpected runtime behavior.
+ * [`/w14905`](https://msdn.microsoft.com/en-us/library/zayh85yw.aspx) wide string literal cast to 'LPSTR'
+ * [`/w14906`](https://msdn.microsoft.com/en-us/library/ae10z5cb.aspx) string literal cast to 'LPWSTR'
+ * [`/w14928`](https://msdn.microsoft.com/en-us/library/cwck4ta9.aspx) illegal copy-initialization; more than one user-defined conversion has been implicitly applied
 
 Not recommended
 
