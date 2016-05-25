@@ -217,6 +217,7 @@ Both of these tools use coverage reporting to find new code execution paths and 
 
  * [american fuzzy lop](http://lcamtuf.coredump.cx/afl/)
  * [LibFuzzer](http://llvm.org/docs/LibFuzzer.html)
+ * [KLEE](http://klee.github.io/) - Can be used to fuzz individual functions
 
 ## Ignoring Warnings
 
