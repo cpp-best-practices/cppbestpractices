@@ -307,3 +307,18 @@ std::cout << someThing() << '\n';
 This is very minor, but a `"\n"` has to be parsed by the compiler as a `const char *` which has to do a range check for `\0` when writing it to the stream (or appending to a string). A '\n' is known to be a single character and avoids many CPU instructions.
 
 If used inefficiently very many times it might have an impact on your performance, but more importantly thinking about these two usage cases gets you thinking more about what the compiler and runtime has to do to execute your code.
+
+
+### Never Use `std::bind`
+
+`std::bind` is almost always way more overhead (both compile time and runtime) than you need. Instead simply use a lambda.
+
+```cpp
+// Bad Idea
+auto f = std::bind(&my_function, "hello", std::placeholders::_1);
+f("world");
+
+// Good Idea
+auto f = [](const std::string &s) { return my_function("hello", s); };
+f("world")
+```
