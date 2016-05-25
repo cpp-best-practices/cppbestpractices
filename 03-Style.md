@@ -296,6 +296,16 @@ In general, using `auto` will avoid most of these issues, but not all.
 
 Make sure you stick with the correct integer types and remain consistent with the C++ standard library. It might not warn on the platform you are currently using, but it probably will when you change platforms.
 
+*Note that you can cause integer underflow when peforming some operations on unsigned values. For example:*
+
+```cpp
+std::vector<int> v1{2,3,4,5,6,7,8,9};
+std::vector<int> v2{9,8,7,6,5,4,3,2,1};
+const auto s1 = v1.size();
+const auto s2 = v2.size();
+const auto diff = s1 - s2; // diff underflows to a very large number
+```
+
 ## Use .hpp and .cpp for Your File Extensions
 
 Ultimately this is a matter of preference, but .hpp and .cpp are widely recognized by various editors and tools. So the choice is pragmatic. Specifically, Visual Studio only automatically recognizes .cpp and .cxx for C++ files, and Vim doesn't necessarily recognize .cc as a C++ file.
