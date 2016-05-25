@@ -12,3 +12,5 @@ In all cases brevity and succinctness is preferred. Examples are preferred for m
 *Disclaimer*
 
 This document is based on my personal experiences. You are not supposed to agree with it 100%. It exists as a book on [GitHub](https://github.com/lefticus/cppbestpractices) so that you can fork it for your own uses or submit back proposed changes for everyone to share.
+
+This book has inspired an O'Reilly video: [Learning C++ Best Practices](http://shop.oreilly.com/product/0636920049814.do)
