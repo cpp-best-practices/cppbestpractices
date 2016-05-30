@@ -174,7 +174,7 @@ The Eclipse based [Cevelop](https://www.cevelop.com/) IDE has various static ana
 
 ### Qt Creator
 
-Qt Creator can plug into the clang static analyzer, but *only* on the *commercial* version of Qt Creator.
+Qt Creator can plug into the clang static analyzer.
 
 ## Runtime Checkers
 
