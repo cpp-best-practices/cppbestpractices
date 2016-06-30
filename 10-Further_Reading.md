@@ -6,7 +6,7 @@
  * https://www.gitbook.com/book/alexastva/the-ultimate-question-of-programming-refactoring-/details - The Ultimate Question of Programming, Refactoring, and Everything
  * http://llvm.org/docs/CodingStandards.html - LLVM Coding Standards - very well written
  * http://geosoft.no/development/cppstyle.html
- * http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml (Note that Google's standard document makes several recommendations which we will NOT be following. For example, they explicitly forbid the use of exceptions, which makes [RAII](http://blog2.emptycrate.com/content/nobody-understands-c-part-2-raii) impossible.)
+ * https://google.github.io/styleguide/cppguide.html (Note that Google's standard document makes several recommendations which we will NOT be following. For example, they explicitly forbid the use of exceptions, which makes [RAII](http://blog2.emptycrate.com/content/nobody-understands-c-part-2-raii) impossible.)
  * https://isocpp.org/faq/
  * http://www.cplusplus.com/
  * http://www.gamasutra.com/view/news/128836/InDepth_Static_Code_Analysis.php - Article from John Carmack on the advantages of static analysis
