@@ -22,7 +22,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [Conan](https://www.conan.io/) - a crossplatform dependency manager for C++
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
- * [Ninja](https://martine.github.io/ninja/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
+ * [Ninja](https://ninja-build.org/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
  * [Bazel](http://bazel.io/) - Note: MacOS and Linux only.
  * [gyp](https://chromium.googlesource.com/external/gyp/) - Google's build tool for chromium.
  * [maiken](https://github.com/Dekken/maiken) - Crossplatform build tool with Maven-esque configuration style.
