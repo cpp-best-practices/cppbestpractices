@@ -265,6 +265,8 @@ for (int i = 0; i < 15; ++i)
 // obj is still taking up memory for no reason
 ```
 
+[This topic has an associated discussion thread](https://github.com/lefticus/cppbestpractices/issues/52).
+
 ### Prefer `double` to `float`, But Test First
 
 Depending on the situation and the compiler's ability to optimize, one may be faster over the other. Choosing `float` will result in lower precision and may be slower due to conversions. On vectorizable operations `float` may be faster if you are able to sacrifice precision. 
