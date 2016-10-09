@@ -9,7 +9,7 @@ Source control is an absolute necessity for any software development project. If
  * [GitHub](https://github.com/) - allows for unlimited public repositories, must pay for a private repository.
  * [Bitbucket](https://bitbucket.org/) - allows for unlimited private repositories with up to 5 collaborators, for free.
  * [SourceForge](http://sourceforge.net/) - open source hosting only.
- * [GitLab](https://gitlab.com/), Subversion, BitKeeper, many many others... The above are the most popular free services.
+ * [GitLab](https://gitlab.com/) - allows for unlimited public and private repositories, unlimited CI Runners included, for free.
  * [Visual Studio Online](https://visualstudio.com) (http://www.visualstudio.com/what-is-visual-studio-online-vs) - allows for unlimited public repositories, must pay for private repository. Repositories can be git or TFVC. Additionally: Issue tracking, project planning (multiple Agile templates, such as SCRUM), integrated hosted builds, integration of all this into Microsoft Visual Studio. Windows only.
 
 ## Build Tool
