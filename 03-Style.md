@@ -380,7 +380,7 @@ struct S {
 
 ## Consider the Rule of Zero
 
-The Rule of Zero states that you do not provide any of the functions that the compiler can provide (copy constructor, assignment operator, move constructor, destructor, move constructor) unless the class you are constructing does some novel form of ownership.
+The Rule of Zero states that you do not provide any of the functions that the compiler can provide (copy constructor, copy assignment operator, move constructor, move assignment operator, destructor) unless the class you are constructing does some novel form of ownership.
 
 The goal is to let the compiler provide optimal versions that are automatically maintained when more member variables are added.
 
