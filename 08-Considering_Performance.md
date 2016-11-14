@@ -39,12 +39,19 @@ Templates are not free to instantiate. Instantiating many templates, or template
 
 For more examples see [this article](http://blog2.emptycrate.com/content/template-code-bloat-revisited-smaller-makeshared).
 
+### Avoid Recursive Template Instantiations
+
+Recursive template instantiations can result in a significant load on the compiler and more difficult to understand code. 
+
+[Consider using variadic expansions and folds when possible instead.](http://articles.emptycrate.com/2016/05/14/folds_in_cpp11_ish.html)
 
 ### Analyze the Build
 
 The tool [Templight](https://github.com/mikael-s-persson/templight) can be used to analyze the build time of your project. It takes some effort to get built, but once you do, it's a drop in replacement for clang++.
 
 After you build using Templight, you will need to analyze the results. The [templight-tools](https://github.com/mikael-s-persson/templight-tools) project provides various methods. (Author's Note: I suggest using the callgrind converter and visualizing the results with kcachegrind).
+
+
 
 ### Firewall Frequently Changing Header Files
 
