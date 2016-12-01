@@ -241,6 +241,16 @@ There should be a test enabled for every feature or bug fix that is committed. S
 
 Don't forget to make sure that your error handling is being tested and works properly as well. This will become obvious if you aim for 100% code coverage.
 
+## Debugging
+
+### uftrace
+
+[uftrace](https://github.com/namhyung/uftrace) can be used to generating function call graphs of a program execution
+
+### rr
+
+[rr](http://rr-project.org/) is a free (open source) reverse debugger that supports C++.
+
 ## Other Tools
 
 ### Metrix++
