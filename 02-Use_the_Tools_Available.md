@@ -206,6 +206,7 @@ Similar to Valgrind. http://www.drmemory.org
 These tools provide many of the same features as Valgrind, but built into the compiler. They are easy to use and provide a report of what went wrong.
 
  * AddressSanitizer
+ * MemorySanitizer
  * ThreadSanitizer
  * UndefinedBehaviorSanitizer
 
