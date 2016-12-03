@@ -20,6 +20,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
    * Consider: https://github.com/sakra/cotire/ for build performance
    * Consider: https://github.com/toeb/cmakepp for enhanced usability
  * [Conan](https://www.conan.io/) - a crossplatform dependency manager for C++
+ * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://ninja-build.org/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
