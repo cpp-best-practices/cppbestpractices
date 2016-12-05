@@ -150,6 +150,10 @@ The best bet is the static analyzer that you can run as part of your automated b
 
 [Coverity](https://scan.coverity.com/) has a free (for open source) static analysis toolkit that can work on every commit in integration with [Travis CI](http://travis-ci.org) and [AppVeyor](http://www.appveyor.com/).
 
+### PVS-Studio
+
+[PVS-Studio](http://www.viva64.com/en/pvs-studio/) is a tool for bug detection in the source code of programs, written in C, C++ and C#. It is free for personal academic projects, open source non-commercial projects and independent projects of individual developers. It works in Windows and Linux environment.
+
 ### Cppcheck
 [Cppcheck](http://cppcheck.sourceforge.net/) is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `--enable=all`
 
