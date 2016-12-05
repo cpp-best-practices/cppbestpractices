@@ -73,7 +73,7 @@ These tools are all free and relatively easy to set up. Once they are set up you
 
 ## Compilers
 
-Use every available and reasonable set of warning options. Some warning options only work with optimizations enabled, or work better the higher the chosen level of optimization is.
+Use every available and reasonable set of warning options. Some warning options only work with optimizations enabled, or work better the higher the chosen level of optimization is, for example `-Wnull-dereference` with GCC.
 
 You should use as many compilers as you can for your platform(s). Each compiler implements the standard slightly differently and supporting multiple will help ensure the most portable, most reliable code.
 
