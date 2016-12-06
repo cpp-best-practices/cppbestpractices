@@ -329,5 +329,5 @@ f("world");
 
 // Good Idea
 auto f = [](const std::string &s) { return my_function("hello", s); };
-f("world")
+f("world");
 ```
