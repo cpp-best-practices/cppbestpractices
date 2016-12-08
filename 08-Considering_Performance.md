@@ -61,7 +61,7 @@ After you build using Templight, you will need to analyze the results. The [temp
 
 The compiler has to do something with each include directive it sees. Even if it stops as soon as it seems the `#ifndef` include guard, it still had to open the file and begin processing it.
 
-[include-what-you-use](https://code.google.com/p/include-what-you-use) is a tool that can help you identify which headers you need.
+[include-what-you-use](https://github.com/include-what-you-use/include-what-you-use) is a tool that can help you identify which headers you need.
 
 #### Reduce the load on the preprocessor
 
