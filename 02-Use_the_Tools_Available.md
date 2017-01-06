@@ -19,6 +19,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [CMake](http://www.cmake.org/)
    * Consider: https://github.com/sakra/cotire/ for build performance
    * Consider: https://github.com/toeb/cmakepp for enhanced usability
+   * Utilize: https://cmake.org/cmake/help/v3.6/command/target_compile_features.html for C++ standard flags
  * [Conan](https://www.conan.io/) - a crossplatform dependency manager for C++
  * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
  * [Waf](https://waf.io/)
@@ -137,6 +138,16 @@ Start with very strict warning settings from the beginning. Trying to raise the 
 Consider using the *treat warnings as errors* setting. `/Wx` with MSVC, `-Werror` with GCC / Clang
 
 ## LLVM-based tools
+
+LLVM based tools work best with a build system (such as cmake) that can output a compile command database, for example:
+
+```
+$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+```
+
+If you are not using a build system like that, you can consider [Build EAR](https://github.com/rizsotto/Bear) which will hook into your build system and generate a compile command database for you.
+
+CMake now also comes with built-in support for calling `clang-tidy` during [normal compilation](https://cmake.org/cmake/help/latest/prop_tgt/LANG_CLANG_TIDY.html).
 
  * [include-what-you-use](https://github.com/include-what-you-use), [example results](https://github.com/ChaiScript/ChaiScript/commit/c0bf6ee99dac14a19530179874f6c95255fde173)
  * [clang-modernize](http://clang.llvm.org/extra/clang-modernize.html), [example results](https://github.com/ChaiScript/ChaiScript/commit/6eab8ddfe154a4ebbe956a5165b390ee700fae1b)
@@ -277,7 +288,7 @@ Don't forget to make sure that your error handling is being tested and works pro
 
 ### ClangFormat
 
-[ClangFormat](http://clang.llvm.org/docs/ClangFormat.html) can check and correct code formatting to match organizational conventions automatically.
+[ClangFormat](http://clang.llvm.org/docs/ClangFormat.html) can check and correct code formatting to match organizational conventions automatically. [Multipart series](https://engineering.mongodb.com/post/succeeding-with-clangformat-part-1-pitfalls-and-planning/) on utilizing clang-format.
 
 ### SourceMeter 
 
