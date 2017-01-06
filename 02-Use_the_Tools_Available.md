@@ -197,6 +197,9 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
  * [LCOV](http://ltp.sourceforge.net/coverage/lcov.php)
    * very configurable 
  * [Gcovr](http://gcovr.com/)
+ * [kcov](http://simonkagstrom.github.io/kcov/index.html)
+   * integrates with codecov and coveralls
+   * performs code coverage reporting without needing special compiler flags, just by instrumenting debug symbols.
 
 
 ### Valgrind
