@@ -244,6 +244,8 @@ Both of these tools use coverage reporting to find new code execution paths and 
 
 If it is determined by team consensus that the compiler or analyzer is warning on something that is either incorrect or unavoidable, the team will disable the specific error to as localized part of the code as possible.
 
+Be sure to reenable the warning after disabling it for a section of code. You do not want your disabled warnings to [leak into other code](http://www.forwardscattering.org/post/48).
+
 ## Testing
 
 CMake, mentioned above, has a built in framework for executing tests. Make sure whatever build system you use has a way to execute tests built in.
