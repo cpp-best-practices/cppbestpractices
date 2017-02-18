@@ -179,7 +179,7 @@ if (caseA) {
 
 ```cpp
 // Better Idea
-const std::string somevalue = caseA?"Value A":"Value B";
+const std::string somevalue = caseA ? "Value A" : "Value B";
 ```
 
 More complex cases can be facilitated with an [immediately-invoked lambda](http://blog2.emptycrate.com/content/complex-object-initialization-optimization-iife-c11).

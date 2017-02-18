@@ -332,7 +332,7 @@ They should be preferred to macros, because macros do not honor namespaces, etc.
 
 ## Use Operator Overloads Judiciously
 
-Operator overloading was invented to enable expressive syntax. Expressive in the sense that adding two big integers looks like `a + b` and not `a.add(b)`. Another common example is std::string, where it is very common to concatenate two strings with `string1 + string2`.
+Operator overloading was invented to enable expressive syntax. Expressive in the sense that adding two big integers looks like `a + b` and not `a.add(b)`. Another common example is `std::string`, where it is very common to concatenate two strings with `string1 + string2`.
 
 However, you can easily create unreadable expressions using too much or wrong operator overloading. When overloading operators, there are three basic rules to follow as described [on stackoverflow](http://stackoverflow.com/questions/4421706/operator-overloading/4421708#4421708).
 
