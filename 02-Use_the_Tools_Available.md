@@ -173,6 +173,8 @@ The best bet is the static analyzer that you can run as part of your automated b
 
 Clang's analyzer's default options are good for the respective platform. It can be used directly [from CMake](http://garykramlich.blogspot.com/2011/10/using-scan-build-from-clang-with-cmake.html). They can also be called via clang-check and clang-tidy from the [LLVM-based Tools](#llvm-based-tools).
 
+Also, [CodeChecker](https://github.com/Ericsson/CodeChecker) is available as a front-end to clang's static analysis.
+
 ### MSVC's Static Analyzer
 
 Can be enabled with the `/analyze` [command line option](http://msdn.microsoft.com/en-us/library/ms173498.aspx). For now we will stick with the default options.
@@ -295,3 +297,7 @@ Don't forget to make sure that your error handling is being tested and works pro
 ### SourceMeter 
 
 [SourceMeter](https://www.sourcemeter.com/) offers a free version which provides many different metrics for your code and can also call into cppcheck.
+
+### Bloaty McBloatface
+
+[Bloaty McBloatface](https://github.com/google/bloaty) is a binary size analyzer/profiler for unix-like platforms
