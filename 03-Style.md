@@ -297,6 +297,8 @@ private:
 };
 ```
 
+Since a const member variable cannot be assigned a new value, such a class may not have a meaningful copy assignment operator.
+
 ## Always Use Namespaces
 
 There is almost never a reason to declare an identifier in the global namespace. Instead, functions and classes should exist in an appropriately named namespace or in a class inside of a namespace. Identifiers which are placed in the global namespace risk conflicting with identifiers from other libraries (mostly C, which doesn't have namespaces).
