@@ -277,11 +277,27 @@ private:
 // ... //
 ```
 
-
 Prefer {} initialization over alternatives unless you have a strong reason not to.
 
 Forgetting to initialize a member is a source of undefined behavior bugs which are often extremely hard to find.
 
+If the member variable is not expected to change after the initialization, then mark it `const`.
+
+```cpp
+class MyClass
+{
+public:
+  MyClass(int t_value)
+    : m_value{t_value}
+  {
+  }
+
+private:
+  const int m_value{0};
+};
+```
+
+Since a const member variable cannot be assigned a new value, such a class may not have a meaningful copy assignment operator.
 
 ## Always Use Namespaces
 
