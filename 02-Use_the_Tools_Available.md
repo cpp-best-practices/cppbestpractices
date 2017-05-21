@@ -63,6 +63,10 @@ Continuous Integration (CI) tools automatically build the source code as changes
    * Provides hosted build agents and also allows for user-provided build agents
    * Can be controlled and monitored from within Microsoft Visual Studio
    * On-Premise installation via Microsoft Team Foundation Server
+ * [GitLab](https://gitlab.com)
+   * use custom Docker images, so can be used for C++
+   * has free shared runners
+   * has trivial processing of result of coverage analyze
 
 If you have an open source, publicly-hosted project on GitHub:
 
