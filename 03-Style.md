@@ -257,27 +257,34 @@ private:
 };
 ```
 
-In C++11 you may consider always giving each member a default value, e.g. by writing
+In C++11 you can assign default values to each member (using `=` or using `{}`).
+
+### Assigning default values with =
+
 ```cpp
 // ... //
 private:
-  int m_value = 0;
+  int m_value = 0; // allowed
+  unsigned m_value_2 = -1; // narrowing from signed to unsigned allowed
 // ... //
 ```
-inside the class body. This makes sure that no constructor ever "forgets" to initialize a member object.
+This ensures that no constructor ever "forgets" to initialize a member object.
 
-Use brace initialization; it does not allow narrowing at compile-time:
+### Assigning default values with brace initialization
+
+Using brace initialization does not allow narrowing at compile-time.
+
 ```cpp
 // Best Idea
 
 // ... //
 private:
   int m_value{ 0 }; // allowed
-  unsigned m_value_2 { -1 }; // compile-time error, narrowing from signed to unsigned.
+  unsigned m_value_2 { -1 }; // narrowing from signed to unsigned not allowed, leads to a compile time error
 // ... //
 ```
 
-Prefer {} initialization over alternatives unless you have a strong reason not to.
+Prefer `{}` initialization over `=` unless you have a strong reason not to.
 
 Forgetting to initialize a member is a source of undefined behavior bugs which are often extremely hard to find.
 
