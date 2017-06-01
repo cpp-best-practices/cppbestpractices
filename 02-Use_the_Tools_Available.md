@@ -167,7 +167,13 @@ The best bet is the static analyzer that you can run as part of your automated b
 [PVS-Studio](http://www.viva64.com/en/pvs-studio/) is a tool for bug detection in the source code of programs, written in C, C++ and C#. It is free for personal academic projects, open source non-commercial projects and independent projects of individual developers. It works in Windows and Linux environment.
 
 ### Cppcheck
-[Cppcheck](http://cppcheck.sourceforge.net/) is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `--enable=all`. For correct work it requires well formed path for headers, so before usage don't forget pass: `--check-config`. If you try to found unused functions don't use `-j` with more than 1. Remember to add `--force` for code with a lot number of `#ifdef` if you need check all of them.
+[Cppcheck](http://cppcheck.sourceforge.net/) is free and open source. It strives for 0 false positives and does a good job at it. Therefore all warnings should be enabled: `--enable=all`
+
+Notes:
+
+ * For correct work it requires well formed path for headers, so before usage don't forget to pass: `--check-config`.
+ * Finding unused headers does not work with `-j` more than 1. 
+ * Remember to add `--force` for code with a lot number of `#ifdef` if you need check all of them.
 
 ### Clang's Static Analyzer
 
