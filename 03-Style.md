@@ -271,8 +271,8 @@ private:
 };
 
 // Good Idea
-// There is a performance gain here because the default constructor 
-// for m_myOtherClass is never called.  
+// The default constructor for m_myOtherClass is never called here, so 
+// there is a performance gain if MyOtherClass is not is_trivially_default_constructible. 
 class MyClass
 {
 public:
