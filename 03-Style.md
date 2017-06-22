@@ -223,7 +223,9 @@ It also makes it possible to have two separate files next to each other on one s
 ```
 
 ## Initialize Member Variables
-...with the member initializer list.
+...with the member initializer list. 
+
+For POD types, the performance of an initializer list is the same as manual initialization, but for other types there is a clear performance gain, see below.
 
 ```cpp
 // Bad Idea
@@ -239,11 +241,23 @@ private:
   int m_value;
 };
 
+// Bad Idea
+// This leads to an additional constructor call for m_myOtherClass
+// before the assignment.
+class MyClass
+{
+public:
+  MyClass(MyOtherClass t_myOtherClass)
+  {
+    m_myOtherClass = t_myOtherClass;
+  }
+
+private:
+  MyOtherClass m_myOtherClass;
+};
 
 // Good Idea
-// C++'s member initializer list is unique to the language and leads to
-// cleaner code and potential performance gains that other languages cannot
-// match.
+// There is no performance gain here but the code is cleaner.
 class MyClass
 {
 public:
@@ -254,6 +268,21 @@ public:
 
 private:
   int m_value;
+};
+
+// Good Idea
+// The default constructor for m_myOtherClass is never called here, so 
+// there is a performance gain if MyOtherClass is not is_trivially_default_constructible. 
+class MyClass
+{
+public:
+  MyClass(MyOtherClass t_myOtherClass)
+    : m_myOtherClass(t_myOtherClass)
+  {
+  }
+
+private:
+  MyOtherClass m_myOtherClass;
 };
 ```
 
