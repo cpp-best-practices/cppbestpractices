@@ -9,3 +9,4 @@ The VM based compiled languages have learned this already: JRuby, Jython, IronRu
  * [luabind](http://www.rasterbar.com/products/luabind.html)
  * [sol2](https://github.com/ThePhD/sol2) (bindings for Lua)
  * [SWIG](http://www.swig.org/) (simplified wrapper and interface generator)
+ * [pybind11](https://pybind11.readthedocs.io/en/stable/) (Python and modern C++ interoperability)
