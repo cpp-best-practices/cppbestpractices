@@ -348,7 +348,7 @@ In general, using `auto` will avoid most of these issues, but not all.
 
 Make sure you stick with the correct integer types and remain consistent with the C++ standard library. It might not warn on the platform you are currently using, but it probably will when you change platforms.
 
-*Note that you can cause integer underflow when peforming some operations on unsigned values. For example:*
+*Note that you can cause integer underflow when performing some operations on unsigned values. For example:*
 
 ```cpp
 std::vector<int> v1{2,3,4,5,6,7,8,9};
