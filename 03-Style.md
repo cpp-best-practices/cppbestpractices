@@ -436,5 +436,5 @@ The Rule of Zero states that you do not provide any of the functions that the co
 
 The goal is to let the compiler provide optimal versions that are automatically maintained when more member variables are added.
 
-The [original article](https://rmf.io/cxx11/rule-of-zero) provides the background, while a [follow up article](http://www.nirfriedman.com/2015/06/27/cpp-rule-of-zero/) explains techniques for implementing nearly 100% of the time.
+The [original article](https://github.com/rmartinho/flamingdangerzone/blob/master/_posts/cxx11/2012-08-15-rule-of-zero.md) provides the background, while a [follow up article](http://www.nirfriedman.com/2015/06/27/cpp-rule-of-zero/) explains techniques for implementing nearly 100% of the time.
 
