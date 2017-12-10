@@ -9,6 +9,22 @@ C++ allows for arbitrary-length identifier names, so there's no reason to be ter
 
 are common examples. *snake_case* has the advantage that it can also work with spell checkers, if desired.
 
+## Establishing A Style Guideline
+
+Whatever style guidelines you establish, be sure to implement a `.clang-format` file that specifies the style you expect. While this cannot help with naming, it is particularly important for an open source project to maintain a consistent style.
+
+Every IDE and many editors have support for clang-format built in or easily installable with an add-in.
+
+ * VSCode https://marketplace.visualstudio.com/items?itemName=xaver.clang-format
+ * VisualStudio https://marketplace.visualstudio.com/items?itemName=LLVMExtensions.ClangFormat#review-details
+ * Resharper++: https://www.jetbrains.com/help/resharper/2017.2/Using_Clang_Format.html
+ * Vim
+     * https://github.com/rhysd/vim-clang-format
+     * https://github.com/chiel92/vim-autoformat
+ * XCode: https://github.com/travisjeffery/ClangFormat-Xcode
+
+
+
 ## Common C++ Naming Conventions
 
  * Types start with upper case: `MyClass`.
