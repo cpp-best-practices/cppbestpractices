@@ -263,6 +263,10 @@ Both of these tools use coverage reporting to find new code execution paths and 
  * [LibFuzzer](http://llvm.org/docs/LibFuzzer.html)
  * [KLEE](http://klee.github.io/) - Can be used to fuzz individual functions
 
+### Control Flow Guard
+
+MSVC's [Control Flow Guard](https://msdn.microsoft.com/en-us/library/windows/desktop/mt637065%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) adds high performance runtime security checks.
+
 ## Ignoring Warnings
 
 If it is determined by team consensus that the compiler or analyzer is warning on something that is either incorrect or unavoidable, the team will disable the specific error to as localized part of the code as possible.
