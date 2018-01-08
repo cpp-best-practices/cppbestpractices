@@ -113,6 +113,8 @@ Consider using `-Weverything` and disabling the few warnings you need to on Clan
 
 ### MSVC
 
+`/permissive-` - [Enforces standards conformance](https://docs.microsoft.com/en-us/cpp/build/reference/permissive-standards-conformance).
+
 `/W4 /W44640` - use these and consider the following
 
  * `/W4` All reasonable warnings
