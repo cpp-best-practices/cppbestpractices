@@ -204,6 +204,10 @@ Can be enabled with the `/analyze` [command line option](http://msdn.microsoft.c
 
 [Flint](https://github.com/facebook/flint) and [Flint++](https://github.com/L2Program/FlintPlusPlus) are linters that analyze C++ code against Facebook's coding standards.
 
+### OCLint
+
+[OCLint](http://oclint.org/) is a free, libre and open source static code analysis tool for improving quality of C++ code in many different ways.
+
 ### ReSharper C++ / CLion
 
 Both of these tools from [JetBrains](https://www.jetbrains.com/cpp/) offer some level of static analysis and automated fixes for common things that can be done better. They have options available for free licenses for open source project leaders.
