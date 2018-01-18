@@ -120,7 +120,7 @@ Exceptions cannot be ignored. Return values, such as using `boost::optional`, ca
 Stroustrup, the original designer of C++, [makes this point](http://www.stroustrup.com/bs_faq2.html#exceptions-why) much better than I ever could.
 
 ## Use C++-style cast instead of C-style cast
-Use the C++-style cast (static\_cast<>, dynamic\_cast<> ...) instead of the C-style cast. The C++-style cast allows more compiler checks and is considerable safer.
+Use the C++-style cast (static\_cast<>, dynamic\_cast<> ...) instead of the C-style cast. The C++-style cast allows more compiler checks and is considerably safer.
 
 ```cpp
 // Bad Idea
