@@ -188,6 +188,10 @@ Notes:
  * For correct work it requires well formed path for headers, so before usage don't forget to pass: `--check-config`.
  * Finding unused headers does not work with `-j` more than 1. 
  * Remember to add `--force` for code with a lot number of `#ifdef` if you need check all of them.
+ 
+ ### CppDepend
+ 
+[CppDepend](http://www.cppdpeend.com/) Simplifies managing a complex C/C++ code base by analyzing and visualizing code dependencies, by defining design rules, by doing impact analysis, and comparing different versions of the code. It's free for OSS contributors.
 
 ### Clang's Static Analyzer
 
