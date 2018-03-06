@@ -191,7 +191,7 @@ Notes:
  
  ### CppDepend
  
-[CppDepend](http://www.cppdpeend.com/) Simplifies managing a complex C/C++ code base by analyzing and visualizing code dependencies, by defining design rules, by doing impact analysis, and comparing different versions of the code. It's free for OSS contributors.
+[CppDepend](https://www.cppdepend.com/) Simplifies managing a complex C/C++ code base by analyzing and visualizing code dependencies, by defining design rules, by doing impact analysis, and comparing different versions of the code. It's free for OSS contributors.
 
 ### Clang's Static Analyzer
 
