@@ -225,6 +225,10 @@ The Eclipse based [Cevelop](https://www.cevelop.com/) IDE has various static ana
 
 Qt Creator can plug into the clang static analyzer.
 
+### clazy
+
+[clazy](https://github.com/KDE/clazy) is a clang based tool for analyzing Qt usage.
+
 ## Runtime Checkers
 
 ### Code Coverage Analysis
