@@ -32,6 +32,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [Qt Build Suite](http://doc.qt.io/qbs/) - Crossplatform build tool From Qt.
  * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
  * [premake](https://premake.github.io/) 
+ * [hunter](https://github.com/ruslo/hunter) - CMake driven cross-platform package manager for C/C++
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
