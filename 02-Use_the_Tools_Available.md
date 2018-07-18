@@ -43,7 +43,7 @@ Package management is an important topic in C++, with currently no clear winner.
  * [hunter](https://github.com/ruslo/hunter) - CMake driven cross-platform package manager for C/C++
  * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
  * [qpm](https://www.qpm.io/) - Package manager for Qt
- 
+ * [build2](https://build2.org/) - cargo-like package management for C++
 
 ## Continuous Integration
 
@@ -199,6 +199,11 @@ Notes:
  * Finding unused headers does not work with `-j` more than 1. 
  * Remember to add `--force` for code with a lot number of `#ifdef` if you need check all of them.
  
+### cppclean
+
+[cppclean](https://github.com/myint/cppclean) - Open source static analyzer focused on finding problems in C++ source that slow development of large code bases.
+
+ 
 ### CppDepend
  
 [CppDepend](https://www.cppdepend.com/) Simplifies managing a complex C/C++ code base by analyzing and visualizing code dependencies, by defining design rules, by doing impact analysis, and comparing different versions of the code. It's free for OSS contributors.
@@ -296,6 +301,10 @@ MSVC's [Control Flow Guard](https://msdn.microsoft.com/en-us/library/windows/des
 ### Checked STL Implementations
 
  * `_GLIBCXX_DEBUG` with GCC's implementation libstdc++ implementation. See [Krister's blog article](https://kristerw.blogspot.se/2018/03/detecting-incorrect-c-stl-usage.html).
+
+### Heap Profiling
+
+ * [https://epfl-vlsc.github.io/memoro/](Memoro) - A detailed heap profiler 
 
 ## Ignoring Warnings
 
