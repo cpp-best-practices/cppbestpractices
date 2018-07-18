@@ -331,3 +331,13 @@ f("world");
 auto f = [](const std::string &s) { return my_function("hello", s); };
 f("world");
 ```
+
+
+### Know The Standard Library
+
+Properly use the already highly optimized components of the vendor provided standard library.
+
+#### `in_place_t` And Related
+
+Be aware of how to use `in_place_t` and related tags for effecient creation of objects such as `std::tuple`, `std::any` and `std::variant`.
+
