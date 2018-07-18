@@ -2,6 +2,8 @@
 
 *Note: This book has now inspired a video series from O'Reilly, [Learning C++ Best Practices](http://shop.oreilly.com/product/0636920049814.do)*
 
+## C++
+
  * https://github.com/isocpp/CppCoreGuidelines The C++ Core Guidelines are a set of tried-and-true guidelines, rules, and best practices about coding in C++ 
  * https://www.gitbook.com/book/alexastva/the-ultimate-question-of-programming-refactoring-/details - The Ultimate Question of Programming, Refactoring, and Everything
  * http://llvm.org/docs/CodingStandards.html - LLVM Coding Standards - very well written
@@ -16,3 +18,11 @@
  * http://stackoverflow.com/questions/tagged/c%2b%2b-faq?sort=votes&pageSize=15 - StackOverflow C++ FAQ
  * http://codergears.com/qacenter/ discussion center for C and C++ best practices
  * http://www.viva64.com/en/b/0391/ The Ultimate Question of Programming, Refactoring, and Everything
+
+## CMake
+
+ * https://cmake.org/cmake/help/latest/manual/cmake.1.html - Be aware that there are `--warn` command line options for CMake that can catch some issues.
+ * https://github.com/Akagi201/learning-cmake
+ * https://codingnest.com/basic-cmake/
+ * https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1 - Effective CMake online book
+ 
