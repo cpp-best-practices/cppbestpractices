@@ -21,8 +21,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
    * Consider: https://github.com/toeb/cmakepp for enhanced usability
    * Utilize: https://cmake.org/cmake/help/v3.6/command/target_compile_features.html for C++ standard flags
    * Consider: https://github.com/cheshirekow/cmake_format for automatic formatting of your CMakeLists.txt
- * [Conan](https://www.conan.io/) - a crossplatform dependency manager for C++
- * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
+   * See the [Further Reading](10-Further_Reading.md) section for CMake specific best practices
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://ninja-build.org/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
@@ -32,9 +31,19 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [Qt Build Suite](http://doc.qt.io/qbs/) - Crossplatform build tool From Qt.
  * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
  * [premake](https://premake.github.io/) 
- * [hunter](https://github.com/ruslo/hunter) - CMake driven cross-platform package manager for C/C++
+
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
+
+## Package Manager
+
+Package management is an important topic in C++, with currently no clear winner. Consider using a package manager to help you keep track of the dependencies for your project and make it easier for new people to get started with the project.
+
+ * [Conan](https://www.conan.io/) - a crossplatform dependency manager for C++
+ * [hunter](https://github.com/ruslo/hunter) - CMake driven cross-platform package manager for C/C++
+ * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
+ * [qpm](https://www.qpm.io/) - Package manager for Qt
+ 
 
 ## Continuous Integration
 
@@ -190,7 +199,7 @@ Notes:
  * Finding unused headers does not work with `-j` more than 1. 
  * Remember to add `--force` for code with a lot number of `#ifdef` if you need check all of them.
  
- ### CppDepend
+### CppDepend
  
 [CppDepend](https://www.cppdepend.com/) Simplifies managing a complex C/C++ code base by analyzing and visualizing code dependencies, by defining design rules, by doing impact analysis, and comparing different versions of the code. It's free for OSS contributors.
 
@@ -248,6 +257,7 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
  * [kcov](http://simonkagstrom.github.io/kcov/index.html)
    * integrates with codecov and coveralls
    * performs code coverage reporting without needing special compiler flags, just by instrumenting debug symbols.
+ * [OpenCppCoverage](https://github.com/OpenCppCoverage/OpenCppCoverage) - open source coverage reporting tool for Windows.
 
 
 ### Valgrind
@@ -266,6 +276,8 @@ These tools provide many of the same features as Valgrind, but built into the co
  * MemorySanitizer
  * ThreadSanitizer
  * UndefinedBehaviorSanitizer
+
+Be aware of the sanitizer options available, including runtime options. https://kristerw.blogspot.com/2018/06/useful-gcc-address-sanitizer-checks-not.html
 
 ### Fuzzy Analyzers
 
