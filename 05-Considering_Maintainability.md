@@ -42,7 +42,7 @@ assert(set_value(something));
 assert(success);
 ```
 
-The `assert()` will be removed in release builds which will prevent the `set_value` call from every happening.
+The `assert()` will be removed in release builds which will prevent the `set_value` call from ever happening.
 
 So while the second version is uglier, the first version is simply not correct.
 
