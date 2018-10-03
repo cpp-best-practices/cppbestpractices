@@ -116,6 +116,7 @@ You should use as many compilers as you can for your platform(s). Each compiler 
  * `-Wuseless-cast` warn if you perform a cast to the same type
  * `-Wdouble-promotion` warn if `float` is implicit promoted to `double`
  * `-Wformat=2` warn on security issues around functions that format output (ie `printf`)
+ * `-Wlifetime` (clang only currently) shows object lifetime issues
  
 Consider using `-Weverything` and disabling the few warnings you need to on Clang
 
