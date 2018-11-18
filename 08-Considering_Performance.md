@@ -278,7 +278,7 @@ for (int i = 0; i < 15; ++i)
 
 Depending on the situation and the compiler's ability to optimize, one may be faster over the other. Choosing `float` will result in lower precision and may be slower due to conversions. On vectorizable operations `float` may be faster if you are able to sacrifice precision. 
 
-`double` is the recomended default choice as it is the default type for floating point values in C++.
+`double` is the recommended default choice as it is the default type for floating point values in C++.
 
 See this [stackoverflow](http://stackoverflow.com/questions/4584637/double-or-float-which-is-faster) discussion for some more information. 
 
