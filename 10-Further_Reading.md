@@ -26,3 +26,4 @@
  * https://codingnest.com/basic-cmake/
  * https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1 - Effective CMake online book
  * https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/
+ * https://cliutils.gitlab.io/modern-cmake/ - An Introduction to Modern CMake
