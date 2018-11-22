@@ -105,7 +105,7 @@ You should use as many compilers as you can for your platform(s). Each compiler 
  * `-Wcast-align` warn for potential performance problem casts
  * `-Wunused` warn on anything being unused
  * `-Woverloaded-virtual` warn if you overload (not override) a virtual function
- * `-Wpedantic` (GCC only) warn if non-standard C++ is used
+ * `-Wpedantic` (all versions of GCC, Clang >= 3.2) warn if non-standard C++ is used
  * `-Wconversion` warn on type conversions that may lose data
  * `-Wsign-conversion` (Clang all versions, GCC >= 4.3) warn on sign conversions
  * `-Wmisleading-indentation` (only in GCC >= 6.0) warn if indentation implies blocks where blocks do not exist
