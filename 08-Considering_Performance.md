@@ -83,7 +83,8 @@ Tools like [cotire](https://github.com/sakra/cotire/) (a plugin for cmake) can h
 
 These are not meant to supersede good design
 
- * [ccache](https://ccache.samba.org/)
+ * [ccache](https://ccache.samba.org/), compile results caching for unix-like operating systems
+ * [clcache](https://github.com/frerich/clcache), compile results caching for cl.exe (MSVC)
  * [warp](https://github.com/facebook/warp), Facebook's preprocessor
 
 ### Put tmp on Ramdisk
