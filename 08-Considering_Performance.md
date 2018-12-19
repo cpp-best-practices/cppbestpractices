@@ -340,5 +340,5 @@ Properly use the already highly optimized components of the vendor provided stan
 
 #### `in_place_t` And Related
 
-Be aware of how to use `in_place_t` and related tags for effecient creation of objects such as `std::tuple`, `std::any` and `std::variant`.
+Be aware of how to use `in_place_t` and related tags for efficient creation of objects such as `std::tuple`, `std::any` and `std::variant`.
 
