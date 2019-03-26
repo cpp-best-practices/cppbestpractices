@@ -6,7 +6,7 @@ An automated framework for executing these tools should be established very earl
 
 Source control is an absolute necessity for any software development project. If you are not using one yet, start using one.
 
- * [GitHub](https://github.com/) - allows for unlimited public repositories, must pay for a private repository.
+ * [GitHub](https://github.com/) - allows for unlimited public repositories, and unlimited private repositories with up to 3 collaborators.
  * [Bitbucket](https://bitbucket.org/) - allows for unlimited private repositories with up to 5 collaborators, for free.
  * [SourceForge](http://sourceforge.net/) - open source hosting only.
  * [GitLab](https://gitlab.com/) - allows for unlimited public and private repositories, unlimited CI Runners included, for free.
