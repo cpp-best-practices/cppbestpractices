@@ -215,7 +215,7 @@ Clang's analyzer's default options are good for the respective platform. It can 
 
 Also, [CodeChecker](https://github.com/Ericsson/CodeChecker) is available as a front-end to clang's static analysis.
 
-`clang-tidy` can be easily used with Visual Studio via the [Clang Power Tools](https://caphyon.github.io/clang-power-tools/) extension.
+`clang-tidy` can be easily used with Visual Studio via the [Clang Power Tools](https://clangpowertools.com) extension.
 
 ### MSVC's Static Analyzer
 
