@@ -273,6 +273,16 @@ for (int i = 0; i < 15; ++i)
 // obj is still taking up memory for no reason
 ```
 
+For C++17 and onwards, consider using init-statement in the `if` and `switch` statements:
+
+```cpp
+if (MyObject obj(index); obj.good()) {
+    // do something if obj is good
+} else {
+    // do something if obj is not good
+}
+```
+
 [This topic has an associated discussion thread](https://github.com/lefticus/cppbestpractices/issues/52).
 
 ### Prefer `double` to `float`, But Test First
