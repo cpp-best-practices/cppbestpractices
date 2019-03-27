@@ -25,7 +25,8 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://ninja-build.org/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
- * [Bazel](http://bazel.io/) - Note: MacOS and Linux only.
+ * [Bazel](http://bazel.io/) - Fast incremental builds using network artefact caching and remote execution
+ * [Buck](http://buckbuild.com/) - Similar to Bazel, with very good support for iOS and Andoid
  * [gyp](https://chromium.googlesource.com/external/gyp/) - Google's build tool for chromium.
  * [maiken](https://github.com/Dekken/maiken) - Crossplatform build tool with Maven-esque configuration style.
  * [Qt Build Suite](http://doc.qt.io/qbs/) - Crossplatform build tool From Qt.
@@ -44,6 +45,7 @@ Package management is an important topic in C++, with currently no clear winner.
  * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
  * [qpm](https://www.qpm.io/) - Package manager for Qt
  * [build2](https://build2.org/) - cargo-like package management for C++
+ * [Buckaroo](https://buckaroo.pm) - Truly decentralized cross-platform dependency manager for C/C++ and more
 
 ## Continuous Integration
 
