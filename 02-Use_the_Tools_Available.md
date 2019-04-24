@@ -248,6 +248,11 @@ Qt Creator can plug into the clang static analyzer.
 
 [clazy](https://github.com/KDE/clazy) is a clang based tool for analyzing Qt usage.
 
+### IKOS
+
+[IKOS](https://ti.arc.nasa.gov/opensource/ikos/) is an open source static analyzer, developed by NASA. It is based on the Abstract Interpretation. It is written in C++ and provides an analyzer for C and C++, using LLVM.
+The source code is [available on Github](https://github.com/NASA-SW-VnV/ikos).
+
 ## Runtime Checkers
 
 ### Code Coverage Analysis
