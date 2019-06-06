@@ -16,6 +16,7 @@ Whatever style guidelines you establish, be sure to implement a `.clang-format` 
 Every IDE and many editors have support for clang-format built in or easily installable with an add-in.
 
  * VSCode: [Microsoft C/C++ extension for VS Code](https://github.com/Microsoft/vscode-cpptools)
+ * CLion: https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html
  * VisualStudio https://marketplace.visualstudio.com/items?itemName=LLVMExtensions.ClangFormat#review-details
  * Resharper++: https://www.jetbrains.com/help/resharper/2017.2/Using_Clang_Format.html
  * Vim
