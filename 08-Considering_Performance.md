@@ -33,6 +33,8 @@ template<typename T> class MyTemplatedType;
 
 This is a proactive approach to reduce compilation time and rebuilding dependencies.
 
+*Note: forward declaration does prevent more inlining and optimizations. It's recommended to use Link Time Optimization or Link Time Code Generation for release builds.*
+
 ### Avoid Unnecessary Template Instantiations
 
 Templates are not free to instantiate. Instantiating many templates, or templates with more code than necessary increases compiled code size and build time.

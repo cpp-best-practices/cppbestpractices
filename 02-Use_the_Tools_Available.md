@@ -47,7 +47,7 @@ Package management is an important topic in C++, with currently no clear winner.
  * [qpm](https://www.qpm.io/) - Package manager for Qt
  * [build2](https://build2.org/) - cargo-like package management for C++
  * [Buckaroo](https://buckaroo.pm) - Truly decentralized cross-platform dependency manager for C/C++ and more
- * [vcpkg](https://github.com/microsoft/vcpkg) - Microsoft cross-platform library manager, could be used with CMake
+ * [Vcpkg](https://github.com/microsoft/vcpkg) - Microsoft C++ Library Manager for Windows, Linux, and MacOS
 
 ## Continuous Integration
 
@@ -303,6 +303,15 @@ Both of these tools use coverage reporting to find new code execution paths and 
  * [american fuzzy lop](http://lcamtuf.coredump.cx/afl/)
  * [LibFuzzer](http://llvm.org/docs/LibFuzzer.html)
  * [KLEE](http://klee.github.io/) - Can be used to fuzz individual functions
+
+### Mutation Testers
+
+These tools take code executed during unit test runs and mutate the executed code. If the test continues to pass with a mutation in place, then there is likely a flawed test in your suite.
+
+ * [Dextool Mutate](https://github.com/joakim-brannstrom/dextool/tree/master/plugin/mutate)
+ * [MuCPP](https://neptuno.uca.es/redmine/projects/mucpp-mutation-tool/wiki)
+ * [mull](https://github.com/mull-project/mull)
+ * [CCMutator](https://github.com/markus-kusano/CCMutator)
 
 ### Control Flow Guard
 
