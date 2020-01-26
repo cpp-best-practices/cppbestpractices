@@ -323,7 +323,7 @@ MSVC's [Control Flow Guard](https://msdn.microsoft.com/en-us/library/windows/des
 
 ### Heap Profiling
 
- * [https://epfl-vlsc.github.io/memoro/](Memoro) - A detailed heap profiler 
+ * [Memoro](https://epfl-vlsc.github.io/memoro/) - A detailed heap profiler 
 
 ## Ignoring Warnings
 
