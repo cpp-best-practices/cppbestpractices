@@ -381,10 +381,14 @@ Don't forget to make sure that your error handling is being tested and works pro
 
 [ClangFormat](http://clang.llvm.org/docs/ClangFormat.html) can check and correct code formatting to match organizational conventions automatically. [Multipart series](https://engineering.mongodb.com/post/succeeding-with-clangformat-part-1-pitfalls-and-planning/) on utilizing clang-format.
 
-### SourceMeter 
+### SourceMeter
 
 [SourceMeter](https://www.sourcemeter.com/) offers a free version which provides many different metrics for your code and can also call into cppcheck.
 
 ### Bloaty McBloatface
 
 [Bloaty McBloatface](https://github.com/google/bloaty) is a binary size analyzer/profiler for unix-like platforms
+
+### pahole
+
+[pahole](https://linux.die.net/man/1/pahole) generates data on holes in the packing of data structures and classes in compiled code. It can also the size of structures and how they fit within the system's cache lines.
