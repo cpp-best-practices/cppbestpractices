@@ -16,6 +16,7 @@ Source control is an absolute necessity for any software development project. If
 
 Use an industry standard widely accepted build tool. This prevents you from reinventing the wheel whenever you discover / link to a new library / package your product / etc. Examples include:
 
+ * [Autotools](https://autotools.io) - The traditional GNU build system.
  * [CMake](http://www.cmake.org/)
    * Consider: https://github.com/sakra/cotire/ for build performance
    * Consider: https://github.com/toeb/cmakepp for enhanced usability
@@ -25,9 +26,9 @@ Use an industry standard widely accepted build tool. This prevents you from rein
    * `cmake --build` provides a common interface for compiling your project regardless of platform
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
- * [Ninja](https://ninja-build.org/) - can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
- * [Bazel](http://bazel.io/) - Fast incremental builds using network artefact caching and remote execution
- * [Buck](http://buckbuild.com/) - Similar to Bazel, with very good support for iOS and Andoid
+ * [Ninja](https://ninja-build.org/) - Can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
+ * [Bazel](http://bazel.io/) - Fast incremental builds using network artefact caching and remote execution.
+ * [Buck](http://buckbuild.com/) - Similar to Bazel, with very good support for iOS and Andoid.
  * [gyp](https://chromium.googlesource.com/external/gyp/) - Google's build tool for chromium.
  * [maiken](https://github.com/Dekken/maiken) - Crossplatform build tool with Maven-esque configuration style.
  * [Qt Build Suite](http://doc.qt.io/qbs/) - Crossplatform build tool From Qt.
@@ -275,13 +276,23 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
  * [OpenCppCoverage](https://github.com/OpenCppCoverage/OpenCppCoverage) - open source coverage reporting tool for Windows.
 
 
-### Valgrind
+### Heap profiling
 
-[Valgrind](http://www.valgrind.org/) is a runtime code analyzer that can detect memory leaks, race conditions, and other associated problems. It is supported on various Unix platforms.
+ * [Valgrind](http://www.valgrind.org/)
+   * Valgrind is a runtime code analyzer that can detect memory leaks, race conditions, and other associated problems. It is supported on various Unix platforms.
+ * [Heaptrack](https://github.com/KDE/heaptrack)
+   * A profiler created by a Valgrind's Massif developper. Quite similar to Massif with pros and cons over it, way more intuitive though.
+ * [Dr Memory](http://www.drmemory.org)
+ * [Memoro](https://epfl-vlsc.github.io/memoro/) - A detailed heap profiler.
 
-### Dr Memory
+### CPU profiling
 
-Similar to Valgrind. http://www.drmemory.org
+ * [Hotspot](https://github.com/KDAB/hotspot) - An intuitive front-end to visualize datas produced by the [perf](https://perf.wiki.kernel.org) CPU profiler.
+ * [uftrace](https://github.com/namhyung/uftrace) - Can be used to generating function call graphs of a program execution.
+
+### Reverse engineering tools
+
+ * [Cutter](https://cutter.re/) - A front-end for [Radare2](https://www.radare.org/n/radare2.html). It provides tools such as decompiler, disassembly, graph visualizer, hex editor.
 
 ### GCC / Clang Sanitizers
 
@@ -351,9 +362,9 @@ Don't forget to make sure that your error handling is being tested and works pro
 
 ## Debugging
 
-### uftrace
+### GDB
 
-[uftrace](https://github.com/namhyung/uftrace) can be used to generating function call graphs of a program execution
+[GDB](https://www.gnu.org/software/gdb/) - The GNU debugger, powerful and widely used. Most IDEs implement an interface to use it.
 
 ### rr
 
