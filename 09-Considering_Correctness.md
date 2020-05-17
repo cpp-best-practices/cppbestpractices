@@ -21,9 +21,9 @@ Consider using a typesafe library like
 
  * https://foonathan.net/type_safe/
  * https://github.com/rollbear/strong_type
+ * https://github.com/joboccara/NamedType
 
 Note that stronger typing can also allow for more compiler optimizations.
-
 
 * [Sorting in C vs C++](Sorting in C vs C++.pdf)
 
