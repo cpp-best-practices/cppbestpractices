@@ -164,7 +164,7 @@ Not recommended
 
 Start with very strict warning settings from the beginning. Trying to raise the warning level after the project is underway can be painful.
 
-Consider using the *treat warnings as errors* setting. `/Wx` with MSVC, `-Werror` with GCC / Clang
+Consider using the *treat warnings as errors* setting. `/WX` with MSVC, `-Werror` with GCC / Clang
 
 ## LLVM-based tools
 
