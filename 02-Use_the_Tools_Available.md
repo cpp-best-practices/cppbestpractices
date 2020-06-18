@@ -315,6 +315,12 @@ Both of these tools use coverage reporting to find new code execution paths and 
  * [LibFuzzer](http://llvm.org/docs/LibFuzzer.html)
  * [KLEE](http://klee.github.io/) - Can be used to fuzz individual functions
 
+#### Continuous Fuzzing
+
+Continuous fuzzing tools exist to run fuzz tests for you with each commit.
+
+ * [Fuzzit](https://fuzzit.dev/)
+
 ### Mutation Testers
 
 These tools take code executed during unit test runs and mutate the executed code. If the test continues to pass with a mutation in place, then there is likely a flawed test in your suite.
@@ -403,3 +409,7 @@ Don't forget to make sure that your error handling is being tested and works pro
 ### pahole
 
 [pahole](https://linux.die.net/man/1/pahole) generates data on holes in the packing of data structures and classes in compiled code. It can also the size of structures and how they fit within the system's cache lines.
+
+### BinSkim 
+
+[BinSkim](https://github.com/Microsoft/binskim) is a binary static analysis tool that provides security and correctness results for Windows Portable Executable and *nix ELF binary formats 
