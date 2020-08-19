@@ -22,7 +22,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
    * Consider: https://github.com/toeb/cmakepp for enhanced usability
    * Utilize: https://cmake.org/cmake/help/v3.6/command/target_compile_features.html for C++ standard flags
    * Consider: https://github.com/cheshirekow/cmake_format for automatic formatting of your CMakeLists.txt
-   * See the [Further Reading](10-Further_Reading.md) section for CMake specific best practices
+   * See the [Further Reading](11-Further_Reading.md) section for CMake specific best practices
    * `cmake --build` provides a common interface for compiling your project regardless of platform
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
