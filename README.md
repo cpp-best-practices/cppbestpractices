@@ -4,8 +4,11 @@
 
 Collaborative Collection of C++ Best Practices
 
-This document is available as a download via [gitbook](https://www.gitbook.com/book/lefticus/cpp-best-practices)
-
 For more information please see the [Preface](01-Preface.md).
 
-This book has inspired an O'Reilly video: [Learning C++ Best Practices](http://shop.oreilly.com/product/0636920049814.do)
+This online resource is part of Jason Turner's collection of C++ Best Practices resources.
+
+* [C++ Best Practices Book](https://leanpub.com/cppbestpractices)
+* [C++ Weekly YouTube Channel](https://www.youtube.com/c/JasonTurner-lefticus)
+* [The Ultimate CMake/C++ Starter Project](https://github.com/lefticus/cpp_starter_project/)
+* [Learning C++ Best Practices - O'Reilly Video](http://shop.oreilly.com/product/0636920049814.do)
