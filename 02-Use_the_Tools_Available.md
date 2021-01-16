@@ -33,7 +33,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [maiken](https://github.com/Dekken/maiken) - Crossplatform build tool with Maven-esque configuration style.
  * [Qt Build Suite](http://doc.qt.io/qbs/) - Crossplatform build tool From Qt.
  * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
- * [premake](https://premake.github.io/) 
+ * [premake](https://premake.github.io/)
  * [xmake](https://xmake.io) - A cross-platform build utility based on Lua. Modern C/C++ build tools, Support multi-language hybrid compilation
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
@@ -340,7 +340,7 @@ MSVC's [Control Flow Guard](https://msdn.microsoft.com/en-us/library/windows/des
 
 ### Heap Profiling
 
- * [Memoro](https://epfl-vlsc.github.io/memoro/) - A detailed heap profiler 
+ * [Memoro](https://epfl-vlsc.github.io/memoro/) - A detailed heap profiler
 
 ## Ignoring Warnings
 
@@ -410,6 +410,6 @@ Don't forget to make sure that your error handling is being tested and works pro
 
 [pahole](https://linux.die.net/man/1/pahole) generates data on holes in the packing of data structures and classes in compiled code. It can also the size of structures and how they fit within the system's cache lines.
 
-### BinSkim 
+### BinSkim
 
-[BinSkim](https://github.com/Microsoft/binskim) is a binary static analysis tool that provides security and correctness results for Windows Portable Executable and *nix ELF binary formats 
+[BinSkim](https://github.com/Microsoft/binskim) is a binary static analysis tool that provides security and correctness results for Windows Portable Executable and *nix ELF binary formats

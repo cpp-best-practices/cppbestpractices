@@ -11,5 +11,3 @@
  10. [Enable Scripting](10-Enable_Scripting.md)
  11. [Further Reading](11-Further_Reading.md)
  12. [Final Thoughts](12-Final_Thoughts.md)
-
-

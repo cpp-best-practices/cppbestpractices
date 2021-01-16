@@ -240,7 +240,7 @@ It also makes it possible to have two separate files next to each other on one s
 ```
 
 ## Initialize Member Variables
-...with the member initializer list. 
+...with the member initializer list.
 
 For POD types, the performance of an initializer list is the same as manual initialization, but for other types there is a clear performance gain, see below.
 
@@ -288,8 +288,8 @@ private:
 };
 
 // Good Idea
-// The default constructor for m_myOtherClass is never called here, so 
-// there is a performance gain if MyOtherClass is not is_trivially_default_constructible. 
+// The default constructor for m_myOtherClass is never called here, so
+// there is a performance gain if MyOtherClass is not is_trivially_default_constructible.
 class MyClass
 {
 public:
@@ -454,4 +454,3 @@ The Rule of Zero states that you do not provide any of the functions that the co
 The goal is to let the compiler provide optimal versions that are automatically maintained when more member variables are added.
 
 [This article](http://www.nirfriedman.com/2015/06/27/cpp-rule-of-zero/) provides a background and explains techniques for implementing nearly 100% of the time.
-

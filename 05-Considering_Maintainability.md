@@ -33,7 +33,7 @@ Know and understand the existing C++ standard algorithms and put them to use.
 
  * See [cppreference](https://en.cppreference.com/w/cpp/algorithm)
  * Watch [C++ Seasoning](https://www.youtube.com/watch?v=qH6sSOr-yk8)
- 
+
 Consider a call to `[]` as a potential code smell, indicating that an algorithm was not used where it could have been.
 
 

@@ -34,9 +34,9 @@ public:
    * Always return by value.
 
 
-references: https://github.com/lefticus/cppbestpractices/issues/21 https://twitter.com/lefticus/status/635943577328095232 
+references: https://github.com/lefticus/cppbestpractices/issues/21 https://twitter.com/lefticus/status/635943577328095232
 
-### Do not pass and return simple types by const ref 
+### Do not pass and return simple types by const ref
 
 ```cpp
 // Very Bad Idea
@@ -47,7 +47,7 @@ public:
     : m_int_value(t_int_value)
   {
   }
-  
+
   const int& get_int_value() const
   {
     return m_int_value;
@@ -69,7 +69,7 @@ public:
     : m_int_value(t_int_value)
   {
   }
-  
+
   int get_int_value() const
   {
     return m_int_value;
@@ -101,7 +101,7 @@ auto mybuffer = std::make_unique<char[]>(length); // C++14
 auto mybuffer = std::unique_ptr<char[]>(new char[length]); // C++11
 
 // or for reference counted objects
-auto myobj = std::make_shared<MyClass>(); 
+auto myobj = std::make_shared<MyClass>();
 
 // ...
 // myobj is automatically freed for you whenever it is no longer used.
@@ -111,7 +111,7 @@ auto myobj = std::make_shared<MyClass>();
 
 Both of these guarantee contiguous memory layout of objects and can (and should) completely replace your usage of C-style arrays for many of the reasons listed for not using bare pointers.
 
-Also, [avoid](http://stackoverflow.com/questions/3266443/can-you-use-a-shared-ptr-for-raii-of-c-style-arrays) using `std::shared_ptr` to hold an array. 
+Also, [avoid](http://stackoverflow.com/questions/3266443/can-you-use-a-shared-ptr-for-raii-of-c-style-arrays) using `std::shared_ptr` to hold an array.
 
 ## Use Exceptions
 
