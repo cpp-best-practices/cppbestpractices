@@ -338,10 +338,6 @@ MSVC's [Control Flow Guard](https://msdn.microsoft.com/en-us/library/windows/des
 
  * `_GLIBCXX_DEBUG` with GCC's implementation libstdc++ implementation. See [Krister's blog article](https://kristerw.blogspot.se/2018/03/detecting-incorrect-c-stl-usage.html).
 
-### Heap Profiling
-
- * [Memoro](https://epfl-vlsc.github.io/memoro/) - A detailed heap profiler 
-
 ## Ignoring Warnings
 
 If it is determined by team consensus that the compiler or analyzer is warning on something that is either incorrect or unavoidable, the team will disable the specific error to as localized part of the code as possible.
