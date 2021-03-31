@@ -1,101 +1,5 @@
 # Considering Performance
 
-## Build Time
-
-
-
-### Forward Declare When Possible
-
-This:
-
-```cpp
-// some header file
-class MyClass;
-
-void doSomething(const MyClass &);
-```
-
-instead of:
-
-```cpp
-// some header file
-#include "MyClass.hpp"
-
-void doSomething(const MyClass &);
-```
-
-
-This applies to templates as well:
-
-```cpp
-template<typename T> class MyTemplatedType;
-```
-
-This is a proactive approach to reduce compilation time and rebuilding dependencies.
-
-*Note: forward declaration does prevent more inlining and optimizations. It's recommended to use Link Time Optimization or Link Time Code Generation for release builds.*
-
-### Avoid Unnecessary Template Instantiations
-
-Templates are not free to instantiate. Instantiating many templates, or templates with more code than necessary increases compiled code size and build time.
-
-For more examples see [this article](http://blog2.emptycrate.com/content/template-code-bloat-revisited-smaller-makeshared).
-
-### Avoid Recursive Template Instantiations
-
-Recursive template instantiations can result in a significant load on the compiler and more difficult to understand code. 
-
-[Consider using variadic expansions and folds when possible instead.](http://articles.emptycrate.com/2016/05/14/folds_in_cpp11_ish.html)
-
-### Analyze the Build
-
-The tool [Templight](https://github.com/mikael-s-persson/templight) can be used to analyze the build time of your project. It takes some effort to get built, but once you do, it's a drop in replacement for clang++.
-
-After you build using Templight, you will need to analyze the results. The [templight-tools](https://github.com/mikael-s-persson/templight-tools) project provides various methods. (Author's Note: I suggest using the callgrind converter and visualizing the results with kcachegrind).
-
-
-
-### Firewall Frequently Changing Header Files
-
-
-
-#### Don't Unnecessarily Include Headers
-
-The compiler has to do something with each include directive it sees. Even if it stops as soon as it sees the `#ifndef` include guard, it still had to open the file and begin processing it.
-
-[include-what-you-use](https://github.com/include-what-you-use/include-what-you-use) is a tool that can help you identify which headers you need.
-
-#### Reduce the load on the preprocessor
-
-This is a general form of "Firewall Frequently Changing Header Files" and "Don't Unnecessarily Include Headers." Tools like BOOST_PP can be very helpful, but they also put a huge burden on the preprocessor.
-
-### Consider using precompiled headers
-
-The usage of precompiled headers can considerably reduce the compile time in large projects. Selected headers are compiled to an intermediate form (PCH files) that can be faster processed by the compiler. It is recommended to define only frequently used header that changes rarely as precompiled header (e.g. system and library headers) to achieve the compile time reduction.
-But you have to keep in mind, that using precompiled headers has several disadvantages:
-* The usage of precompiled header is not portable.
-* The generated PCH files are machine dependent.
-* The generated PCH files can be quite large.
-* It can break your header dependencies. Because of the precompiled headers, every file has the possibility to include every header that is marked as a precompiled header. In result it can happen, that the build fails if you disable the precompiled headers. This can be an issue if you ship something like a library. Because of this it is highly recommend to build once with precompiled header enabled and a second time without them.
-
-Precompiled headers is supported by the most common compiler, like [GCC](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html), [Clang](http://clang.llvm.org/docs/PCHInternals.html) and [Visual Studio](https://msdn.microsoft.com/en-us/library/szfdksca.aspx).
-Tools like [cotire](https://github.com/sakra/cotire/) (a plugin for cmake) can help you to add precompiled headers to your build system.
-
-### Consider Using Tools
-
-These are not meant to supersede good design
-
- * [ccache](https://ccache.samba.org/), compile results caching for unix-like operating systems
- * [clcache](https://github.com/frerich/clcache), compile results caching for cl.exe (MSVC)
- * [warp](https://github.com/facebook/warp), Facebook's preprocessor
-
-### Put tmp on Ramdisk
-
-See [this](https://www.youtube.com/watch?v=t4M3yG1dWho) YouTube video for more details.
-
-### Use the gold linker
-
-If on Linux, consider using the gold linker for GCC.
 
 ## Runtime
 
@@ -354,3 +258,98 @@ Properly use the already highly optimized components of the vendor provided stan
 
 Be aware of how to use `in_place_t` and related tags for efficient creation of objects such as `std::tuple`, `std::any` and `std::variant`.
 
+
+## Build Time
+
+### Forward Declare When Possible
+
+This:
+
+```cpp
+// some header file
+class MyClass;
+
+void doSomething(const MyClass &);
+```
+
+instead of:
+
+```cpp
+// some header file
+#include "MyClass.hpp"
+
+void doSomething(const MyClass &);
+```
+
+
+This applies to templates as well:
+
+```cpp
+template<typename T> class MyTemplatedType;
+```
+
+This is a proactive approach to reduce compilation time and rebuilding dependencies.
+
+*Note: forward declaration does prevent more inlining and optimizations. It's recommended to use Link Time Optimization or Link Time Code Generation for release builds.*
+
+### Avoid Unnecessary Template Instantiations
+
+Templates are not free to instantiate. Instantiating many templates, or templates with more code than necessary increases compiled code size and build time.
+
+For more examples see [this article](http://blog2.emptycrate.com/content/template-code-bloat-revisited-smaller-makeshared).
+
+### Avoid Recursive Template Instantiations
+
+Recursive template instantiations can result in a significant load on the compiler and more difficult to understand code. 
+
+[Consider using variadic expansions and folds when possible instead.](http://articles.emptycrate.com/2016/05/14/folds_in_cpp11_ish.html)
+
+### Analyze the Build
+
+The tool [Templight](https://github.com/mikael-s-persson/templight) can be used to analyze the build time of your project. It takes some effort to get built, but once you do, it's a drop in replacement for clang++.
+
+After you build using Templight, you will need to analyze the results. The [templight-tools](https://github.com/mikael-s-persson/templight-tools) project provides various methods. (Author's Note: I suggest using the callgrind converter and visualizing the results with kcachegrind).
+
+
+
+### Firewall Frequently Changing Header Files
+
+
+
+#### Don't Unnecessarily Include Headers
+
+The compiler has to do something with each include directive it sees. Even if it stops as soon as it sees the `#ifndef` include guard, it still had to open the file and begin processing it.
+
+[include-what-you-use](https://github.com/include-what-you-use/include-what-you-use) is a tool that can help you identify which headers you need.
+
+#### Reduce the load on the preprocessor
+
+This is a general form of "Firewall Frequently Changing Header Files" and "Don't Unnecessarily Include Headers." Tools like BOOST_PP can be very helpful, but they also put a huge burden on the preprocessor.
+
+### Consider using precompiled headers
+
+The usage of precompiled headers can considerably reduce the compile time in large projects. Selected headers are compiled to an intermediate form (PCH files) that can be faster processed by the compiler. It is recommended to define only frequently used header that changes rarely as precompiled header (e.g. system and library headers) to achieve the compile time reduction.
+But you have to keep in mind, that using precompiled headers has several disadvantages:
+* The usage of precompiled header is not portable.
+* The generated PCH files are machine dependent.
+* The generated PCH files can be quite large.
+* It can break your header dependencies. Because of the precompiled headers, every file has the possibility to include every header that is marked as a precompiled header. In result it can happen, that the build fails if you disable the precompiled headers. This can be an issue if you ship something like a library. Because of this it is highly recommend to build once with precompiled header enabled and a second time without them.
+
+Precompiled headers is supported by the most common compiler, like [GCC](https://gcc.gnu.org/onlinedocs/gcc/Precompiled-Headers.html), [Clang](http://clang.llvm.org/docs/PCHInternals.html) and [Visual Studio](https://msdn.microsoft.com/en-us/library/szfdksca.aspx).
+Tools like [cotire](https://github.com/sakra/cotire/) (a plugin for cmake) can help you to add precompiled headers to your build system.
+
+### Consider Using Tools
+
+These are not meant to supersede good design
+
+ * [ccache](https://ccache.samba.org/), compile results caching for unix-like operating systems
+ * [clcache](https://github.com/frerich/clcache), compile results caching for cl.exe (MSVC)
+ * [warp](https://github.com/facebook/warp), Facebook's preprocessor
+
+### Put tmp on Ramdisk
+
+See [this](https://www.youtube.com/watch?v=t4M3yG1dWho) YouTube video for more details.
+
+### Use the gold linker
+
+If on Linux, consider using the gold linker for GCC.
