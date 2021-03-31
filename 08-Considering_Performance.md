@@ -103,8 +103,13 @@ If on Linux, consider using the gold linker for GCC.
 
 There's no real way to know where your bottlenecks are without analyzing the code.
 
- * http://developer.amd.com/tools-and-sdks/opencl-zone/codexl/
- * http://www.codersnotes.com/sleepy
+A list of code profilers: 
+ * [Intel VTune](https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/vtune-profiler.html) 
+ * [Coz - Causal Profiling](https://github.com/plasma-umass/coz)
+ * [Sleepy](http://www.codersnotes.com/sleepy)
+ * [Dyninst](https://dyninst.org/)
+ * [AMD CodeXL](https://github.com/GPUOpen-Archive/CodeXL)
+ * [lukestackwalker](http://lukestackwalker.sourceforge.net/)
 
 ### Simplify the Code
 
