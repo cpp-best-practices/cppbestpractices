@@ -293,6 +293,7 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
 ### Reverse engineering tools
 
  * [Cutter](https://cutter.re/) - A front-end for [Radare2](https://www.radare.org/n/radare2.html). It provides tools such as decompiler, disassembly, graph visualizer, hex editor.
+ * [Ghidra](https://ghidra-sre.org/) -  Ghidra is a free and open source reverse engineering tool developed by the National Security Agency (NSA) of the United States.
 
 ### GCC / Clang Sanitizers
 
