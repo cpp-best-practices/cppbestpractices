@@ -49,7 +49,6 @@ Package management is an important topic in C++, with currently no clear winner.
  * [build2](https://build2.org/) - cargo-like package management for C++
  * [Buckaroo](https://buckaroo.pm) - Truly decentralized cross-platform dependency manager for C/C++ and more
  * [Vcpkg](https://github.com/microsoft/vcpkg) - Microsoft C++ Library Manager for Windows, Linux, and MacOS - [description](https://docs.microsoft.com/en-us/cpp/build/vcpkg)
- * [CPM](https://github.com/cpm-cmake/CPM.cmake) - CMake package manager for modern CMake
 
 ## Continuous Integration
 
