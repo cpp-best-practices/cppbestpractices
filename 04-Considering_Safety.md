@@ -80,7 +80,7 @@ private:
 }
 ```
 
-Why? Because passing and returning by reference leads to pointer operations instead by much more faster passing values in processor registers.
+Why? Because passing and returning by reference leads to pointer operations, instead of much faster passing of values in processor registers.
 
 ## Avoid Raw Memory Access
 
