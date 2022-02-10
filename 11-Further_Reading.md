@@ -4,7 +4,7 @@
 
 ## C++
 
- * https://github.com/isocpp/CppCoreGuidelines The C++ Core Guidelines are a set of tried-and-true guidelines, rules, and best practices about coding in C++ 
+ * https://github.com/isocpp/CppCoreGuidelines The C++ Core Guidelines are a set of tried-and-true guidelines, rules, and best practices about coding in C++
  * https://www.gitbook.com/book/alexastva/the-ultimate-question-of-programming-refactoring-/details - The Ultimate Question of Programming, Refactoring, and Everything
  * http://llvm.org/docs/CodingStandards.html - LLVM Coding Standards - very well written
  * http://geosoft.no/development/cppstyle.html

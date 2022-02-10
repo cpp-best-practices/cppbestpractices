@@ -43,7 +43,7 @@ For more examples see [this article](http://blog2.emptycrate.com/content/templat
 
 ### Avoid Recursive Template Instantiations
 
-Recursive template instantiations can result in a significant load on the compiler and more difficult to understand code. 
+Recursive template instantiations can result in a significant load on the compiler and more difficult to understand code.
 
 [Consider using variadic expansions and folds when possible instead.](http://articles.emptycrate.com/2016/05/14/folds_in_cpp11_ish.html)
 
@@ -294,11 +294,11 @@ if (MyObject obj(index); obj.good()) {
 
 ### Prefer `double` to `float`, But Test First
 
-Depending on the situation and the compiler's ability to optimize, one may be faster over the other. Choosing `float` will result in lower precision and may be slower due to conversions. On vectorizable operations `float` may be faster if you are able to sacrifice precision. 
+Depending on the situation and the compiler's ability to optimize, one may be faster over the other. Choosing `float` will result in lower precision and may be slower due to conversions. On vectorizable operations `float` may be faster if you are able to sacrifice precision.
 
 `double` is the recommended default choice as it is the default type for floating point values in C++.
 
-See this [stackoverflow](http://stackoverflow.com/questions/4584637/double-or-float-which-is-faster) discussion for some more information. 
+See this [stackoverflow](http://stackoverflow.com/questions/4584637/double-or-float-which-is-faster) discussion for some more information.
 
 ### Prefer `++i` to `i++`
 ... when it is semantically correct. Pre-increment is [faster](http://blog2.emptycrate.com/content/why-i-faster-i-c) than post-increment because it does not require a copy of the object to be made.
@@ -318,7 +318,7 @@ for (int i = 0; i < 15; ++i)
 ```
 
 Even if many modern compilers will optimize these two loops to the same assembly code, it is still good practice to prefer `++i`. There is absolutely no reason not to and you can never be certain that your code will not pass a compiler that does not optimize this.
-You should be also aware that the compiler will not be able optimize this only for integer types and not necessarily for all iterator or other user defined types.  
+You should be also aware that the compiler will not be able optimize this only for integer types and not necessarily for all iterator or other user defined types.
 The bottom line is that it is always easier and recommended to use the pre-increment operator if it is semantically identical to the post-increment operator.
 
 ### Char is a char, string is a string
@@ -358,4 +358,3 @@ Properly use the already highly optimized components of the vendor provided stan
 #### `in_place_t` And Related
 
 Be aware of how to use `in_place_t` and related tags for efficient creation of objects such as `std::tuple`, `std::any` and `std::variant`.
-
