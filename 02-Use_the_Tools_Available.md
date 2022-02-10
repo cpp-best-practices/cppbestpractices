@@ -35,6 +35,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
  * [premake](https://premake.github.io/) 
  * [xmake](https://xmake.io) - A cross-platform build utility based on Lua. Modern C/C++ build tools, Support multi-language hybrid compilation
+ * [build2](https://build2.org) - A cargo-like complete toolchain (build system, package manager, project manager)
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
@@ -46,7 +47,7 @@ Package management is an important topic in C++, with currently no clear winner.
  * [hunter](https://github.com/ruslo/hunter) - CMake driven cross-platform package manager for C/C++
  * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
  * [qpm](https://www.qpm.io/) - Package manager for Qt
- * [build2](https://build2.org/) - cargo-like package management for C++
+ * [build2](https://build2.org/) - A cargo-like complete toolchain (build system, package manager, project manager)
  * [Buckaroo](https://buckaroo.pm) - Truly decentralized cross-platform dependency manager for C/C++ and more
  * [Vcpkg](https://github.com/microsoft/vcpkg) - Microsoft C++ Library Manager for Windows, Linux, and MacOS - [description](https://docs.microsoft.com/en-us/cpp/build/vcpkg)
 
