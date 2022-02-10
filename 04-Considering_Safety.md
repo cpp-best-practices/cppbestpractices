@@ -80,7 +80,7 @@ private:
 }
 ```
 
-Why? Because passing and returning by reference leads to pointer operations instead by much more faster passing values in processor registers.
+Why? Because passing and returning by reference leads to pointer operations, instead of much faster passing of values in processor registers.
 
 ## Avoid Raw Memory Access
 
@@ -142,4 +142,4 @@ If you have the possibility to use a compiler that supports C++11, you can use v
 
 ## Additional Resources
 
-[How to Prevent The Next Heartbleed](http://www.dwheeler.com/essays/heartbleed.html) by David Wheeler is a good analysis of the current state of code safety and how to ensure safe code.
+[How to Prevent The Next Heartbleed](https://dwheeler.com/essays/heartbleed.html) by David Wheeler is a good analysis of the current state of code safety and how to ensure safe code.

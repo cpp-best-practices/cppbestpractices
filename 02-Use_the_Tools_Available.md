@@ -35,6 +35,7 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
  * [premake](https://premake.github.io/)
  * [xmake](https://xmake.io) - A cross-platform build utility based on Lua. Modern C/C++ build tools, Support multi-language hybrid compilation
+ * [build2](https://build2.org) - A cargo-like complete toolchain (build system, package manager, project manager)
 
 Remember, it's not just a build tool, it's also a programming language. Try to maintain good clean build scripts and follow the recommended practices for the tool you are using.
 
@@ -46,9 +47,10 @@ Package management is an important topic in C++, with currently no clear winner.
  * [hunter](https://github.com/ruslo/hunter) - CMake driven cross-platform package manager for C/C++
  * [C++ Archive Network (CPPAN)](https://cppan.org/) - a crossplatform dependency manager for C++
  * [qpm](https://www.qpm.io/) - Package manager for Qt
- * [build2](https://build2.org/) - cargo-like package management for C++
+ * [build2](https://build2.org/) - A cargo-like complete toolchain (build system, package manager, project manager)
  * [Buckaroo](https://buckaroo.pm) - Truly decentralized cross-platform dependency manager for C/C++ and more
  * [Vcpkg](https://github.com/microsoft/vcpkg) - Microsoft C++ Library Manager for Windows, Linux, and MacOS - [description](https://docs.microsoft.com/en-us/cpp/build/vcpkg)
+ * [CPM](https://github.com/cpm-cmake/CPM.cmake) - CMake package manager for modern CMake
 
 ## Continuous Integration
 
@@ -101,8 +103,9 @@ You should use as many compilers as you can for your platform(s). Each compiler 
 
 ### GCC / Clang
 
-`-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic`
+`-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic` - use these and consider the following (see descriptions below)
 
+ * `-pedantic` - Warn on language extensions
  * `-Wall -Wextra` reasonable and standard
  * `-Wshadow` warn the user if a variable declaration shadows one from a parent context
  * `-Wnon-virtual-dtor` warn the user if a class with virtual functions has a non-virtual destructor. This helps catch hard to track down memory errors
@@ -293,6 +296,7 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
 ### Reverse engineering tools
 
  * [Cutter](https://cutter.re/) - A front-end for [Radare2](https://www.radare.org/n/radare2.html). It provides tools such as decompiler, disassembly, graph visualizer, hex editor.
+ * [Ghidra](https://ghidra-sre.org/) -  Ghidra is a free and open source reverse engineering tool developed by the National Security Agency (NSA) of the United States.
 
 ### GCC / Clang Sanitizers
 
@@ -337,10 +341,6 @@ MSVC's [Control Flow Guard](https://msdn.microsoft.com/en-us/library/windows/des
 ### Checked STL Implementations
 
  * `_GLIBCXX_DEBUG` with GCC's implementation libstdc++ implementation. See [Krister's blog article](https://kristerw.blogspot.se/2018/03/detecting-incorrect-c-stl-usage.html).
-
-### Heap Profiling
-
- * [Memoro](https://epfl-vlsc.github.io/memoro/) - A detailed heap profiler
 
 ## Ignoring Warnings
 
