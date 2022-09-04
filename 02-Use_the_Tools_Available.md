@@ -27,12 +27,12 @@ Use an industry standard widely accepted build tool. This prevents you from rein
  * [Waf](https://waf.io/)
  * [FASTBuild](http://www.fastbuild.org/)
  * [Ninja](https://ninja-build.org/) - Can greatly improve the incremental build time of your larger projects. Can be used as a target for CMake.
- * [Bazel](http://bazel.io/) - Fast incremental builds using network artefact caching and remote execution.
- * [Buck](http://buckbuild.com/) - Similar to Bazel, with very good support for iOS and Andoid.
+ * [Bazel](http://bazel.io/) - Fast incremental builds using network artifact caching and remote execution.
+ * [Buck](http://buckbuild.com/) - Similar to Bazel, with very good support for iOS and Android.
  * [gyp](https://chromium.googlesource.com/external/gyp/) - Google's build tool for chromium.
  * [maiken](https://github.com/Dekken/maiken) - Crossplatform build tool with Maven-esque configuration style.
  * [Qt Build Suite](http://doc.qt.io/qbs/) - Crossplatform build tool From Qt.
- * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user friendly as possible.
+ * [meson](http://mesonbuild.com/index.html) - Open source build system meant to be both extremely fast, and, even more importantly, as user-friendly as possible.
  * [premake](https://premake.github.io/)
  * [xmake](https://xmake.io) - A cross-platform build utility based on Lua. Modern C/C++ build tools, Support multi-language hybrid compilation
  * [build2](https://build2.org) - A cargo-like complete toolchain (build system, package manager, project manager)
@@ -49,7 +49,7 @@ Package management is an important topic in C++, with currently no clear winner.
  * [qpm](https://www.qpm.io/) - Package manager for Qt
  * [build2](https://build2.org/) - A cargo-like complete toolchain (build system, package manager, project manager)
  * [Buckaroo](https://buckaroo.pm) - Truly decentralized cross-platform dependency manager for C/C++ and more
- * [Vcpkg](https://github.com/microsoft/vcpkg) - Microsoft C++ Library Manager for Windows, Linux, and MacOS - [description](https://docs.microsoft.com/en-us/cpp/build/vcpkg)
+ * [Vcpkg](https://github.com/microsoft/vcpkg) - Microsoft C++ Library Manager for Windows, Linux, and macOS - [description](https://docs.microsoft.com/en-us/cpp/build/vcpkg)
  * [CPM](https://github.com/cpm-cmake/CPM.cmake) - CMake package manager for modern CMake
 
 ## Continuous Integration
@@ -88,7 +88,7 @@ Continuous Integration (CI) tools automatically build the source code as changes
 
 If you have an open source, publicly-hosted project on GitHub:
 
- * go enable Travis Ci and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
+ * go enable Travis CI and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
  * enable one of the coverage tools listed below (Codecov or Coveralls)
  * enable [Coverity Scan](https://scan.coverity.com)
 
@@ -122,8 +122,8 @@ You should use as many compilers as you can for your platform(s). Each compiler 
  * `-Wlogical-op` (only in GCC) warn about logical operations being used where bitwise were probably wanted
  * `-Wnull-dereference` (only in GCC >= 6.0) warn if a null dereference is detected
  * `-Wuseless-cast` (only in GCC >= 4.8) warn if you perform a cast to the same type
- * `-Wdouble-promotion` (GCC >= 4.6, Clang >= 3.8) warn if `float` is implicit promoted to `double`
- * `-Wformat=2` warn on security issues around functions that format output (ie `printf`)
+ * `-Wdouble-promotion` (GCC >= 4.6, Clang >= 3.8) warn if `float` is implicitly promoted to `double`
+ * `-Wformat=2` warn on security issues around functions that format output (i.e., `printf`)
  * `-Wlifetime` (only special branch of Clang currently) shows object lifetime issues
 
 Consider using `-Weverything` and disabling the few warnings you need to on Clang
@@ -152,7 +152,7 @@ Consider using `-Weverything` and disabling the few warnings you need to on Clan
  * `/w14549` 'operator': operator before comma has no effect; did you intend 'operator'?
  * `/w14555` expression has no effect; expected expression with side-effect
  * `/w14619` pragma warning: there is no warning number 'number'
- * `/w14640` Enable warning on thread un-safe static member initialization
+ * `/w14640` Enable warning on thread unsafe static member initialization
  * `/w14826` Conversion from 'type1' to 'type_2' is sign-extended. This may cause unexpected runtime behavior.
  * `/w14905` wide string literal cast to 'LPSTR'
  * `/w14906` string literal cast to 'LPWSTR'
@@ -206,7 +206,7 @@ Notes:
 
  * For correct work it requires well formed path for headers, so before usage don't forget to pass: `--check-config`.
  * Finding unused headers does not work with `-j` more than 1.
- * Remember to add `--force` for code with a lot number of `#ifdef` if you need check all of them.
+ * Remember to add `--force` for code with a lot number of `#ifdef` if you need to check all of them.
 
 ### cppclean
 
@@ -256,7 +256,7 @@ Qt Creator can plug into the clang static analyzer.
 ### IKOS
 
 [IKOS](https://ti.arc.nasa.gov/opensource/ikos/) is an open source static analyzer, developed by NASA. It is based on the Abstract Interpretation. It is written in C++ and provides an analyzer for C and C++, using LLVM.
-The source code is [available on Github](https://github.com/NASA-SW-VnV/ikos).
+The source code is [available on GitHub](https://github.com/NASA-SW-VnV/ikos).
 
 ## Runtime Checkers
 
@@ -284,7 +284,7 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
  * [Valgrind](http://www.valgrind.org/)
    * Valgrind is a runtime code analyzer that can detect memory leaks, race conditions, and other associated problems. It is supported on various Unix platforms.
  * [Heaptrack](https://github.com/KDE/heaptrack)
-   * A profiler created by a Valgrind's Massif developper. Quite similar to Massif with pros and cons over it, way more intuitive though.
+   * A profiler created by a Valgrind's Massif developer. Quite similar to Massif with pros and cons over it, way more intuitive though.
  * [Dr Memory](http://www.drmemory.org)
  * [Memoro](https://epfl-vlsc.github.io/memoro/) - A detailed heap profiler.
 
@@ -350,7 +350,7 @@ Be sure to reenable the warning after disabling it for a section of code. You do
 
 ## Testing
 
-CMake, mentioned above, has a built in framework for executing tests. Make sure whatever build system you use has a way to execute tests built in.
+CMake, mentioned above, has a built-in framework for executing tests. Make sure whatever build system you use has a way to execute tests built in.
 
 To further aid in executing tests, consider a library such as [Google Test](https://github.com/google/googletest), [Catch](https://github.com/philsquared/Catch), [CppUTest](https://github.com/cpputest/cpputest) or [Boost.Test](http://www.boost.org/doc/libs/release/libs/test/) to help you organize the tests.
 
