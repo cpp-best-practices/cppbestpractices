@@ -125,6 +125,7 @@ You should use as many compilers as you can for your platform(s). Each compiler 
  * `-Wdouble-promotion` (GCC >= 4.6, Clang >= 3.8) warn if `float` is implicit promoted to `double`
  * `-Wformat=2` warn on security issues around functions that format output (ie `printf`)
  * `-Wlifetime` (only special branch of Clang currently) shows object lifetime issues
+ * `-Wimplicit-fallthrough` Warns when case statements fall-through. (Included with `-Wextra` in GCC, not in clang)
 
 Consider using `-Weverything` and disabling the few warnings you need to on Clang
 
