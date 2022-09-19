@@ -88,7 +88,7 @@ Continuous Integration (CI) tools automatically build the source code as changes
 
 If you have an open source, publicly-hosted project on GitHub:
 
- * go enable Travis CI and AppVeyor integration right now. We'll wait for you to come back. For a simple example of how to enable it for your C++ CMake-based application, see here: https://github.com/ChaiScript/ChaiScript/blob/master/.travis.yml
+ * go enable github actions. A template for this can be found in the [C++ Boilerplate Template](https://github.com/cpp-best-practices/cmake_conan_boilerplate_template)
  * enable one of the coverage tools listed below (Codecov or Coveralls)
  * enable [Coverity Scan](https://scan.coverity.com)
 
