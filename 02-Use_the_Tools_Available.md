@@ -162,6 +162,7 @@ Consider using `-Weverything` and disabling the few warnings you need to on Clan
 Not recommended
 
  * `/Wall` - Also warns on files included from the standard library, so it's not very useful and creates too many extra warnings.
+   * Since VS2022, `/external:anglebrackets /external:W0` can be used to turn off warnings from all headers included with angle brackets, e.g. `#include <utility>`.
 
 
 
