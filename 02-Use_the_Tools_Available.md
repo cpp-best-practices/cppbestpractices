@@ -382,6 +382,12 @@ Don't forget to make sure that your error handling is being tested and works pro
 
 [rr](http://rr-project.org/) is a free (open source) reverse debugger that supports C++.
 
+
+## Documentation Tools
+
+ * [hdoc](https://hdoc.io/) the modern documentation tool for C++
+
+
 ## Other Tools
 
 ### Lizard
