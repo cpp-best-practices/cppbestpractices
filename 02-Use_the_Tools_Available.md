@@ -339,6 +339,7 @@ These tools take code executed during unit test runs and mutate the executed cod
  * [MuCPP](https://neptuno.uca.es/redmine/projects/mucpp-mutation-tool/wiki)
  * [mull](https://github.com/mull-project/mull)
  * [CCMutator](https://github.com/markus-kusano/CCMutator)
+ * [Universal Mutator](https://github.com/agroce/universalmutator)
 
 ### Control Flow Guard
 
