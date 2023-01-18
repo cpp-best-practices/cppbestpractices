@@ -185,7 +185,6 @@ If you are not using a build system like that, you can consider [Build EAR](http
 CMake now also comes with built-in support for calling `clang-tidy` during [normal compilation](https://cmake.org/cmake/help/latest/prop_tgt/LANG_CLANG_TIDY.html).
 
  * [include-what-you-use](https://github.com/include-what-you-use), [example results](https://github.com/ChaiScript/ChaiScript/commit/c0bf6ee99dac14a19530179874f6c95255fde173)
- * [clang-modernize](http://clang.llvm.org/extra/clang-modernize.html), [example results](https://github.com/ChaiScript/ChaiScript/commit/6eab8ddfe154a4ebbe956a5165b390ee700fae1b)
  * [clang-check](http://clang.llvm.org/docs/ClangCheck.html)
  * [clang-tidy](http://clang.llvm.org/extra/clang-tidy.html)
 
