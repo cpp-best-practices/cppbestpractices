@@ -2,7 +2,7 @@
 
 
 ## Const as Much as Possible
-`const` tells the compiler that a variable or method is immutable. This helps the compiler optimize the code and helps the developer know if a function has a side effect. Also, using `const &` prevents the compiler from copying data unnecessarily. The  [comments on `const` from John Carmack](http://kotaku.com/454293019) are also a good read.
+`const` tells the compiler that a variable or method is immutable. This helps the compiler optimize the code and helps the developer know if a function has a side effect. Also, using `const &` prevents the compiler from copying data unnecessarily. The  [comments on `const` from John Carmack](https://web.archive.org/web/20131211065348/https://kotaku.com/454293019) are also a good read.
 
 ```cpp
 // Bad Idea
