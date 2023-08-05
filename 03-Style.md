@@ -35,7 +35,7 @@ Every IDE and many editors have support for clang-format built in or easily inst
 C++ Standard Library (and other well-known C++ libraries like [Boost](http://www.boost.org/)) use these guidelines:
 
  * Macro names use upper case with underscores: `INT_MAX`.
- * Template parameter names use camel case: `InputIterator`.
+ * Template parameter names use Pascal case: `InputIterator`.
  * All other names use snake case: `unordered_map`.
 
 ## Distinguish Private Object Data
