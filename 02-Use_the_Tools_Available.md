@@ -420,7 +420,7 @@ Don't forget to make sure that your error handling is being tested and works pro
 
 ### pahole
 
-[pahole](https://linux.die.net/man/1/pahole) generates data on holes in the packing of data structures and classes in compiled code. It can also the size of structures and how they fit within the system's cache lines.
+[pahole](https://linux.die.net/man/1/pahole) generates data on holes in the packing of data structures and classes in compiled code. It can also determine the size of structures and how they fit within the system's cache lines.
 
 ### BinSkim
 
