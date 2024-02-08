@@ -192,6 +192,12 @@ CMake now also comes with built-in support for calling `clang-tidy` during [norm
 
 The best bet is the static analyzer that you can run as part of your automated build system. Cppcheck and clang meet that requirement for free options.
 
+### SonarLint / SonarQube / SonarCloud
+
+[SonarLint](https://www.sonarsource.com/products/sonarlint/) runs as a plug-in in all the main IDEs. The other two run as part of your build pipeline and can also gate PRs. [SonarQube](https://www.sonarsource.com/products/sonarqube/) runs on your own infrastructure whereas [SonarCloud](https://www.sonarsource.com/products/sonarcloud/) runs in The Cloud, is free for public Open Source projects and supports Automatic Analysis for zero-config setup.
+
+All three run the same set of analyzers (although SonarQube and SonarCloud have a handful of additional checks that are too heavyweight to run in-IDE) that catch code smells and best practice violations, as well as complex bugs.
+
 ### Coverity Scan
 
 [Coverity](https://scan.coverity.com/) has a free (for open source) static analysis toolkit that can work on every commit in integration with [Travis CI](http://travis-ci.org) and [AppVeyor](http://www.appveyor.com/).
