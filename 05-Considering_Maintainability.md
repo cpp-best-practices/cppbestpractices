@@ -53,6 +53,6 @@ The `assert()` will be removed in release builds which will prevent the `set_val
 So while the second version is uglier, the first version is simply not correct.
 
 
-## Properly Utilize 'override' and 'final'
+## Properly Utilize `override` and `final`
 
 These keywords make it clear to other developers how virtual functions are being utilized, can catch potential errors if the signature of a virtual function changes, and can possibly [hint to the compiler](http://stackoverflow.com/questions/7538820/how-does-the-compiler-benefit-from-cs-new-final-keyword) of optimizations that can be performed.
