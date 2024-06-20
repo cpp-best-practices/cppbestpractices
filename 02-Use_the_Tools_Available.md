@@ -341,7 +341,7 @@ Continuous fuzzing tools exist to run fuzz tests for you with each commit.
 These tools take code executed during unit test runs and mutate the executed code. If the test continues to pass with a mutation in place, then there is likely a flawed test in your suite.
 
  * [Dextool Mutate](https://github.com/joakim-brannstrom/dextool/tree/master/plugin/mutate)
- * [MuCPP](https://neptuno.uca.es/redmine/projects/mucpp-mutation-tool/wiki)
+ * [MuCPP](https://ucase.uca.es/mucpp/)
  * [mull](https://github.com/mull-project/mull)
  * [CCMutator](https://github.com/markus-kusano/CCMutator)
  * [Universal Mutator](https://github.com/agroce/universalmutator)
