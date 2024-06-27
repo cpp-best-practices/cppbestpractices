@@ -269,6 +269,11 @@ The source code is [available on GitHub](https://github.com/NASA-SW-VnV/ikos).
 
 [codespell](https://github.com/codespell-project/codespell) is a spell checker for your source code.
 
+### infer
+
+[infer](https://github.com/facebook/infer) A static analyzer for Java, C, C++, and Objective-C
+
+
 ## Runtime Checkers
 
 ### Code Coverage Analysis
