@@ -217,7 +217,7 @@ It also makes it possible to have two separate files next to each other on one s
 
 
 ## Use "" for Including Local Files
-... `<>` is [reserved for system includes](http://blog2.emptycrate.com/content/when-use-include-verses-include).
+Compiler developers use different types of quotes to [optimize search](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rs-incform).
 
 ```cpp
 // Bad Idea. Requires extra -I directives to the compiler
