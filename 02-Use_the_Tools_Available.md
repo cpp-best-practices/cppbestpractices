@@ -126,6 +126,7 @@ You should use as many compilers as you can for your platform(s). Each compiler 
  * `-Wformat=2` warn on security issues around functions that format output (i.e., `printf`)
  * `-Wlifetime` (only special branch of Clang currently) shows object lifetime issues
  * `-Wimplicit-fallthrough` Warns when case statements fall-through. (Included with `-Wextra` in GCC, not in clang)
+ * `-D_GLIBCXX_ASSERTIONS` (only in GCC >= TBD) Adds extra assertions, null pointer checks. Do not enable this on release builds because it is slow.
 
 Consider using `-Weverything` and disabling the few warnings you need to on Clang
 
