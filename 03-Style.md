@@ -56,21 +56,23 @@ struct Size
   int width;
   int height;
 
-  Size(int t_width, int t_height) : width(t_width), height(t_height) {}
+ constexpr explicit Size(int t_width, int t_height) : width(t_width), height(t_height) {}
 };
 
 // This version might make sense for thread safety or something,
 // but more to the point, sometimes we need to hide data, sometimes we don't.
 class PrivateSize
 {
-  public:
-    int width() const { return m_width; }
-    int height() const { return m_height; }
-    PrivateSize(int t_width, int t_height) : m_width(t_width), m_height(t_height) {}
+public:
+  constexpr int width() const noexcept { return m_width; }
+  constexpr int height() const noexcept { return m_height; }
 
-  private:
-    int m_width;
-    int m_height;
+  constexpr explicit PrivateSize(int t_width, int t_height)
+    : m_width(t_width), m_height(t_height) {}
+
+private:
+  int m_width;
+  int m_height;
 };
 ```
 
