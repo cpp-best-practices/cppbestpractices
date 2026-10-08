@@ -288,6 +288,7 @@ A coverage analysis tool shall be run when tests are executed to make sure the e
    * integrates with codecov and coveralls
    * performs code coverage reporting without needing special compiler flags, just by instrumenting debug symbols.
  * [OpenCppCoverage](https://github.com/OpenCppCoverage/OpenCppCoverage) - open source coverage reporting tool for Windows.
+ * [covdbg](https://covdbg.com/) - coverage for native Windows x64 C++ programs using an existing binary and matching PDB, with LCOV, GCOV and HTML export.
 
 
 ### Heap profiling
